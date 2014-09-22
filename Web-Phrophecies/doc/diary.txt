@@ -5,6 +5,7 @@
 22.09.2014 burkt4, huber3, nells1
 - Setup github und IDE
 - Erste Projekt-Defition
+- Krieg mit github
 
 ------
 
