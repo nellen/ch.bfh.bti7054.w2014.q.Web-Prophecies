@@ -3,12 +3,10 @@
 ## ----------------------------------
 
 22.09.2014 burkt4, huber3, nells1
-- Setup GIT und IDE
+- Setup github und IDE
 - Erste Projekt-Defition
 	
 ------
 
 15.09.2014 burkt4, huber3, nells1
 - Projekt-Auswahl
-
-Test
