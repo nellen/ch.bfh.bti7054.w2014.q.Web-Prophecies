@@ -2,6 +2,16 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+26.09.2014 burkt4, huber3, nells1
+- Installation XAMPP Bundle, Firebug
+- Auftrags-bearbeitung und -verteilung Task 1
+		-> burkt4: "Business" men
+		-> nells1: "Bio over all" girl
+		-> huber3: "Last-minute guy" men
+			
+
+------
+
 22.09.2014 burkt4, huber3, nells1
 - Setup github und IDE
 - Erste Projekt-Defition
