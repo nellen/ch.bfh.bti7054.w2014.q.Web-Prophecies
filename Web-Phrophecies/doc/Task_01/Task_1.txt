@@ -1,0 +1,88 @@
+Task 1.2: Web Shop Basics
+▶ Work out a basic concept for your Web shop. The most important decision is about the type of products you want to sell (e.g. computers). 
+Find something, which allows you to classify the products into a small number of main categories (e.g. desktop computers, servers, notebooks, PDAs). 
+Some of the products should have additional options or extensions (e.g. 2GB/4GB RAM, 200/250GB HD). 
+Work out a precise list of categories, products, options, and prices. The total number of different products should be about 20.
+
+-> BreakFast (to go)
+
+categories		|		product			|		options												|		prices
+
+bread					croissant				butter, whole-grain								
+bread					bun						butter, whole-grain, bacon
+bread					bread					white, dark, whole-grain
+bread					braid					--
+sandwich				ham						w/ or w/o: tomatoes, cucumbers
+sandwich				salami					w/ or w/o: tomatoes, cucumbers
+sandwich				cheese					w/ or w/o: tomatoes, cucumbers
+proteines				eggs					three-minute egg, scrambled eggs, sunny-side up
+proteines				ham						raw, cooked		
+proteines				cheese					(altered weekly)				
+cereals					muesli					dry
+
+coffee					espresso				black, with milk	
+coffee					coffee					black, with milk
+coffee					macchiato				different flavors
+coffee					capucchino				cold milk, hot milk
+tea						tea						different flavors
+tea						chai latte				--
+chocolate				chocolate				cold milk, hot milk
+chocolate				ovomaltine				cold milk, hot milk
+fruit juice				orange juice			--
+fruit juice				ananas juice			--
+fruit juice				tropical juice			--
+
+menu					bircher muesli			--
+menu					eggs benedict			--
+menu					the BreakFast menu		small, medium, large, surprise
+
+
+------
+
+Task 1.3: Target User and Requirements
+
+▶ Think about your target market and target users (customers).
+	▶ define at least 2 different Personas (http://en.wikipedia.org/wiki/Persona_%28marketing%29)
+		a)	"Business" men
+			-> burkt4
+		b)	"Bio over all" girl
+			-> nells1
+		c)	"Last-minute guy" men
+			-> huber3
+	▶ with relevant characteristics such as gender, age, skills, interests, income, …
+		a)	male, 45, , , high income, 
+		
+		b) 	female, 25,
+		
+		c)	male, 19, 
+	
+▶ Define a detailed Use Case (http://en.wikipedia.org/wiki/Use_case) on how these Personas may interact with your Web Shop.
+		
+		a)	
+		
+		b)	
+		
+		c)	
+
+▶ On this basis, elicit requirements that your Web Shop should (ideally) fulfill once it is completely implemented.
+
+		-	
+		-	
+		-	
+		-	
+		
+
+------
+
+Task 1.4: Design Principles
+
+▶ Read about the Design of Web Pages and Web Shops in general. Have a look at the design of existing shops and think about what you like and 
+what not (http://www.webpagesthatsuck.com is interesting in that respect).
+
+▶ Write down a list of important design rules that you want to follow
+
+		-	mobile first
+		-	easy to use
+		-	timeless design
+		
+
