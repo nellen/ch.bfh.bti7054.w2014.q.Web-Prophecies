@@ -43,14 +43,14 @@ Task 1.3: Target User and Requirements
 
 ▶ Think about your target market and target users (customers).
 	▶ define at least 2 different Personas (http://en.wikipedia.org/wiki/Persona_%28marketing%29)
-		a)	"Business" men
+		a)	Peter, a "Business" man
 			-> burkt4
 		b)	Anna, a "bio over all" girl 
 			-> nells1
 		c)	"Last-minute guy" men
 			-> huber3
 	▶ with relevant characteristics such as gender, age, skills, interests, income, …
-		a)	male, 45, , , high income, 
+		a)	male, 45, works as a banker,travels daily from cities by train (first class), he collects art as a hobby,he is kind of a snob, accustomed to certain standard of living, high income, 
 		
 		b) 	female, 25, studies psychology and history, works part time in a library, likes reading books, medium income
 		
@@ -58,7 +58,8 @@ Task 1.3: Target User and Requirements
 	
 ▶ Define a detailed Use Case (http://en.wikipedia.org/wiki/Use_case) on how these Personas may interact with your Web Shop.
 		
-		a)	
+		a)	Peter likes his routine therefore he would like to place standing orders per weekday, so he doesn't have to place a order daily.
+		But it should still be possible to change the standard order or to be able to suspend it, when he goes on business trips.
 		
 		b)	
 		
@@ -66,8 +67,8 @@ Task 1.3: Target User and Requirements
 
 ▶ On this basis, elicit requirements that your Web Shop should (ideally) fulfill once it is completely implemented.
 
-		-	
-		-	
+		- be able to place one time orders as well as having standing orders	
+		- be able to declare exceptions to standing orders or suspend them if necessary or cancel them completely
 		-	
 		-	
 		
