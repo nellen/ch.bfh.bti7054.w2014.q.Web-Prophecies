@@ -45,14 +45,14 @@ Task 1.3: Target User and Requirements
 	▶ define at least 2 different Personas (http://en.wikipedia.org/wiki/Persona_%28marketing%29)
 		a)	"Business" men
 			-> burkt4
-		b)	"Bio over all" girl
+		b)	Anna, a "bio over all" girl 
 			-> nells1
 		c)	"Last-minute guy" men
 			-> huber3
 	▶ with relevant characteristics such as gender, age, skills, interests, income, …
 		a)	male, 45, , , high income, 
 		
-		b) 	female, 25,
+		b) 	female, 25, studies psychology and history, works part time in a library, likes reading books, medium income
 		
 		c)	male, 19, 
 	

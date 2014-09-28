@@ -2,6 +2,11 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+29.09.2014 burkt4, huber3, nells1
+- 
+
+------
+
 26.09.2014 burkt4, huber3, nells1
 - Installation XAMPP Bundle, Firebug
 - Auftrags-bearbeitung und -verteilung Task 1
@@ -9,7 +14,6 @@
 		-> nells1: "Bio over all" girl
 		-> huber3: "Last-minute guy" men
 			
-
 ------
 
 22.09.2014 burkt4, huber3, nells1
