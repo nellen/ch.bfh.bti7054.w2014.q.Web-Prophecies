@@ -1,5 +1,5 @@
 Task 1.2: Web Shop Basics
-▶ Work out a basic concept for your Web shop. The most important decision is about the type of products you want to sell (e.g. computers). 
+��� Work out a basic concept for your Web shop. The most important decision is about the type of products you want to sell (e.g. computers). 
 Find something, which allows you to classify the products into a small number of main categories (e.g. desktop computers, servers, notebooks, PDAs). 
 Some of the products should have additional options or extensions (e.g. 2GB/4GB RAM, 200/250GB HD). 
 Work out a precise list of categories, products, options, and prices. The total number of different products should be about 20.
@@ -41,46 +41,56 @@ menu					the BreakFast menu		small, medium, large, surprise
 
 Task 1.3: Target User and Requirements
 
-▶ Think about your target market and target users (customers).
-	▶ define at least 2 different Personas (http://en.wikipedia.org/wiki/Persona_%28marketing%29)
+��� Think about your target market and target users (customers).
+	��� define at least 2 different Personas (http://en.wikipedia.org/wiki/Persona_%28marketing%29)
 		a)	Peter, a "Business" man
 			-> burkt4
-		b)	Anna, a "bio over all" girl 
+		b)	Anna, girl with lactose intolerance
 			-> nells1
-		c)	"Last-minute guy" men
+		c)	Simon, "Last-minute guy" men
 			-> huber3
-	▶ with relevant characteristics such as gender, age, skills, interests, income, …
+	��� with relevant characteristics such as gender, age, skills, interests, income, ���
 		a)	male, 45, works as a banker,travels daily from cities by train (first class), he collects art as a hobby,he is kind of a snob, accustomed to certain standard of living, high income, 
 		
-		b) 	female, 25, studies psychology and history, works part time in a library, likes reading books, medium income
+		b) 	female, 25, studies psychology and history, works part time in a library, likes reading books, lives in a living community, medium income
 		
-		c)	male, 19, 
+		c)	male, 19, is in the second year of learning carpenter, has to take the train for his workingplace, he practise downhill (bike) and snowboarding, he's a dreamer, low income
 	
-▶ Define a detailed Use Case (http://en.wikipedia.org/wiki/Use_case) on how these Personas may interact with your Web Shop.
+��� Define a detailed Use Case (http://en.wikipedia.org/wiki/Use_case) on how these Personas may interact with your Web Shop.
 		
 		a)	Peter likes his routine therefore he would like to place standing orders per weekday, so he doesn't have to place a order daily.
 		But it should still be possible to change the standard order or to be able to suspend it, when he goes on business trips.
 		
-		b)	
+		b) Anna loves breakfast and is her most important meal of the day. To find a bakery or restaurant with lactose free products
+		is sometimes difficult. She would like to see which products are suitable for her lactose intolerance.
 		
-		c)	
+		c)	Simon is a late riser and dreamer. Therefore he either doesn't have time to prepare breakfast or forget it. Mostly he realise it on
+		the way to the trainstation. The bus has about 8 minutes to the station and Simon has a waiting time about 5 minutes before his train leaves.
+		He would be able to place easy and fast a breakfast order which is cheap. Additionally, he would be able to select additional food/drink
+		for the second breakfast on the job.
 
-▶ On this basis, elicit requirements that your Web Shop should (ideally) fulfill once it is completely implemented.
+��� On this basis, elicit requirements that your Web Shop should (ideally) fulfill once it is completely implemented.
 
 		- be able to place one time orders as well as having standing orders	
 		- be able to declare exceptions to standing orders or suspend them if necessary or cancel them completely
-		-	
-		-	
+		- be able to creat a user-profile with information about the user (allergy information)
+		- show allergy information (food facts -> e.g. lactose free)
+		- show suitable products to the costumer (if selected some filters)
+		- it is possible to order over a smartphone
+		- be able to handel last minute orders
+		- showing only selective products in case of a last minute order
+		- flat navigation
+		- easy order
 		
 
 ------
 
 Task 1.4: Design Principles
 
-▶ Read about the Design of Web Pages and Web Shops in general. Have a look at the design of existing shops and think about what you like and 
+��� Read about the Design of Web Pages and Web Shops in general. Have a look at the design of existing shops and think about what you like and 
 what not (http://www.webpagesthatsuck.com is interesting in that respect).
 
-▶ Write down a list of important design rules that you want to follow
+��� Write down a list of important design rules that you want to follow
 
 		-	mobile first
 		-	easy to use
