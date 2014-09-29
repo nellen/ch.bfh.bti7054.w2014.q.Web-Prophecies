@@ -1,0 +1,17 @@
+--> Web Shop Design with CSS
+
+Task 3.1: Basic Design
+> Decide how your Web shop pages should look like (colors, fonts, etc.). Specify all the necessary style information in the external CSS file. 
+It is recommended to:
+	> use class-attributes to group similar elements of your page,
+	> assign id-attributes to access the elements in the CSS file.
+
+------
+
+Task 3.2: Content
+
+> Add some additional pages to your site. Reuse the <div>-elements from the main HTML file (copy/paste). 
+Link all pages to the same CSS file. Add links to the navigation menu (or elsewhere) to make all pages accessible from the main page (and vice versa).
+Fill the pages with meaningful content. One of your pages should contain the list of products you offer (product number, description, price, etc.).
+
+
