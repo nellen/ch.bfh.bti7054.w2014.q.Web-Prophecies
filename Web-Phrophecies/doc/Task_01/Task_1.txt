@@ -1,5 +1,5 @@
 Task 1.2: Web Shop Basics
-��� Work out a basic concept for your Web shop. The most important decision is about the type of products you want to sell (e.g. computers). 
+> Work out a basic concept for your Web shop. The most important decision is about the type of products you want to sell (e.g. computers). 
 Find something, which allows you to classify the products into a small number of main categories (e.g. desktop computers, servers, notebooks, PDAs). 
 Some of the products should have additional options or extensions (e.g. 2GB/4GB RAM, 200/250GB HD). 
 Work out a precise list of categories, products, options, and prices. The total number of different products should be about 20.
@@ -8,55 +8,55 @@ Work out a precise list of categories, products, options, and prices. The total 
 
 categories		|		product			|		options												|		prices
 
-bread					croissant				butter, whole-grain								
-bread					bun						butter, whole-grain, bacon
-bread					bread					white, dark, whole-grain
-bread					braid					--
-sandwich				ham						w/ or w/o: tomatoes, cucumbers
-sandwich				salami					w/ or w/o: tomatoes, cucumbers
-sandwich				cheese					w/ or w/o: tomatoes, cucumbers
-proteines				eggs					three-minute egg, scrambled eggs, sunny-side up
-proteines				ham						raw, cooked		
-proteines				cheese					(altered weekly)				
-cereals					muesli					dry
+bread					croissant				butter, whole-grain											1.50 both
+bread					bun						butter, whole-grain; bacon									1.50; 2.00 
+bread					bread					white, dark, whole-grain									2.00 all
+bread					braid					--															2.00
+sandwich				ham						w/ or w/o: tomatoes, cucumbers								5.00
+sandwich				salami					w/ or w/o: tomatoes, cucumbers								5.00
+sandwich				cheese					w/ or w/o: tomatoes, cucumbers								5.00
+proteines				eggs					three-minute egg, scrambled eggs, sunny-side up				4.00
+proteines				ham						raw, cooked													3.00
+proteines				cheese					(altered weekly)											3.50		
+cereals					muesli					dry															2.00
 
-coffee					espresso				black, with milk	
-coffee					coffee					black, with milk
-coffee					macchiato				different flavors
-coffee					capucchino				cold milk, hot milk
-tea						tea						different flavors
-tea						chai latte				--
-chocolate				chocolate				cold milk, hot milk
-chocolate				ovomaltine				cold milk, hot milk
-fruit juice				orange juice			--
-fruit juice				ananas juice			--
-fruit juice				tropical juice			--
+coffee					espresso				black, with milk											2.50
+coffee					coffee					black, with milk											3.00
+coffee					macchiato				different flavors											4.00
+coffee					capucchino				cold milk, hot milk											3.50
+tea						tea						different flavors											3.00
+tea						chai latte				--															3.00	
+chocolate				chocolate				cold milk, hot milk											3.50
+chocolate				ovomaltine				cold milk, hot milk											3.50
+fruit juice				orange juice			--															3.50
+fruit juice				ananas juice			--															3.50
+fruit juice				tropical juice			--															3.50
 
-menu					bircher muesli			--
-menu					eggs benedict			--
-menu					the BreakFast menu		small, medium, large, surprise
+menu					bircher muesli			--															6.50
+menu					eggs benedict			--															8.50
+menu					the BreakFast menu		small, medium, large, surprise								9.00, 10.00, 11.00, 12.00
 
 
 ------
 
 Task 1.3: Target User and Requirements
 
-��� Think about your target market and target users (customers).
-	��� define at least 2 different Personas (http://en.wikipedia.org/wiki/Persona_%28marketing%29)
+> Think about your target market and target users (customers).
+	> define at least 2 different Personas (http://en.wikipedia.org/wiki/Persona_%28marketing%29)
 		a)	Peter, a "Business" man
 			-> burkt4
 		b)	Anna, girl with lactose intolerance
 			-> nells1
 		c)	Simon, "Last-minute guy" men
 			-> huber3
-	��� with relevant characteristics such as gender, age, skills, interests, income, ���
+	> with relevant characteristics such as gender, age, skills, interests, income, ...
 		a)	male, 45, works as a banker,travels daily from cities by train (first class), he collects art as a hobby,he is kind of a snob, accustomed to certain standard of living, high income, 
 		
 		b) 	female, 25, studies psychology and history, works part time in a library, likes reading books, lives in a living community, medium income
 		
 		c)	male, 19, is in the second year of learning carpenter, has to take the train for his workingplace, he practise downhill (bike) and snowboarding, he's a dreamer, low income
 	
-��� Define a detailed Use Case (http://en.wikipedia.org/wiki/Use_case) on how these Personas may interact with your Web Shop.
+> Define a detailed Use Case (http://en.wikipedia.org/wiki/Use_case) on how these Personas may interact with your Web Shop.
 		
 		a)	Peter likes his routine therefore he would like to place standing orders per weekday, so he doesn't have to place a order daily.
 		But it should still be possible to change the standard order or to be able to suspend it, when he goes on business trips.
@@ -69,15 +69,15 @@ Task 1.3: Target User and Requirements
 		He would be able to place easy and fast a breakfast order which is cheap. Additionally, he would be able to select additional food/drink
 		for the second breakfast on the job.
 
-��� On this basis, elicit requirements that your Web Shop should (ideally) fulfill once it is completely implemented.
+> On this basis, elicit requirements that your Web Shop should (ideally) fulfill once it is completely implemented.
 
 		- be able to place one time orders as well as having standing orders	
 		- be able to declare exceptions to standing orders or suspend them if necessary or cancel them completely
-		- be able to creat a user-profile with information about the user (allergy information)
+		- be able to create a user-profile with information about the user (allergy information)
 		- show allergy information (food facts -> e.g. lactose free)
 		- show suitable products to the costumer (if selected some filters)
 		- it is possible to order over a smartphone
-		- be able to handel last minute orders
+		- be able to handle last minute orders
 		- showing only selective products in case of a last minute order
 		- flat navigation
 		- easy order
@@ -87,10 +87,10 @@ Task 1.3: Target User and Requirements
 
 Task 1.4: Design Principles
 
-��� Read about the Design of Web Pages and Web Shops in general. Have a look at the design of existing shops and think about what you like and 
+> Read about the Design of Web Pages and Web Shops in general. Have a look at the design of existing shops and think about what you like and 
 what not (http://www.webpagesthatsuck.com is interesting in that respect).
 
-��� Write down a list of important design rules that you want to follow
+> Write down a list of important design rules that you want to follow
 
 		-	mobile first
 		-	easy to use

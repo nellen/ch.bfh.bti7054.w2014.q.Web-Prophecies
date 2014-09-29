@@ -3,7 +3,7 @@
 
 Task 2.1: General Design
 
-▶ Choose an imaginary name, address, and logo for your company or shop.
+> Choose an imaginary name, address, and logo for your company or shop.
 
 	BreakFast
 	St.-Erpelsburg-Boulevard 0715
@@ -11,19 +11,20 @@ Task 2.1: General Design
 	
 	-> logo tbd
 
-▶ Make a sketch of how your Web shop should roughly look like. Divide the page into different areas and give them names. The page should at least contain areas to display
-	▶ the main content of the actual page,
-	▶ the navigation main menu,
-	▶ information about new releases or special offers,
-	▶ customer related information (shopping cart, user id, . . . ),
-	▶ information about the current location within the site.
+> Make a sketch of how your Web shop should roughly look like. Divide the page into different areas and give them names. 
+The page should at least contain areas to display
+	> the main content of the actual page,
+	> the navigation main menu,
+	> information about new releases or special offers,
+	> customer related information (shopping cart, user id, . . . ),
+	> information about the current location within the site.
 	
-▶ Specify a site map, i.e. a hierarchical list of included pages. Think about the navigation between these pages and the workflow for your potential customers.
+> Specify a site map, i.e. a hierarchical list of included pages. Think about the navigation between these pages and the workflow for your potential customers.
 
 ------
 
 Task 2.2: Main HTML Page
 
-▶ Generate the HTML or XHTML code for the main page of your Web site. Use <div>-elements for the main areas of the page. 
+> Generate the HTML or XHTML code for the main page of your Web site. Use <div>-elements for the main areas of the page. 
 Fill your page with dummy information for testing. Do not use text formatting or other style information (will be done later with CSS). 
 You may use images as decoration or to add a logo.
