@@ -28,7 +28,23 @@ The page should at least contain areas to display
 	
 > Specify a site map, i.e. a hierarchical list of included pages. 
 Think about the navigation between these pages and the workflow for your potential customers.
-	
+	- Home
+	- Shop
+		- Food
+			-- ...
+		- Beverage
+			-- ...
+		- Menus
+			-- ...
+		- Specials
+	- Login / User menu
+		- Shopping Basket 
+		- User Profile
+			-- ...
+		- Check out
+		- Administration
+	- About us
+	- Contact
 
 ------
 

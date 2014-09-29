@@ -3,7 +3,10 @@
 ## ----------------------------------
 
 29.09.2014 burkt4, huber3, nells1
-- 
+- Task 1 abgeschlossen
+- Task 2 bearbeitet
+	- Auftrag auf nächstes Mal:
+		-- Jeder macht sein eigenes Index.html - wir besprechen's dann
 
 ------
 
