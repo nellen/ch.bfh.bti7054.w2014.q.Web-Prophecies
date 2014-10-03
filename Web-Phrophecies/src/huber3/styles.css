@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+.banner-area {
+	background-color : red;
+	width : 100%;
+	height : 100px;
+}
+
+.banner-area h1 {
+	font-family : 'Shift', sans-serif;
+	text-align : center;
+}
+
+.breadcrumb-area {
+	background-color : grey;
+	width : 100%;
+	height : 30px;
+}
+.breadcrumb-area p {
+	color : white;
+	font-size : 12px;
+	text-align : center;
+	margin : auto;
+}
+
+.navigation-area {
+	background-color : red;
+	width : 150px;
+	min-height : 300px;
+	float : left;
+}
+
+.content-area {
+	background-color : green;
+	float : left;
+	min-height : 300px;
+	min-width : 400px;
+	
+}
+
+.combi-area {
+	background-color : yellow;
+	width : 150px;
+	min-height : 300px;
+	float : right;
+}
+
+.user-area {
+	background-color : violet;
+}
+
+.news-area {
+	background-color: pink;
+}
+
+.footer-area {
+	background-color : blue;
+	color : white;
+	clear : both;
+	text-align : center;
+	margin : auto;
+}
