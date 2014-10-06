@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+body {
+	font-family: arial;
+	font-size: smaller;
+}
+
+/* breadcrumps */
+#breadcrumps p{
+	padding-left: 22px;
+	font-weight: bold;
+	color: white;
+}
+
+/* list format of sidebar navigation */ 
+.sidebarlist {
+	list-style-type: none;
+	margin-left: -20px;
+	line-height: 2;
+}
+
+

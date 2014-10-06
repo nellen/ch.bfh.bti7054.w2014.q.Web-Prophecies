@@ -14,4 +14,20 @@ Task 3.2: Content
 Link all pages to the same CSS file. Add links to the navigation menu (or elsewhere) to make all pages accessible from the main page (and vice versa).
 Fill the pages with meaningful content. One of your pages should contain the list of products you offer (product number, description, price, etc.).
 
+------
 
+ToDos:
+
+- CSS
+	[huber3]	- korrektes Aufteilen layout & format + classes und ids bereinigen
+	[huber3]	- layout optimieren (farbe, "boxen", etc.) 
+					Als Idee: Boxen auf http://eorisis.com/demo/joomla3/default/
+	
+- HTML
+	- Seiten
+	[burkt4]	- "Shop-Ansicht": Auflistung mehrere Artikel für 1 Kategorie (z.B. "Bread" oder "Coffee")
+	[burkt4]	- "Artikel-Ansicht": Detail-Ansicht eines Artikels
+	[nells1]	- About us
+	[nells1]	- Contact
+	[nells1]	- Shopping Basket
+		

@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+
+body {
+	height: 100%;
+}
+
+#wrapper {
+	border: 1px solid black;
+	margin: 0 auto;
+	max-width: 75em;
+	min-width: 30em;
+
+}
+
+#banner-area {
+	text-align: center;
+	padding: 5px;
+}
+
+#breadcrumps {
+	text-align: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: grey;
+}
+
+#left-area {
+	background-color: #462F22;
+	color: white;
+	line-height: 20px;
+	height: 400px;
+	min-width: 150px;
+	float: left;
+	padding: 5px;
+}
+
+#content-area {
+	min-width: 550px;
+	min-height: 400px;
+	float: left;
+	padding-left: 10px;
+}
+
+#right-area {
+	width: 200px;
+	float: right;
+	padding: 5px;
+	min-height: 400px;
+	background-color: #462F22;
+	color: white;
+}
+
+#user-area {
+	min-height: 100px;
+}
+
+#news-area {
+	min-height: 200px;
+}
+
+#footer-area {
+	background-color: grey;
+	color: white;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}
