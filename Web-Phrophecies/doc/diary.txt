@@ -2,6 +2,14 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+06.10.2014 burk4, huber3, nells1
+
+- Task 2 Designs besprochen
+- Draft index.html mit CSS (layout + format)
+- Aufteilung Task 3 gem. Task_3.txt
+
+------
+
 29.09.2014 burkt4, huber3, nells1
 - Task 1 abgeschlossen
 - Task 2 bearbeitet
