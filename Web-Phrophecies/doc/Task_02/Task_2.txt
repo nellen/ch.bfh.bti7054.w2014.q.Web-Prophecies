@@ -5,7 +5,7 @@ Task 2.1: General Design
 
 > Choose an imaginary name, address, and logo for your company or shop.
 
-	BreakFast
+	The BreakFast Company
 	St.-Erpelsburg-Boulevard 0715
 	0815 Duckburg
 	
