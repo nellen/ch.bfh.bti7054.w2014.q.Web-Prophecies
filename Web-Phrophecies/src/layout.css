@@ -2,6 +2,7 @@
 
 body {
 	height: 100%;
+	background-color: #FBF9F3;
 }
 
 #wrapper {
@@ -21,12 +22,13 @@ body {
 	text-align: left;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-color: grey;
+	background-color: #473423;
+	color: white;
 }
 
 #left-area {
-	background-color: #462F22;
-	color: white;
+	background-color: #F5EEDE;
+	color: #755A42;
 	line-height: 20px;
 	height: 400px;
 	min-width: 150px;
@@ -39,6 +41,7 @@ body {
 	min-height: 400px;
 	float: left;
 	padding-left: 10px;
+	background-color: #FBF9F3;
 }
 
 #right-area {
@@ -46,8 +49,10 @@ body {
 	float: right;
 	padding: 5px;
 	min-height: 400px;
-	background-color: #462F22;
-	color: white;
+	background-color: #F5EEDE;
+	color: #755A42;
+	/**background-color: #AC8B6F;
+	color: #473423;*/
 }
 
 #user-area {
@@ -59,7 +64,7 @@ body {
 }
 
 #footer-area {
-	background-color: grey;
+	background-color: #473423;
 	color: white;
 	clear: both;
 	text-align: center;
