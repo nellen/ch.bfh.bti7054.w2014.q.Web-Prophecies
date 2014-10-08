@@ -1,15 +1,51 @@
 @CHARSET "UTF-8";
 
 body {
-	font-family: arial;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	font-size: smaller;
+}
+
+/* sidebarlist links */
+.sidebarlist a {
+	color: inherit;
+	text-decoration: none;
+	display: block;
+}
+
+/* mouse over link */
+.sidebarlist a:hover {
+    color: #473423;
+    font-weight: bold;
+}
+
+/* selected link */
+.sidebarlist a:active {
+    color: #473423;
+    font-weight: bold;
+}
+
+/* breadcrumps links */
+#breadcrumps a {
+	color: inherit;
+	text-decoration: none;
+	/* display: block; */
+}
+
+/* mouse over link */
+#breadcrumps a:hover {
+    font-weight: bold;
+}
+
+/* selected link */
+#breadcrumps a:active {
+    font-weight: bold;
 }
 
 /* breadcrumps */
 #breadcrumps p{
 	padding-left: 22px;
-	font-weight: bold;
-	color: white;
+	font-weight: normal;
+	color: #FBF9F3;
 }
 
 /* list format of sidebar navigation */ 
