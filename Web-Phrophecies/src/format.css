@@ -55,4 +55,6 @@ body {
 	line-height: 2;
 }
 
-
+#content-area #contact-numbers {
+	margin-left: -3px
+}
