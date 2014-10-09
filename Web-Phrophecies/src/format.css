@@ -58,3 +58,8 @@ body {
 #content-area #contact-numbers {
 	margin-left: -3px
 }
+
+.list-article-price, .list-article-variation{
+	font-weight:bold;
+	
+}

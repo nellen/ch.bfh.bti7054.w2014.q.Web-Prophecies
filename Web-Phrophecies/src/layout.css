@@ -93,3 +93,31 @@ body {
 hr {
 	color: #FBF9F3;
 }
+
+.list-article {
+	/*border: 1px solid black;*/
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 95%;
+	min-height: 120px;
+	padding: 10px;
+	background-color: #F5EEDE;
+	overflow:auto;
+}
+
+.list-article img {
+float: left;
+
+}
+
+.list-article h2 {
+	margin-top: 0px;
+	margin-left: 10px;
+}
+
+
+.list-article button {
+float: right;
+
+}
