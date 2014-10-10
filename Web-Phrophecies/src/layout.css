@@ -57,7 +57,7 @@ body {
 
 #content-area {
 	min-width: 550px;
-	min-height: 400px;
+	max-height: 400px;
 	float: left;
 	padding-left: 10px;
 	background-color: #FBF9F3;
@@ -118,6 +118,33 @@ float: left;
 
 
 .list-article button {
+float: right;
+
+}
+
+.article {
+	/*border: 1px solid black;*/
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 95%;
+	min-height: 120px;
+	padding: 10px;
+	overflow:auto;
+}
+
+.article img {
+float: left;
+
+}
+
+.article h3 {
+	margin-top: 0px;
+	margin-left: 10px;
+}
+
+
+.article button {
 float: right;
 
 }
