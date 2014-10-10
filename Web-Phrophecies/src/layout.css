@@ -61,6 +61,7 @@ body {
 	float: left;
 	padding-left: 10px;
 	background-color: #FBF9F3;
+	overflow:auto;
 }
 
 #right-area {
