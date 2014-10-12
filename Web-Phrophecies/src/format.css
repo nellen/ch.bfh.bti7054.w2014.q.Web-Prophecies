@@ -63,10 +63,22 @@ body {
 	font-weight:bold;
 	
 }
+
+.list-article a:link, a:visited {
+    color: black;   
+    cursor: hand;
+    text-decoration: none;
+}
+
+.list-article a:link:active, a:visited:active {
+    color: #FBF9F3;
+} 
+
 .article-price{
 	
 	font-weight:bold;
 	
 }
+
 	
 }
