@@ -2,6 +2,13 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+13.10.2014 burk4, huber3, nells1
+
+- XAMPP, PDT, XDebug eingerichtet
+- Task 4 aufgeteilt
+- css bearbeitet
+------
+
 06.10.2014 burk4, huber3, nells1
 
 - Task 2 Designs besprochen
