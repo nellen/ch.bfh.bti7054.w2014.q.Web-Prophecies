@@ -11,12 +11,16 @@ body {
 	margin: 0 auto;
 	max-width: 75em;
 	min-width: 30em;
-
 }
 
-#banner-area, #breadcrumps,
-#left-area, #content-area,
-#right-area, #footer-area {
+#main-area {
+	display: table;
+	width: 100%;
+	min-height: 400px;
+}
+
+#banner-area, #breadcrumps, #left-area, #content-area, #right-area,
+	#footer-area {
 	-moz-border-radius: 3px; /* Firefox */
 	-webkit-border-radius: 3px; /* Safari, Chrome */
 	behavior: url(border-radius.htc); /* IE */
@@ -49,31 +53,33 @@ body {
 	background-color: #F5EEDE;
 	color: #755A42;
 	line-height: 20px;
-	height: 400px;
-	width: 150px;
-	float: left;
+	height: inherit;
+	min-width: 150px;
 	padding: 5px;
 	border: 1px solid red;
+	display: table-cell;
 }
 
 #right-area {
-	width: 200px;
-	float: right;
+	min-width: 200px;
 	padding: 5px;
-	min-height: 400px;
+	height: inherit;
 	background-color: #F5EEDE;
 	color: #755A42;
 	border: 1px solid red;
 	/**background-color: #AC8B6F;
 	color: #473423;*/
+	display: table-cell;
 }
 
 #content-area {
-	min-height: 400px;
+	padding-left: 10px;
 	padding-left: 10px;
 	background-color: #FBF9F3;
 	margin: 0 auto;
 	border: 1px solid red;
+	display: table-cell;
+	width: 100%;
 }
 
 #user-area {
@@ -105,12 +111,11 @@ hr {
 	min-height: 120px;
 	padding: 10px;
 	background-color: #F5EEDE;
-	overflow:auto;
+	overflow: auto;
 }
 
 .list-article img {
-float: left;
-
+	float: left;
 }
 
 .list-article h2 {
@@ -118,10 +123,8 @@ float: left;
 	margin-left: 10px;
 }
 
-
 .list-article button {
-float: right;
-
+	float: right;
 }
 
 .article {
@@ -132,12 +135,11 @@ float: right;
 	width: 95%;
 	min-height: 120px;
 	padding: 10px;
-	overflow:auto;
+	overflow: auto;
 }
 
 .article img {
-float: left;
-
+	float: left;
 }
 
 .article h3 {
@@ -145,8 +147,6 @@ float: left;
 	margin-left: 10px;
 }
 
-
 .article button {
-float: right;
-
+	float: right;
 }
