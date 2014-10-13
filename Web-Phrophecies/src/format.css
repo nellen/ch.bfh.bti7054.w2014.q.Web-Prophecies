@@ -59,26 +59,25 @@ body {
 	margin-left: -3px
 }
 
+.list-article {
+	
+}
+
 .list-article-price, .list-article-variation{
 	font-weight:bold;
 	
 }
 
-.list-article a:link, a:visited {
+.list-article a:link, .list-article a:visited {
     color: black;   
     cursor: hand;
     text-decoration: none;
 }
 
-.list-article a:link:active, a:visited:active {
+.list-article a:link:active, .list-article a:visited:active {
     color: #FBF9F3;
-} 
-
-.article-price{
-	
-	font-weight:bold;
-	
 }
 
-	
+.article-price{
+	font-weight:bold;
 }

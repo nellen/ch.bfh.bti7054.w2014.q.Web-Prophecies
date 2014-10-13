@@ -50,18 +50,10 @@ body {
 	color: #755A42;
 	line-height: 20px;
 	height: 400px;
-	min-width: 150px;
+	width: 150px;
 	float: left;
 	padding: 5px;
-}
-
-#content-area {
-	min-width: 550px;
-	max-height: 400px;
-	float: left;
-	padding-left: 10px;
-	background-color: #FBF9F3;
-	overflow:auto;
+	border: 1px solid red;
 }
 
 #right-area {
@@ -71,8 +63,17 @@ body {
 	min-height: 400px;
 	background-color: #F5EEDE;
 	color: #755A42;
+	border: 1px solid red;
 	/**background-color: #AC8B6F;
 	color: #473423;*/
+}
+
+#content-area {
+	min-height: 400px;
+	padding-left: 10px;
+	background-color: #FBF9F3;
+	margin: 0 auto;
+	border: 1px solid red;
 }
 
 #user-area {
