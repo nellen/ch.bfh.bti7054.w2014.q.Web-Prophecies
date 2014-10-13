@@ -1,0 +1,17 @@
+(4) The Webshop goes PHP
+
+Task 4.1: PHP Setup
+> Make sure you have your PHP development environment setup as discussed above and run your own "helloWorld.php".
+
+------
+
+Task 4.2: Dynamic Navigation Menu
+> Replace the HTML navigation menu in the main page of your Web site by PHP. For this, store the names of each menu item in an indexed array. 
+Do the same for corresponding links, i.e., use another indexed array (alternatively, you may use a two-dimensional array for both). 
+Write the necessary PHP code to transform the array contents into the "old" HTML navigation menu.
+
+------
+
+Task 4.3: List of Products
+> Do the same for the list of products, i.e., put all the information (product name, price etc.) in one- or multi-dimensional arrays 
+and write the PHP code to display it as HTML.
