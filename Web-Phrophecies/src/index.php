@@ -42,10 +42,6 @@ echo "hello";
 			</ul>
 		</div>
 
-		<div id="content-area">
-			<h1>Webshop</h1>
-			<p>The content will be displayed in the content area.</p>
-		</div>
 		<div id="right-area">
 			<div id="user-area">
 				<ul class="sidebarlist">
@@ -67,6 +63,11 @@ echo "hello";
 			<div id="news-area">
 				<p>The news will be displayed here.</p>
 			</div>
+		</div>
+		
+		<div id="content-area">
+			<h1>Webshop</h1>
+			<p>The content will be displayed in the content area.</p>
 		</div>
 
 		<div id="footer-area">
