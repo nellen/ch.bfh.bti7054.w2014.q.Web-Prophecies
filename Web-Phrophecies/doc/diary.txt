@@ -2,6 +2,34 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+20.10.2014 burk4, huber3, nells1
+
+- site:
+	main
+	aboutus
+	basket
+	contact
+	article
+	category
+	404
+default = main
+
+lang:
+	de
+	fr
+	en
+default = en
+
+sample: index.php?site=category&lang=en&catid=42
+
+-task Verteilung:
+
+-Task 5.1: External PHP Files huber3
+-Task 5.2: Multi-Page PHP File plenum
+-Task 5.3: Multiple Languages nells1, burkt4
+
+------
+
 13.10.2014 burk4, huber3, nells1
 
 - XAMPP, PDT, XDebug eingerichtet
