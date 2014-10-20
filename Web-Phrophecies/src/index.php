@@ -48,8 +48,8 @@
 						include_once("./sites/$site.php");
 					}
 					else{
-						echo "404 Not Found";
-						header($_SERVER["SERVER_PROTOCOL"]."404 Not Found");
+
+						include_once("./sites/404.php");
 
 					}
 					?>
