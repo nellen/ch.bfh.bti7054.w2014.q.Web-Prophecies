@@ -39,8 +39,20 @@
 				</ul>
 			</div>
 			<div id="content-area">
-				<h1>Webshop</h1>
-				<p>The content will be displayed in the content area.</p>
+					<?php
+					$site = "main";
+					if (isset($_GET["site"])){
+						$site=$_GET["site"];
+					}
+					if (file_exists("./sites/$site.php")){
+						include_once("./sites/$site.php");
+					}
+					else{
+						echo "404 Not Found";
+						header($_SERVER["SERVER_PROTOCOL"]."404 Not Found");
+
+					}
+					?>
 			</div>
 			<div id="right-area">
 				<div id="user-area">

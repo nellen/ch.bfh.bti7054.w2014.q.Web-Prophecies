@@ -39,43 +39,19 @@
 				</ul>
 			</div>
 			<div id="content-area">
-
-					<?php 
-					
-					include_once("Items.php");
-					foreach ($items as $item) {
-						echo "<div class=\"list-article\">";
-						echo "<img src=\"".$item["image"]."\" width=\"100px\" height=\"100px\"/>";
-						echo "<h2><a href=\"./croissant.html\">".$item["name"]."</a></h2>";
-						echo "<p class=\"list-article-price\">Price: ".$item["price"]." CHF</p>";
-						echo "<p class=\"list-article-variation\">Variations:";
-						$firstElement = TRUE;
-						foreach ( $item["variants"] as $variant){
-							if ($firstElement) {
-								$firstElement = FALSE;
-							}
-							else {
-								echo ",";
-							}
-							echo " ".$variant["variantname"]." + ".$variant["price"]." CHF";
-						}
-
-						echo "</p>";
-						echo "<p>".$item["discription"]."</p>";
-						echo "<button onclick=\"msgAddtoBasket()\">Add to basket</button>";
-						echo "</div>";
+					<?php
+					$site = "main";
+					if (isset($_GET["site"])){
+						$site=$_GET["site"];
+					}
+					if (file_exists($site.".php")){
+						include_once($site.".php");
+					}
+					else{
+						echo 404;
 					}
 					?>
 					
-				<div class="list-article">
-					<img src="../img/user-a.png" width="100px" height="100px"/>					
-						<h2><a href="../croissant.html">Croissant</a></h2>
-						<p class="list-article-price">Price: 1.50 CHF</p>
-						<p class="list-article-variation">Variations: butter + 0.00 CHF, whole-grain + 0.00 CHF</p>
-						<p>Homemade croissants. Freshly baked each morning.</p>
-					<button onclick="msgAddtoBasket()">Add to basket</button>
-					
-				</div>
 			
 			</div>
 			<div id="right-area">
