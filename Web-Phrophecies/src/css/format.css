@@ -18,7 +18,7 @@ body {
     font-weight: bold;
 }
 
-/* selected link */
+/* active link */
 .sidebarlist a:active {
     color: #473423;
     font-weight: bold;
