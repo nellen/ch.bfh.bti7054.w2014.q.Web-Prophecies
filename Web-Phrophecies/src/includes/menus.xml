@@ -17,22 +17,22 @@
 			<subMenu>
 				<subItem itemName="FOOD">
 					<text>Food</text>
-					<siteName>food</siteName>
+					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="BEVERAGE">
 					<text>Beverage</text>
-					<siteName>beverage</siteName>
+					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="MENU">
 					<text>Menu</text>
-					<siteName>menu</siteName>
+					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="SPECIALS">
 					<text>Specials</text>
-					<siteName>specials</siteName>
+					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
 			</subMenu>

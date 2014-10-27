@@ -10,20 +10,10 @@
 <link rel="stylesheet" href="./css/format.css" type="text/css" />
 <?php
 include_once "./includes/menuController.php";
+include_once "./includes/functions.php";
 $menu = new menuController ( "./includes/menus.xml" );
 ?>
 </head>
-
-<?php
-function get_site() {
-	if (isset ( $_GET ["site"] )) {
-		$site = $_GET ["site"];
-	} else {
-		$site = "main";
-	}
-	return $site;
-}
-?>
 
 <body>
 	<div id="wrapper">

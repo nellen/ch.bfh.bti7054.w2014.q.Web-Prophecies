@@ -1,4 +1,7 @@
 <?php
+
+include_once "./includes/functions.php";
+
 class menuController {
 	
 	const XSD_PATH = "./includes/menus.xsd";
@@ -85,12 +88,12 @@ class menuController {
 		$htmlStr ="";
 		foreach ($nodes as $liNode){
 			if($liNode->subMenu){
-				$htmlStr .= '<li><a href="'. self::LINK_STR . $liNode->siteName . '">'
+				$htmlStr .= '<li><a href="'. self::LINK_STR . $liNode->siteName . '&lang=' . get_language() .'">'
 						. $liNode->text . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
 				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->subItem);
 				$htmlStr .= "</ul>\n</li>" . "\n";
 			} else {
-				$htmlStr .= '<li><a href="' . self::LINK_STR . $liNode->siteName . '">'
+				$htmlStr .= '<li><a href="' . self::LINK_STR . $liNode->siteName . '&lang=' . get_language() . '">'
 						. $liNode->text . '</a></li>' . "\n";
 			}
 		}
