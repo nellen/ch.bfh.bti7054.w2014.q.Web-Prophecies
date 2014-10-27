@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="./css/layout.css" type="text/css" />
 <link rel="stylesheet" href="./css/format.css" type="text/css" />
 <?php
-include_once "./includes/menuController.php";
 include_once "./includes/functions.php";
+include_once "./includes/menuController.php";
 $menu = new menuController ( "./includes/menus.xml" );
 ?>
 </head>

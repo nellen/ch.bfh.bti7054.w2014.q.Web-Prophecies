@@ -1,5 +1,4 @@
 <?php
-require './includes/langController.php';
 
 $lang = get_language ();
 include_once ("./includes/items.php");

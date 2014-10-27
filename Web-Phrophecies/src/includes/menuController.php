@@ -1,6 +1,6 @@
 <?php
 
-include_once "./includes/functions.php";
+require './includes/langController.php';
 
 class menuController {
 	
@@ -89,12 +89,12 @@ class menuController {
 		foreach ($nodes as $liNode){
 			if($liNode->subMenu){
 				$htmlStr .= '<li><a href="'. self::LINK_STR . $liNode->siteName . '&lang=' . get_language() .'">'
-						. $liNode->text . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
+						. get_localization($liNode->text) . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
 				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->subItem);
 				$htmlStr .= "</ul>\n</li>" . "\n";
 			} else {
 				$htmlStr .= '<li><a href="' . self::LINK_STR . $liNode->siteName . '&lang=' . get_language() . '">'
-						. $liNode->text . '</a></li>' . "\n";
+						. get_localization($liNode->text) . '</a></li>' . "\n";
 			}
 		}
 		return $htmlStr;

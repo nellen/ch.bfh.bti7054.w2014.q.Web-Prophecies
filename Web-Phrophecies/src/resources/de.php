@@ -10,5 +10,22 @@ $priceLabel 			= "Preis";
 $variationsLabel 		= "Variationen";
 $basketButtonLabel 		= "In den Warenkorb";
 
+/** menu.xml */
+$home					= "Home";
+$shop					= "Shop";
+$food					= "Essen";
+$beverage				= "Getr&auml;nke";
+$menu					= "Men&uuml;";
+$specials				= "Specials";
+$about_us				= "&Uuml;ber uns";
+$contact				= "Kontakt";
+
+$login_user				= "Login / User";
+$basket					= "Warenkorb";
+$userprofile			= "Profil";
+$filler					= ". . .";
+$checkout				= "Zur Kasse";
+$administration			= "Administration";
+
 ?>
 					

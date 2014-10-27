@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 function get_site() {
 	if (isset ( $_GET ["site"] )) {
 		$site = $_GET ["site"];
@@ -8,7 +7,6 @@ function get_site() {
 	}
 	return $site;
 }
-
 function get_language() {
 	if (isset ( $_GET ["lang"] )) {
 		$lang = $_GET ["lang"];

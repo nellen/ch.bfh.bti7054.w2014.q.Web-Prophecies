@@ -5,33 +5,33 @@
 	<menu menuName="mainMenu">
 	
 		<menuItem itemName="HOME">
-			<text>Home</text>
+			<text>home</text>
 			<siteName>main</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 		
 		<menuItem itemName="SHOP">
-			<text>Shop</text>
+			<text>shop</text>
 			<siteName>shop</siteName>
 			<enabled>1</enabled>
 			<subMenu>
 				<subItem itemName="FOOD">
-					<text>Food</text>
+					<text>food</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="BEVERAGE">
-					<text>Beverage</text>
+					<text>beverage</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="MENU">
-					<text>Menu</text>
+					<text>menu</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="SPECIALS">
-					<text>Specials</text>
+					<text>specials</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
 				</subItem>
@@ -39,13 +39,13 @@
 		</menuItem>
 		
 		<menuItem itemName="ABOUTUS">
-			<text>About us</text>
+			<text>about_us</text>
 			<siteName>aboutus</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 		
 		<menuItem itemName="CONTACT">
-			<text>Contact</text>
+			<text>contact</text>
 			<siteName>contact</siteName>
 			<enabled>1</enabled>
 		</menuItem>
@@ -54,32 +54,32 @@
 	<menu menuName="userMenu">
 	
 		<menuItem itemName="LOGIN">
-			<text>Login / User Menu</text>
-			<siteName>login_User</siteName>
+			<text>login_user</text>
+			<siteName>login_user</siteName>
 			<enabled>1</enabled>
 			<subMenu>
 				<subItem itemName="BASKET">
-					<text>Basket</text>
+					<text>basket</text>
 					<siteName>basket</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="USERPROFILE">
-					<text>Userprofile</text>
+					<text>userprofile</text>
 					<siteName>userprofile</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="FILLER">
-					<text>. . .</text>
+					<text>filler</text>
 					<siteName>filler</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="CHECKOUT">
-					<text>Checkout</text>
+					<text>checkout</text>
 					<siteName>checkout</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="ADMINISTRATION">
-					<text>Administration</text>
+					<text>administration</text>
 					<siteName>administration</siteName>
 					<enabled>1</enabled>
 				</subItem>
