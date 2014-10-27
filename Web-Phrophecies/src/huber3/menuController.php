@@ -5,6 +5,7 @@ class menuController {
 	const MENU_NAME_ATTR = "menuName";
 	private $xmlDom;
 	private $sxmlIter;
+	private $cssStyle;
 	
 	/**
 	 * Checks if the XML-File given by the <code>xmlFilePath</code> exist and validate
@@ -36,32 +37,37 @@ class menuController {
 	
 	
 	/**
-	 * Returns the HTML-Code for the requested menu, defined by <code>menuName</code>
+	 * Returns the HTML-Code for the requested menu, defined by <code>menuName</code> with
+	 * <code>cssStyle</code> attribute.
 	 * 
 	 * @param string $menuName The menu name for which the HTML-Code will returned
+	 * @param string $cssStyle The styling attribute to include for CSS. Default: empty -> ""
 	 * @throws Exception in case the input paramenter <code>menuName</code> is not a String
 	 * @return string which contains the HTML-Code for the menu
 	 */
-	public function getHtmlMenu($menuName) {
+	public function getHtmlMenu($menuName, $cssStyle="") {
 		try {
 			// rewinds the SimpleXMLIterator to the first element
 			$this->sxmlIter->rewind();
 			
 			// Check the input if it is a String else -> Exception
-			if (is_string ( $menuName )) {
-				self::getMenuNode($menuName);
-				// now the menu will be builded
-				$htmlMenu = "<ul>" . "\n";
-				$htmlMenu .= self::getHtmlMenuContent($this->sxmlIter->getChildren());
-				$htmlMenu .= "</ul>";
-				return $htmlMenu;
-			} else {
-				throw new Exception ( "Your function parameter was an " .
-						strtoupper ( gettype ( $menuName ) ) . " instead of " .
-						strtoupper ( gettype ( "a" ) ) );
+			if (!is_string ( $menuName )) {
+				throw new Exception ( "The first function parameter {menuName: $menuName}" .
+						"is not a String ");
 			}
+			
+			$this->cssStyle = $cssStyle;
+			self::getMenuNode($menuName);
+			// now the menu will be builded
+			$htmlMenu = '<ul class="' . $this->cssStyle . '">' . "\n";
+			$htmlMenu .= self::getHtmlMenuContent($this->sxmlIter->getChildren());
+			$htmlMenu .= "</ul>";
+			echo $htmlMenu;
 		} catch (Exception $e) {
-			return $e->getMessage();
+			echo "Oops! Something went wrong.<br />";
+			echo "Message: " . $e->getMessage() . "<br />";
+			echo "Source: " . $e->getFile() . "<br />";
+			echo "On line: " . $e->getLine();
 		}
 		
 	}
@@ -79,7 +85,7 @@ class menuController {
 		foreach ($nodes as $liNode){
 			if($liNode->subMenu){
 				$htmlStr .= '<li><a href="' . $liNode->link . '">'
-						. $liNode->text . '</a>' . "\n" . '<ul>' . "\n";
+						. $liNode->text . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
 				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->subItem);
 				$htmlStr .= "</ul>\n</li>" . "\n";
 			} else {
@@ -131,9 +137,5 @@ class menuController {
 		}
 	}
 }
-
-$myMenu = new menuController ( "./menus.xml" );
-$menu = $myMenu->getHtmlMenu ( "userMenu" );
-echo $menu;
 
 ?>

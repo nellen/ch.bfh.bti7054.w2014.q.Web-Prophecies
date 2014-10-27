@@ -8,7 +8,10 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="../css/layout.css" type="text/css" />
 <link rel="stylesheet" href="../css/format.css" type="text/css" />
-<?php include_once 'menus.php'; ?>
+<?php
+	include_once "./menuController.php";
+	$menu = new menuController("./menus.xml");
+?>
 </head>
 
 <body>
@@ -26,8 +29,8 @@
 		<div id="main-area">
 			<div id="left-area">
 				<?php
-				echo buildMenu( $navMenu, "sidebarlist" );
-				?>
+ 				$menu->getHtmlMenu("mainMenu", "sidebarlist");
+ 				?>
 			</div>
 			<div id="content-area">
 				<h1>Webshop</h1>
@@ -36,7 +39,7 @@
 			<div id="right-area">
 				<div id="user-area">
 					<?php
-					echo buildMenu( $userMenu, "sidebarlist" );
+ 					$menu->getHtmlMenu("userMenu", "sidebarlist");
 					?>
 				</div>
 				<hr />
