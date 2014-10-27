@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	
+	<!-- Defining simple elements -->
+	<xsd:element name="text" type="xsd:string" default="Value not set"/>
+	<xsd:element name="link" type="xsd:string" default="#" />
+	<xsd:element name="enabled" type="xsd:boolean" default="1" />
+	
+	<!-- Defining attributes -->
+	<xsd:attribute name="itemName">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="([A-Z])*" />
+				<xsd:whiteSpace value="collapse" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+	
+	<xsd:attribute name="menuName">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="([a-zA-Z])*" />
+				<xsd:whiteSpace value="collapse" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+	
+	
+	<!-- Defining complex elements -->
+	<xsd:element name="subItem">
+		<xsd:complexType mixed="true">
+			<xsd:all>
+				<xsd:element ref="text" />
+				<xsd:element ref="link" />
+				<xsd:element ref="enabled" />
+				<xsd:element ref="subMenu" maxOccurs="1" minOccurs="0"/>
+			</xsd:all>
+			<xsd:attribute ref="itemName" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="subMenu">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="subItem" maxOccurs="unbounded" minOccurs="1" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="menuItem">
+		<xsd:complexType mixed="true">
+			<xsd:all>
+				<xsd:element ref="text" />
+				<xsd:element ref="link" />
+				<xsd:element ref="enabled" />
+				<xsd:element ref="subMenu" minOccurs="0" />
+			</xsd:all>
+			<xsd:attribute ref="itemName" use="required" />
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="menu">
+		<xsd:complexType mixed="true">
+			<xsd:sequence>
+				<xsd:element ref="menuItem" maxOccurs="unbounded" minOccurs="1" />
+			</xsd:sequence>
+			<xsd:attribute ref="menuName" use="required"/>
+		</xsd:complexType>
+	</xsd:element>	
+	
+	<xsd:element name="menus">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="menu" maxOccurs="unbounded" minOccurs="0" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
