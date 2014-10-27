@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="./includes/menus.xsd">
+	<menu menuName="mainMenu">
+	
+		<menuItem itemName="HOME">
+			<text>Home</text>
+			<siteName>main</siteName>
+			<enabled>1</enabled>
+		</menuItem>
+		
+		<menuItem itemName="SHOP">
+			<text>Shop</text>
+			<siteName>shop</siteName>
+			<enabled>1</enabled>
+			<subMenu>
+				<subItem itemName="FOOD">
+					<text>Food</text>
+					<siteName>food</siteName>
+					<enabled>1</enabled>
+				</subItem>
+				<subItem itemName="BEVERAGE">
+					<text>Beverage</text>
+					<siteName>beverage</siteName>
+					<enabled>1</enabled>
+				</subItem>
+				<subItem itemName="MENU">
+					<text>Menu</text>
+					<siteName>menu</siteName>
+					<enabled>1</enabled>
+				</subItem>
+				<subItem itemName="SPECIALS">
+					<text>Specials</text>
+					<siteName>specials</siteName>
+					<enabled>1</enabled>
+				</subItem>
+			</subMenu>
+		</menuItem>
+		
+		<menuItem itemName="ABOUTUS">
+			<text>About us</text>
+			<siteName>aboutus</siteName>
+			<enabled>1</enabled>
+		</menuItem>
+		
+		<menuItem itemName="CONTACT">
+			<text>Contact</text>
+			<siteName>contact</siteName>
+			<enabled>1</enabled>
+		</menuItem>
+	</menu>
+	
+	<menu menuName="userMenu">
+	
+		<menuItem itemName="LOGIN">
+			<text>Login / User Menu</text>
+			<siteName>login_User</siteName>
+			<enabled>1</enabled>
+			<subMenu>
+				<subItem itemName="BASKET">
+					<text>Basket</text>
+					<siteName>basket</siteName>
+					<enabled>1</enabled>
+				</subItem>
+				<subItem itemName="USERPROFILE">
+					<text>Userprofile</text>
+					<siteName>userprofile</siteName>
+					<enabled>1</enabled>
+				</subItem>
+				<subItem itemName="FILLER">
+					<text>. . .</text>
+					<siteName>filler</siteName>
+					<enabled>1</enabled>
+				</subItem>
+				<subItem itemName="CHECKOUT">
+					<text>Checkout</text>
+					<siteName>checkout</siteName>
+					<enabled>1</enabled>
+				</subItem>
+				<subItem itemName="ADMINISTRATION">
+					<text>Administration</text>
+					<siteName>administration</siteName>
+					<enabled>1</enabled>
+				</subItem>
+			</subMenu>
+		</menuItem>
+		
+	</menu>
+
+</menus>
