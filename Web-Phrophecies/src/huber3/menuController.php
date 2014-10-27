@@ -3,6 +3,7 @@ class menuController {
 	
 	const XSD_PATH = "./menus.xsd";
 	const MENU_NAME_ATTR = "menuName";
+	const LINK_STR = "./index.php?site=";
 	private $xmlDom;
 	private $sxmlIter;
 	private $cssStyle;
@@ -84,12 +85,12 @@ class menuController {
 		$htmlStr ="";
 		foreach ($nodes as $liNode){
 			if($liNode->subMenu){
-				$htmlStr .= '<li><a href="' . $liNode->link . '">'
+				$htmlStr .= '<li><a href="'. self::LINK_STR . $liNode->siteName . '">'
 						. $liNode->text . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
 				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->subItem);
 				$htmlStr .= "</ul>\n</li>" . "\n";
 			} else {
-				$htmlStr .= '<li><a href="' . $liNode->link . '">'
+				$htmlStr .= '<li><a href="' . self::LINK_STR . $liNode->siteName . '">'
 						. $liNode->text . '</a></li>' . "\n";
 			}
 		}

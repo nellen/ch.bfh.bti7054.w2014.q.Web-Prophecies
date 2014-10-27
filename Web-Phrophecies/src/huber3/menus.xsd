@@ -3,7 +3,6 @@
 	
 	<!-- Defining simple elements -->
 	<xsd:element name="text" type="xsd:string" default="Value not set"/>
-	<xsd:element name="link" type="xsd:string" default="#" />
 	<xsd:element name="enabled" type="xsd:boolean" default="1" />
 	
 	<!-- Defining attributes -->
@@ -27,11 +26,20 @@
 	
 	
 	<!-- Defining complex elements -->
+	<xsd:element name="siteName" default="main">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[a-z]([a-zA-Z0-9_])*" />
+				<xsd:whiteSpace value="collapse" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	
 	<xsd:element name="subItem">
 		<xsd:complexType mixed="true">
 			<xsd:all>
 				<xsd:element ref="text" />
-				<xsd:element ref="link" />
+				<xsd:element ref="siteName" />
 				<xsd:element ref="enabled" />
 				<xsd:element ref="subMenu" maxOccurs="1" minOccurs="0"/>
 			</xsd:all>
@@ -51,7 +59,7 @@
 		<xsd:complexType mixed="true">
 			<xsd:all>
 				<xsd:element ref="text" />
-				<xsd:element ref="link" />
+				<xsd:element ref="siteName" />
 				<xsd:element ref="enabled" />
 				<xsd:element ref="subMenu" minOccurs="0" />
 			</xsd:all>

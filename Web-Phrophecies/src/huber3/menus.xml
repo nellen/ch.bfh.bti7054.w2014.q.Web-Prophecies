@@ -6,33 +6,33 @@
 	
 		<menuItem itemName="HOME">
 			<text>Home</text>
-			<link>./myindex.php</link>
+			<siteName>main</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 		
 		<menuItem itemName="SHOP">
 			<text>Shop</text>
-			<link></link>
+			<siteName>shop</siteName>
 			<enabled>1</enabled>
 			<subMenu>
 				<subItem itemName="FOOD">
 					<text>Food</text>
-					<link></link>
+					<siteName>food</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="BEVERAGE">
 					<text>Beverage</text>
-					<link></link>
+					<siteName>beverage</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="MENU">
 					<text>Menu</text>
-					<link></link>
+					<siteName>menu</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="SPECIALS">
 					<text>Specials</text>
-					<link></link>
+					<siteName>specials</siteName>
 					<enabled>1</enabled>
 				</subItem>
 			</subMenu>
@@ -40,13 +40,13 @@
 		
 		<menuItem itemName="ABOUTUS">
 			<text>About us</text>
-			<link>../html/aboutus.html</link>
+			<siteName>aboutus</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 		
 		<menuItem itemName="CONTACT">
 			<text>Contact</text>
-			<link>../html/contact.html</link>
+			<siteName>contact</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 	</menu>
@@ -55,32 +55,32 @@
 	
 		<menuItem itemName="LOGIN">
 			<text>Login / User Menu</text>
-			<link></link>
+			<siteName>login_User</siteName>
 			<enabled>1</enabled>
 			<subMenu>
 				<subItem itemName="BASKET">
 					<text>Basket</text>
-					<link>../html/basket.html</link>
+					<siteName>basket</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="USERPROFILE">
 					<text>Userprofile</text>
-					<link></link>
+					<siteName>userprofile</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="FILLER">
 					<text>. . .</text>
-					<link></link>
+					<siteName>filler</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="CHECKOUT">
 					<text>Checkout</text>
-					<link></link>
+					<siteName>checkout</siteName>
 					<enabled>1</enabled>
 				</subItem>
 				<subItem itemName="ADMINISTRATION">
 					<text>Administration</text>
-					<link></link>
+					<siteName>administration</siteName>
 					<enabled>1</enabled>
 				</subItem>
 			</subMenu>

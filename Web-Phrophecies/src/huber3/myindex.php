@@ -35,6 +35,7 @@
 			<div id="content-area">
 				<h1>Webshop</h1>
 				<p>The content will be displayed in the content area.</p>
+				<img src= "../img/under_construction.png" width="100%" height="100%" />
 			</div>
 			<div id="right-area">
 				<div id="user-area">
