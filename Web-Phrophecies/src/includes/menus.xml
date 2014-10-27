@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="./includes/menus.xsd">
+	xsi:noNamespaceSchemaLocation="./menus.xsd">
 	<menu menuName="mainMenu">
 	
 		<menuItem itemName="HOME">

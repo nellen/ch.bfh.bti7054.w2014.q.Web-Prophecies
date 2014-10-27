@@ -23,8 +23,8 @@ class menuController {
 			$this->xmlDom = new DOMDocument ();
 			$this->xmlDom->load ( $xmlFilepath );
 		} else {
-			throw new Exception("Failed to load the XML-File. Check your filepath " . 
-					"and/or your XML-File");
+			throw new Exception("Failed to load the XML-File from $xmlFilepath ->" .
+					" Check your filepath and/or your XML-File.");
 		}
 		
 		// Validation

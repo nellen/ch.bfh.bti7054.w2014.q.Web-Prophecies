@@ -8,6 +8,10 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="./css/layout.css" type="text/css" />
 <link rel="stylesheet" href="./css/format.css" type="text/css" />
+<?php
+	include_once "./includes/menuController.php";
+	$menu = new menuController("./includes/menus.xml");
+?>
 </head>
 
 <body>
@@ -24,19 +28,9 @@
 		</div>
 		<div id="main-area">
 			<div id="left-area">
-				<ul class="sidebarlist">
-					<li><a href="./index.php">Home</a></li>
-					<li>Shop
-						<ul class="sidebarlist">
-							<li>Food</li>
-							<li>Beverage</li>
-							<li>Menus</li>
-							<li>Specials</li>
-						</ul>
-					</li>
-					<li><a href="./html/aboutus.html">About us</a></li>
-					<li><a href="./html/contact.html">Contact</a></li>
-				</ul>
+				<?php
+ 				$menu->getHtmlMenu("mainMenu", "sidebarlist");
+ 				?>
 			</div>
 			<div id="content-area">
 					<?php
@@ -56,20 +50,9 @@
 			</div>
 			<div id="right-area">
 				<div id="user-area">
-					<ul class="sidebarlist">
-						<li>Login / User menu
-							<ul class="sidebarlist">
-								<li><a href="./html/basket.html">Shopping Basket</a></li>
-								<li>User Profile
-									<ul class="sidebarlist">
-										<li>...</li>
-									</ul>
-								</li>
-								<li>Check out</li>
-								<li>Administration</li>
-							</ul>
-						</li>
-					</ul>
+					<?php
+ 					$menu->getHtmlMenu("userMenu", "sidebarlist");
+					?>
 				</div>
 				<hr />
 				<div id="news-area">
