@@ -9,10 +9,21 @@
 <link rel="stylesheet" href="./css/layout.css" type="text/css" />
 <link rel="stylesheet" href="./css/format.css" type="text/css" />
 <?php
-	include_once "./includes/menuController.php";
-	$menu = new menuController("./includes/menus.xml");
+include_once "./includes/menuController.php";
+$menu = new menuController ( "./includes/menus.xml" );
 ?>
 </head>
+
+<?php
+function get_site() {
+	if (isset ( $_GET ["site"] )) {
+		$site = $_GET ["site"];
+	} else {
+		$site = "main";
+	}
+	return $site;
+}
+?>
 
 <body>
 	<div id="wrapper">
@@ -21,37 +32,48 @@
 			<!-- <h2>The </h2><h1>BreakFast</h1><h2> Company</h2>
 		<h3>Start your day with a smile!</h3> -->
 		</div>
-		<div id="breadcrumps">
-			<p>
-				<a href="./index.php">Home</a>
-			</p>
+		<div id="breadcrumps-area">
+			<div id="breadcrumps">
+				<p>
+					<a href="./index.php">Home</a>
+				</p>
+			</div>
+			<div id="language-selector">
+				<p>
+					<a
+						href="<?php
+						echo "index.php?site=" . get_site () . "&lang=de";
+						?>">DE</a> <a
+						href="<?php
+						echo "index.php?site=" . get_site () . "&lang=fr";
+						?>">FR</a> <a
+						href="<?php
+						echo "index.php?site=" . get_site () . "&lang=en";
+						?>">EN</a>
+
+				</p>
+			</div>
 		</div>
 		<div id="main-area">
 			<div id="left-area">
 				<?php
- 				$menu->getHtmlMenu("mainMenu", "sidebarlist");
- 				?>
+				$menu->getHtmlMenu ( "mainMenu", "sidebarlist" );
+				?>
 			</div>
 			<div id="content-area">
 					<?php
-					$site = "main";
-					if (isset($_GET["site"])){
-						$site=$_GET["site"];
-					}
-					if (file_exists("./sites/$site.php")){
-						include_once("./sites/$site.php");
-					}
-					else{
-
-						include_once("./sites/404.php");
-
+					$site = get_site();
+					if (file_exists ( "./sites/$site.php" )) {
+						include ("./sites/$site.php");
+					} else {
+						include_once ("./sites/404.php");
 					}
 					?>
 			</div>
 			<div id="right-area">
 				<div id="user-area">
 					<?php
- 					$menu->getHtmlMenu("userMenu", "sidebarlist");
+					$menu->getHtmlMenu ( "userMenu", "sidebarlist" );
 					?>
 				</div>
 				<hr />
