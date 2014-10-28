@@ -21,7 +21,12 @@ foreach ( $items as $item ) {
 	
 	echo "</p>";
 	echo "<p>" . $item ["discription"] . "</p>";
-	echo "<button onclick=\"msgAddtoBasket()\">$basketButtonLabel</button>";
+	echo "<form action=\"index.php\" method=\"get\">";
+	echo "<input type=\"hidden\" name=\"site\" value=\"article\" /input>";
+	echo "<input type=\"hidden\" name=\"lang\" value=\"". $lang. "\" /input>";
+	echo "<input type=\"hidden\" name=\"artId\" value=\"". $item ["artId"]. "\" /input>";
+	echo "<input class=\"list-article-button\" type=\"submit\" value=\"$basketButtonLabel\"/>";
+	echo "</form>";
 	echo "</div>";
 }
 ?>
