@@ -2,6 +2,17 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+27.10.2014 burk4, huber3, nells1
+
+- Multilanguage implementiert
+
+Task 6.1: "Buy Now" Links burkt4
+Task 6.2: Select Options burkt4
+Task 6.3: Shipping Address burkt4
+Task 6.4: Confirmation
+Task 6.5: Refactoring and Code Beautification
+------
+
 20.10.2014 burk4, huber3, nells1
 
 - site:
