@@ -11,6 +11,8 @@ class menuController {
 	private $sxmlIter;
 	private $cssStyle;
 	
+	private $isFound = False;
+	
 	/**
 	 * Checks if the XML-File given by the <code>xmlFilePath</code> exist and validate
 	 * it against the "menus.xsd" schema.
@@ -90,7 +92,7 @@ class menuController {
 			if($liNode->subMenu){
 				$htmlStr .= '<li><a href="'. self::LINK_STR . $liNode->siteName . '&lang=' . get_language() .'">'
 						. get_localization($liNode->text) . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
-				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->subItem);
+				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->menuItem);
 				$htmlStr .= "</ul>\n</li>" . "\n";
 			} else {
 				$htmlStr .= '<li><a href="' . self::LINK_STR . $liNode->siteName . '&lang=' . get_language() . '">'
@@ -140,6 +142,52 @@ class menuController {
 			return FALSE;
 		}
 	}
+	
+	public function createBreadcrumb($site){
+		
+		$this->sxmlIter->rewind();
+		$breadcrumb = self::createLink($this->sxmlIter->menu[0]->menuItem[0]);
+		while (!$this->isFound && $this->sxmlIter->hasChildren()) {
+			$menuNode = $this->sxmlIter->getChildren();
+			$breadcrumb .= self::getCrumbs($menuNode, $site);
+			$this->sxmlIter->next();
+		}
+		$this->isFound = FALSE;
+		echo $breadcrumb;
+		
+	}
+	
+	private function getCrumbs($node, $str, $parent=""){
+		$bread="";
+ 		foreach ($node->menuItem as $item){
+ 			
+ 			if ($item->siteName == $str && !$this->isFound){
+ 				$this->isFound = TRUE;
+ 				if($parent != ""){
+ 					$bread .= " -> " . $parent . " -> " . get_localization($item->text);
+ 				} else {
+ 					if($item->siteName != "main"){
+ 						$bread .= " -> " . get_localization($item->text);
+ 					}
+ 				}
+ 			}
+			
+ 			if ($item->subMenu){
+ 				$crumb = self::createLink($item);
+ 				$subItems = $item->subMenu;
+ 				$bread .= self::getCrumbs($subItems, $str, $crumb);
+ 			}
+ 		}
+ 		return $bread;
+	}
+	
+	private function createLink($itemToLink){
+		return '<a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
+		get_language() .'">' . get_localization($itemToLink->text) . '</a>';
+	}
 }
+
+//  $menu = new menuController("./menus.xml");
+//  $menu->createBreadcrumb("about_us");
 
 ?>

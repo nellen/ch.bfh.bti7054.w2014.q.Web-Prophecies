@@ -15,26 +15,26 @@
 			<siteName>shop</siteName>
 			<enabled>1</enabled>
 			<subMenu>
-				<subItem itemName="FOOD">
+				<menuItem itemName="FOOD">
 					<text>food</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
-				</subItem>
-				<subItem itemName="BEVERAGE">
+				</menuItem>
+				<menuItem itemName="BEVERAGE">
 					<text>beverage</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
-				</subItem>
-				<subItem itemName="MENU">
+				</menuItem>
+				<menuItem itemName="MENU">
 					<text>menu</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
-				</subItem>
-				<subItem itemName="SPECIALS">
+				</menuItem>
+				<menuItem itemName="SPECIALS">
 					<text>specials</text>
 					<siteName>category</siteName>
 					<enabled>1</enabled>
-				</subItem>
+				</menuItem>
 			</subMenu>
 		</menuItem>
 		
@@ -58,31 +58,31 @@
 			<siteName>login_user</siteName>
 			<enabled>1</enabled>
 			<subMenu>
-				<subItem itemName="BASKET">
+				<menuItem itemName="BASKET">
 					<text>basket</text>
 					<siteName>basket</siteName>
 					<enabled>1</enabled>
-				</subItem>
-				<subItem itemName="USERPROFILE">
+				</menuItem>
+				<menuItem itemName="USERPROFILE">
 					<text>userprofile</text>
 					<siteName>userprofile</siteName>
 					<enabled>1</enabled>
-				</subItem>
-				<subItem itemName="FILLER">
+				</menuItem>
+				<menuItem itemName="FILLER">
 					<text>filler</text>
 					<siteName>filler</siteName>
 					<enabled>1</enabled>
-				</subItem>
-				<subItem itemName="CHECKOUT">
+				</menuItem>
+				<menuItem itemName="CHECKOUT">
 					<text>checkout</text>
 					<siteName>checkout</siteName>
 					<enabled>1</enabled>
-				</subItem>
-				<subItem itemName="ADMINISTRATION">
+				</menuItem>
+				<menuItem itemName="ADMINISTRATION">
 					<text>administration</text>
 					<siteName>administration</siteName>
 					<enabled>1</enabled>
-				</subItem>
+				</menuItem>
 			</subMenu>
 		</menuItem>
 		

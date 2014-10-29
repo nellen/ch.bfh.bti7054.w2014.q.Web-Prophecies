@@ -59,8 +59,7 @@
 	<xsd:element name="subMenu">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element ref="subItem" maxOccurs="unbounded"
-					minOccurs="1" />
+				<xsd:element ref="menuItem" maxOccurs="unbounded" minOccurs="1" />
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
@@ -71,7 +70,7 @@
 				<xsd:element ref="text" />
 				<xsd:element ref="siteName" />
 				<xsd:element ref="enabled" />
-				<xsd:element ref="subMenu" minOccurs="0" />
+				<xsd:element ref="subMenu" minOccurs="0" maxOccurs="1"/>
 			</xsd:all>
 			<xsd:attribute ref="itemName" use="required" />
 		</xsd:complexType>

@@ -25,7 +25,9 @@ $menu = new menuController ( "./includes/menus.xml" );
 		<div id="breadcrumps-area">
 			<div id="breadcrumps">
 				<p>
-					<a href="./index.php">Home</a>
+					<?php
+						$menu->createBreadcrumb(get_site());
+					?>
 				</p>
 			</div>
 			<div id="language-selector">
