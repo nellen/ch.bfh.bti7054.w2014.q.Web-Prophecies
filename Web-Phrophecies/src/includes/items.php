@@ -7,25 +7,25 @@ function getCategoryItems ($CatId, $lang) {
 			"discription" => "Homemade croissants. Freshly baked each morning.",
 			"variants" =>
 			array(
-			array("variantname" => "butter", "price" => 0.00),
-			array("variantname" => "whole-grain", "price" => 0.00)
+			array("varId" => 1, "variantname" => "butter", "price" => 0.00),
+			array("varId" => 2, "variantname" => "whole-grain", "price" => 0.00)
 			)
 			),
 			array("artId" => 2, "name" => "Bun", "image" => "./img/user-b.png", "price" => 1.50,
 			"discription" => "Homemade buns. Freshly baked each morning.",
 			"variants" =>
 			array(
-			array("variantname" => "butter", "price" => 0.00),
-			array("variantname" => "whole-grain", "price" => 0.00),
-			array("variantname" => "bacon", "price" => 0.50)
+			array("varId" => 1, "variantname" => "butter", "price" => 0.00),
+			array("varId" => 2, "variantname" => "whole-grain", "price" => 0.00),
+			array("varId" => 3, "variantname" => "bacon", "price" => 0.50)
 			)
 			),
 			array("artId" => 3, "name" => "Bread", "image" => "./img/user-c.png", "price" => 2.00,
 			"discription" => "Homemade bread. Freshly baked each morning.",
 			"variants" =>
 			array(
-			array("variantname" => "butter", "price" => 0.00),
-			array("variantname" => "whole-grain", "price" => 0.00)
+			array("varId" => 1, "variantname" => "butter", "price" => 0.00),
+			array("varId" => 2, "variantname" => "whole-grain", "price" => 0.00)
 			)
 			)
 			);
@@ -121,7 +121,14 @@ function getCategoryItems ($CatId, $lang) {
 	return $items; // a real function
 }
 
-
+function getItem ($artId, $lang) {
+	$itemList = getCategoryItems(42,$lang); // temp hack until db is integrated
+	foreach ( $itemList as $item ) {
+		if ($item["artId"] == $artId) {
+			return $item;
+		}
+	}
+}
 
 
 ?>
