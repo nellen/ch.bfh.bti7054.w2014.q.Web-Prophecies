@@ -2,6 +2,21 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+03.11.2014 burk4, huber3, nells1
+
+Task 7.1: Purchase Confirmation nells1
+Task 7.2: Form Validation burkt4
+Task 7.3: DHTML huber3
+
+ToDos/Bugs:
+
+- Sprachwechsel löscht GET-Variablen
+- behandeln was passiert bei nicht gesetzten Variablen:
+	- article.php
+	- billing.php
+	- confirm.php
+	
+------
 27.10.2014 burk4, huber3, nells1
 
 - Multilanguage implementiert
