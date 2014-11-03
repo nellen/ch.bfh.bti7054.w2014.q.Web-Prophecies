@@ -91,12 +91,11 @@ class menuController {
 		foreach ($nodes as $liNode){
 			if($liNode->subMenu){
 				$htmlStr .= '<li><a href="'. self::LINK_STR . $liNode->siteName . '&lang=' . get_language() .'">'
-						. get_localization($liNode->text) . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
+						. get_localization($liNode->attributes()->itemName) . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
 				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->menuItem);
 				$htmlStr .= "</ul>\n</li>" . "\n";
 			} else {
-				$htmlStr .= '<li><a href="' . self::LINK_STR . $liNode->siteName . '&lang=' . get_language() . '">'
-						. get_localization($liNode->text) . '</a></li>' . "\n";
+				$htmlStr .= self::createLink($liNode);
 			}
 		}
 		return $htmlStr;
@@ -143,13 +142,13 @@ class menuController {
 		}
 	}
 	
-	public function createBreadcrumb($site){
+	public function createBreadcrumb($site, $category){
 		
 		$this->sxmlIter->rewind();
 		$breadcrumb = self::createLink($this->sxmlIter->menu[0]->menuItem[0]);
 		while (!$this->isFound && $this->sxmlIter->hasChildren()) {
 			$menuNode = $this->sxmlIter->getChildren();
-			$breadcrumb .= self::getCrumbs($menuNode, $site);
+			$breadcrumb .= self::getCrumbs($menuNode, $site, $category);
 			$this->sxmlIter->next();
 		}
 		$this->isFound = FALSE;
@@ -157,17 +156,17 @@ class menuController {
 		
 	}
 	
-	private function getCrumbs($node, $str, $parent=""){
+	private function getCrumbs($node, $str, $category, $parent=""){
 		$bread="";
  		foreach ($node->menuItem as $item){
  			
- 			if ($item->siteName == $str && !$this->isFound){
+ 			if ($item->siteName == $str && !$this->isFound && $item->category == $category){
  				$this->isFound = TRUE;
  				if($parent != ""){
- 					$bread .= " -> " . $parent . " -> " . get_localization($item->text);
+ 					$bread .= " -> " . $parent . " -> " . get_localization($item->attributes()->itemName);
  				} else {
  					if($item->siteName != "main"){
- 						$bread .= " -> " . get_localization($item->text);
+ 						$bread .= " -> " . get_localization($item->attributes()->itemName);
  					}
  				}
  			}
@@ -175,15 +174,22 @@ class menuController {
  			if ($item->subMenu){
  				$crumb = self::createLink($item);
  				$subItems = $item->subMenu;
- 				$bread .= self::getCrumbs($subItems, $str, $crumb);
+ 				$bread .= self::getCrumbs($subItems, $str, $category, $crumb);
  			}
  		}
  		return $bread;
 	}
 	
 	private function createLink($itemToLink){
-		return '<a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
-		get_language() .'">' . get_localization($itemToLink->text) . '</a>';
+		if($itemToLink->category){
+			return '<a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
+		get_language() . '&category=' . $itemToLink->category . '">' .
+		get_localization($itemToLink->attributes()->itemName) . '</a>';
+		} else {
+			return '<a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
+					get_language() . '">' . get_localization($itemToLink->attributes()->itemName) . '</a>';
+		}
+		
 	}
 }
 

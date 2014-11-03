@@ -4,48 +4,52 @@
 	xsi:noNamespaceSchemaLocation="./menus.xsd">
 	<menu menuName="mainMenu">
 	
-		<menuItem itemName="HOME">
-			<text>home</text>
+		<menuItem itemName="home">
+			<text>Home</text>
 			<siteName>main</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 		
-		<menuItem itemName="SHOP">
-			<text>shop</text>
+		<menuItem itemName="shop">
+			<text>Shop</text>
 			<siteName>shop</siteName>
 			<enabled>1</enabled>
 			<subMenu>
-				<menuItem itemName="FOOD">
-					<text>food</text>
-					<siteName>category</siteName>
+				<menuItem itemName="food">
+					<category>food</category>
+					<text>Food</text>
+					<siteName>shop</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="BEVERAGE">
-					<text>beverage</text>
-					<siteName>category</siteName>
+				<menuItem itemName="beverage">
+					<category>beverage</category>
+					<text>Beverage</text>
+					<siteName>shop</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="MENU">
-					<text>menu</text>
-					<siteName>category</siteName>
+				<menuItem itemName="menu">
+					<category>menu</category>>
+					<text>Menu</text>
+					<siteName>shop</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="SPECIALS">
-					<text>specials</text>
-					<siteName>category</siteName>
+				<menuItem itemName="specials">
+					<category>specials</category>
+					<text>Specials</text>
+					<siteName>shop</siteName>
 					<enabled>1</enabled>
 				</menuItem>
 			</subMenu>
 		</menuItem>
 		
-		<menuItem itemName="ABOUTUS">
-			<text>about_us</text>
+		<menuItem itemName="about_us">
+			<text>About us</text>
 			<siteName>aboutus</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 		
-		<menuItem itemName="CONTACT">
-			<text>contact</text>
+		<menuItem itemName="contact">
+			<text>Contact</text>
 			<siteName>contact</siteName>
 			<enabled>1</enabled>
 		</menuItem>
@@ -53,33 +57,33 @@
 	
 	<menu menuName="userMenu">
 	
-		<menuItem itemName="LOGIN">
-			<text>login_user</text>
+		<menuItem itemName="login_user">
+			<text>Login / User</text>
 			<siteName>login_user</siteName>
 			<enabled>1</enabled>
 			<subMenu>
-				<menuItem itemName="BASKET">
-					<text>basket</text>
+				<menuItem itemName="basket">
+					<text>Basket</text>
 					<siteName>basket</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="USERPROFILE">
-					<text>userprofile</text>
+				<menuItem itemName="userprofile">
+					<text>Userprofile</text>
 					<siteName>userprofile</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="FILLER">
-					<text>filler</text>
+				<menuItem itemName="filler">
+					<text>Filler</text>
 					<siteName>filler</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="CHECKOUT">
-					<text>checkout</text>
+				<menuItem itemName="checkout">
+					<text>Checkout</text>
 					<siteName>checkout</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="ADMINISTRATION">
-					<text>administration</text>
+				<menuItem itemName="administration">
+					<text>Administration</text>
 					<siteName>administration</siteName>
 					<enabled>1</enabled>
 				</menuItem>
