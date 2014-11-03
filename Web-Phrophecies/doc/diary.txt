@@ -10,11 +10,11 @@ Task 7.3: DHTML huber3
 
 ToDos/Bugs:
 
-- Sprachwechsel löscht GET-Variablen
+- Sprachwechsel löscht GET-Variablen nells1
 - behandeln was passiert bei nicht gesetzten Variablen:
-	- article.php
-	- billing.php
-	- confirm.php
+	- article.php burkt4
+	- billing.php burkt4
+	- confirm.php nells1
 	
 ------
 27.10.2014 burk4, huber3, nells1
