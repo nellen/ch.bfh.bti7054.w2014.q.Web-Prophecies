@@ -26,7 +26,7 @@ $menu = new menuController ( "./includes/menus.xml" );
 			<div id="breadcrumps">
 				<p>
 					<?php
-						$menu->createBreadcrumb(get_site());
+						$menu->createBreadcrumb(get_site(), get_category());
 					?>
 				</p>
 			</div>

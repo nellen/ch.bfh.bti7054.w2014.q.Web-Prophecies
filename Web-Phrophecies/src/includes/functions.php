@@ -15,5 +15,12 @@ function get_language() {
 	}
 	return $lang;
 }
-
+function get_category() {
+	if (isset ( $_GET ["category"] )) {
+		$category = $_GET ["category"];
+	} else {
+		$category = NULL;
+	}
+	return $category;
+	}
 ?>
