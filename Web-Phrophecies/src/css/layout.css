@@ -177,3 +177,7 @@ hr {
 .article-button {
 	float: right;
 }
+
+.address-form-table-label{
+	align: left;
+}

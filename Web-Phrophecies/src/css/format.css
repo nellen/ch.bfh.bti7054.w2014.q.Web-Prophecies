@@ -90,3 +90,21 @@ body {
 .article-price{
 	font-weight:bold;
 }
+
+.address-form-field{
+	
+	 width:300px;
+	 margin: 1px;
+
+}
+.address-form-field-city{
+	
+	 width:250px;
+	 margin: 1px;
+}
+.address-form-field-zip{
+	
+	 width:42px;
+	 margin: 1px;
+
+}
