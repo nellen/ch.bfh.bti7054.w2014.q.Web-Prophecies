@@ -2,7 +2,7 @@
 
 $lang = get_language ();
 
-echo "<form action=\"index.php?site=confirm&lang=".$lang."\" method=\"post\">";
+echo "<form name=\"billingForm\" action=\"index.php?site=confirm&lang=".$lang."\" onsubmit=\"return validateForm();\" method=\"post\">";
 echo "<input type=\"hidden\" name=\"artId\" value=\"". $_POST["artId"]. "\" /input>";
 echo "<input type=\"hidden\" name=\"varId\" value=\"". $_POST["varId"]. "\" /input>";
 echo "<table class=\"address-form-table\">";
@@ -42,3 +42,61 @@ echo "<input class=\"billing-button\" type=\"submit\" value=\"Submit\"/>";
 echo "</form>";
 
 ?>
+
+<script>
+	function validateForm() {
+		var errorCounter = 0;
+
+		//check firstname
+		var element = document.forms["billingForm"]["firstname"];
+		var value = element.value;
+	    if (value.length == 0) {
+	    	element.style.backgroundColor = "red";
+	    	errorCounter++;
+	    }
+	    else{
+	    	element.style.backgroundColor = null;
+	    }
+
+		//check lastname
+		element = document.forms["billingForm"]["lastname"];
+		value = element.value;
+	    if (value.length == 0) {
+	    	element.style.backgroundColor = "red";
+	    	errorCounter++;
+	    }
+	    else{
+	    	element.style.backgroundColor = null;
+	    }
+
+		//check zipcode
+		element = document.forms["billingForm"]["zip"];
+		value = element.value;
+	    if (value.length != 4 && !isNaN(value)) {
+	    	element.style.backgroundColor = "red";
+	    	errorCounter++;
+	    }
+	    else{
+	    	element.style.backgroundColor = null;
+	    }
+
+		//check email
+		element = document.forms["billingForm"]["email"];
+		value = element.value;
+	    var atpos = value.indexOf("@");
+	    var dotpos = value.lastIndexOf(".");
+	    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=value.length) {
+	    	element.style.backgroundColor = "red";
+	    	errorCounter++;
+	    }
+	    else{
+	    	element.style.backgroundColor = null;
+	    }
+
+	    if (errorCounter > 0) {
+	        alert("Please check your entered data");
+	        return false;
+	    }
+	}
+	
+</script>
