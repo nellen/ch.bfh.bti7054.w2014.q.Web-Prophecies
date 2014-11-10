@@ -8,8 +8,8 @@ function get_site() {
 	return $site;
 }
 function get_language() {
-	if (isset ( $_GET ["lang"] )) {
-		$lang = $_GET ["lang"];
+	if (isset ( $_COOKIE ["lang"] )) {
+		$lang = $_COOKIE ["lang"];
 	} else {
 		$lang = "en";
 	}

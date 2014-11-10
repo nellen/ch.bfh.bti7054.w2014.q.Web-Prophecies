@@ -1,3 +1,15 @@
+<?php
+
+$time = time()+60*60*24*30; // expires in 30 days
+if(isset ( $_POST ["lang"] )){
+	setcookie("lang",$_POST ["lang"],$time);
+	$_COOKIE["lang"] = $_POST ["lang"];
+}
+else if (!isset( $_COOKIE ["lang"])){
+	setcookie("lang","en",$time); // expires in 30sec	
+}
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -31,16 +43,34 @@ $menu = new menuController ( "./includes/menus.xml" );
 				</p>
 			</div>
 			<div id="language-selector">
+				
+				<form action="<?php "index.php?site=" . get_site ()  ?>" name="langSelector" method="post">              
+				    <div id="en">
+				        <input type="submit" name="lang" value="en" />
+				    </div>
+				
+				    <div id="de">
+				        <input type="submit" name="lang" value="de" />              
+				    </div>  
+				    
+				    <div id="fr">
+				        <input type="submit" name="lang" value="fr" />              
+				    </div>  
+				</form>
+				
 				<p>
+				
+
+				
 					<a
 						href="<?php
-						echo "index.php?site=" . get_site () . "&lang=de";
+						echo "index.php?site=" . get_site () ;
 						?>">DE</a> <a
 						href="<?php
-						echo "index.php?site=" . get_site () . "&lang=fr";
+						echo "index.php?site=" . get_site () ;
 						?>">FR</a> <a
 						href="<?php
-						echo "index.php?site=" . get_site () . "&lang=en";
+						echo "index.php?site=" . get_site () ;
 						?>">EN</a>
 
 				</p>
