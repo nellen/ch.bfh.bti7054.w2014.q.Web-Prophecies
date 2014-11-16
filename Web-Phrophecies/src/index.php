@@ -1,5 +1,4 @@
 <?php
-
 $time = time()+60*60*24*30; // expires in 30 days
 if(isset ( $_POST ["lang"] )){
 	setcookie("lang",$_POST ["lang"],$time);
@@ -45,20 +44,20 @@ $menu = new menuController ( "./includes/menus.xml" );
 			<div id="language-selector">
 				
 				<form action="<?php "index.php?site=" . get_site ()  ?>" name="langSelector" method="post">              
-				    <div id="en">
+				    <div id="en" style="display:inline">
 				        <input type="submit" name="lang" value="en" />
 				    </div>
 				
-				    <div id="de">
+				    <div id="de" style="display:inline">
 				        <input type="submit" name="lang" value="de" />              
 				    </div>  
 				    
-				    <div id="fr">
+				    <div id="fr" style="display:inline">
 				        <input type="submit" name="lang" value="fr" />              
 				    </div>  
 				</form>
 				
-				<p>
+				<!--<p>
 				
 
 				
@@ -73,7 +72,7 @@ $menu = new menuController ( "./includes/menus.xml" );
 						echo "index.php?site=" . get_site () ;
 						?>">EN</a>
 
-				</p>
+				</p>  -->
 			</div>
 		</div>
 		<div id="main-area">
