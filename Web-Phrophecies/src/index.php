@@ -8,7 +8,7 @@ if(isset ( $_POST ["lang"] )){
 else if (!isset( $_COOKIE ["lang"])){
 	setcookie("lang","en",$time); // expires in 30sec	
 }
-
+session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
