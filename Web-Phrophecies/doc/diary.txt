@@ -2,6 +2,18 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+16.11.2014 nells1, burk4, huber3
+
+Skype Session at 9pm:
+- Discussed menu state
+- Discussed shopping cart
+- Discussed "about us", "contact"
+
+ToDo: nells1 has to add user account handling where "news" section was planned
+(this is done by time of writing this)
+
+------
+
 10.11.2014 burk4, huber3, nells1
 
 Task 8.1: Cookies nells1
