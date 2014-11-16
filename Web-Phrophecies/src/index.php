@@ -5,9 +5,9 @@ if(isset ( $_POST ["lang"] )){
 	$_COOKIE["lang"] = $_POST ["lang"];
 }
 else if (!isset( $_COOKIE ["lang"])){
-	setcookie("lang","en",$time); // expires in 30sec	
+	setcookie("lang","en",$time);
 }
-session_start();
+session_start();   // create or recover session,
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -99,7 +99,7 @@ $menu = new menuController ( "./includes/menus.xml" );
 				</div>
 				<hr />
 				<div id="news-area">
-					<p>The news will be displayed here.</p>
+					<?php require './includes/login.php';?>
 				</div>
 			</div>
 		</div>
