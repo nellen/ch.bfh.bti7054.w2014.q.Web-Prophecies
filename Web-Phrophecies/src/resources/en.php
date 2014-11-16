@@ -11,7 +11,7 @@ $variationsLabel 		= "Variations";
 $basketButtonLabel 		= "Add to basket";
 
 /** menu.xml */
-$home					= "Main";
+$home					= "Home";
 $shop					= "Shop";
 $food					= "Food";
 $beverage				= "Beverage";

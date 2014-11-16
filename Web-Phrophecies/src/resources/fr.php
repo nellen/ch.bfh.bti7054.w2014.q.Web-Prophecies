@@ -11,21 +11,21 @@ $variationsLabel 		= "Variations";
 $basketButtonLabel 		= "Ajouter au panier";
 
 /** menu.xml */
-$home					= "Home-FR";
-$shop					= "Shop-FR";
-$food					= "Food-FR";
-$beverage				= "Beverage-FR";
-$menu					= "Menu-FR";
-$specials				= "Specials-FR";
-$about_us				= "About us-FR";
-$contact				= "Contact-FR";
+$home					= "Accueil";
+$shop					= "Boutique en ligne";
+$food					= "Manger";
+$beverage				= "Boissons";
+$menu					= "Menu";
+$specials				= "Formule";
+$about_us				= "A propos de";
+$contact				= "Contact";
 
-$login_user				= "Login / User-FR";
-$basket					= "Basket-FR";
-$userprofile			= "Userprofile-FR";
-$filler					= ". . .-FR";
-$checkout				= "Checkout-FR";
-$administration			= "Administration-FR";
+$login_user				= "Compte client";
+$basket					= "Panier d'achat";
+$userprofile			= "Mon compte";
+$filler					= ". . .";
+$checkout				= "Payer";
+$administration			= "Administration";
 
 ?>
 					
