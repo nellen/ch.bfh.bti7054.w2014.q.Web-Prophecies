@@ -9,9 +9,9 @@ if (isset($_POST['artId']) && isset($_POST['varId'])){
 	if (isset($_SESSION['basket'])){
 		//add item to basket
 		$found = false;
-		foreach ($_SESSION['basket'] as $_basketitem){
+		foreach ($_SESSION['basket'] as $key => $_basketitem){
 			if($_basketitem['artId'] == $_POST['artId'] && $_basketitem['varId'] == $_POST['varId']){
-				$_basketitem['quantity'] = $_basketitem['quantity'] + 1;
+				$_SESSION['basket'][$key]['quantity'] = $_basketitem['quantity'] + 1;
 				$found = true;
 				break;
 			}

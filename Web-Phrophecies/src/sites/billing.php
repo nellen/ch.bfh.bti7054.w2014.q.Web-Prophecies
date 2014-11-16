@@ -3,8 +3,6 @@
 $lang = get_language ();
 
 echo "<form name=\"billingForm\" action=\"index.php?site=confirm&lang=".$lang."\" onsubmit=\"return validateForm();\" method=\"post\">";
-echo "<input type=\"hidden\" name=\"artId\" value=\"". $_POST["artId"]. "\" /input>";
-echo "<input type=\"hidden\" name=\"varId\" value=\"". $_POST["varId"]. "\" /input>";
 echo "<table class=\"address-form-table\">";
 echo 	"<tr>";
 echo 		"<td class=\"address-form-table-label\">Firstname:</td>";
@@ -21,8 +19,8 @@ echo 	"</tr>";
 echo 	"<tr>";
 echo 		"<td class=\"address-form-table-label\">City \ Zip Code:</td>";
 echo 		"<td>";
-echo 			"<input class=\"address-form-field-city\" type=\"text\" name=\"city\"  /input>";
 echo 			"<input class=\"address-form-field-zip\" type=\"text\" name=\"zip\"  /input>";
+echo 			"<input class=\"address-form-field-city\" type=\"text\" name=\"city\"  /input>";
 echo 		"</td>";
 echo 	"</tr>";
 echo 	"<tr>";
