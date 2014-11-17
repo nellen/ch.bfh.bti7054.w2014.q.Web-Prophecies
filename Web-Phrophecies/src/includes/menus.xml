@@ -2,8 +2,8 @@
 
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="./menus.xsd">
-	<menu menuName="mainMenu">
 	
+	<menu menuName="mainMenu">
 		<menuItem itemName="home">
 			<text>Home</text>
 			<siteName>main</siteName>
@@ -28,7 +28,7 @@
 					<enabled>1</enabled>
 				</menuItem>
 				<menuItem itemName="menu">
-					<category>menu</category>>
+					<category>menu</category>
 					<text>Menu</text>
 					<siteName>shop</siteName>
 					<enabled>1</enabled>
@@ -44,7 +44,7 @@
 		
 		<menuItem itemName="about_us">
 			<text>About us</text>
-			<siteName>aboutus</siteName>
+			<siteName>about_us</siteName>
 			<enabled>1</enabled>
 		</menuItem>
 		

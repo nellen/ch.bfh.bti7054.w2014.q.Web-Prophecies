@@ -79,34 +79,35 @@ class menuController {
 	}
 	
 	/**
-	 * Builds the HTML list elements. It's possible that the given <code>node</code>
+	 * Builds the HTML list elements. It's possible that the given <code>menuItem</code>
 	 * has sub menus. In this case, the function will call itselfs (recursive) to generate a
 	 * inner unordered list.
 	 * 
 	 * @param object $nodes Contains the elements which should be listed in the unordered list
 	 * @return string which contains the HTML-Code for the elements in a unordered list
 	 */
-	private function getHtmlMenuContent($nodes){
+	private function getHtmlMenuContent($menuItems){
 		$htmlStr ="";
-		foreach ($nodes as $liNode){
-			if($liNode->subMenu){
-				$htmlStr .= '<li><a href="'. self::LINK_STR . $liNode->siteName . '&lang=' . get_language() .'">'
-						. get_localization($liNode->attributes()->itemName) . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
-				$htmlStr .= self::getHtmlMenuContent($liNode->subMenu->menuItem);
+		foreach ($menuItems as $menuItem){
+			if($menuItem->subMenu){
+				$htmlStr .= '<li><a href="'. self::LINK_STR . $menuItem->siteName . '&lang=' . get_language() .'">'
+						. get_localization($menuItem->attributes()->itemName) . '</a>' . "\n" . '<ul class="' . $this->cssStyle . '">' . "\n";
+				$htmlStr .= self::getHtmlMenuContent($menuItem->subMenu->menuItem);
 				$htmlStr .= "</ul>\n</li>" . "\n";
 			} else {
-				$htmlStr .= self::createLink($liNode);
+				$htmlStr .= self::createLink($menuItem);
 			}
 		}
 		return $htmlStr;
 	}
 	
 	/**
-	 * Sets the SimpleXMLIterator to the XML-Tag where <code>menuName</code> matches the
-	 * attribute value of the attribute identifier called menuName.
+	 * Search the XML-Tag where <code>menuName</code> matches the attribute value of the
+	 * attribute identifier menuName and return it as a new SimpleXMLIterator object.
 	 * 
 	 * @param string $menuName The <code>menuName</code> which will be builded
 	 * @throws Exception in case there is no such named menu in the XML document
+	 * @return mixed SimpleXMLIterator
 	 */
 	private function getMenuNode($menuName){
 		if($this->sxmlIter->current() != NULL){
@@ -182,12 +183,12 @@ class menuController {
 	
 	private function createLink($itemToLink){
 		if($itemToLink->category){
-			return '<a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
+			return '<li><a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
 		get_language() . '&category=' . $itemToLink->category . '">' .
-		get_localization($itemToLink->attributes()->itemName) . '</a>';
+		get_localization($itemToLink->attributes()->itemName) . '</a></li>';
 		} else {
-			return '<a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
-					get_language() . '">' . get_localization($itemToLink->attributes()->itemName) . '</a>';
+			return '<li><a href="'. self::LINK_STR . $itemToLink->siteName . '&lang=' .
+					get_language() . '">' . get_localization($itemToLink->attributes()->itemName) . '</a></li>';
 		}
 		
 	}
