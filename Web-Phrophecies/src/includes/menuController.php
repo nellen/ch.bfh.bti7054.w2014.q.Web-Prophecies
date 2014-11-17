@@ -129,6 +129,14 @@ class menuController {
 	
 	public function getBreadcrumb($site, $category=NULL){
 		$location = self::getLocation($site, $category);
+		if ($site == 'article'){
+			$site = "shop";
+			$location = self::getLocation($site, $category);
+		}
+		else if ($location == ''){
+			$site = "main";
+			$location = self::getLocation($site, $category);
+		}
 		$node = $this->xmlDom->getElementById($location);
 		if($node->getAttribute("itemName") == "home"){
 			echo "<ul>" . self::createLink($node) . "</ul>";
