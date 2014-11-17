@@ -2,6 +2,16 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+17.11.2014 nells1, burk4, huber3
+
+Task 9.1: OO Shopping Cart > burkt4
+Task 9.2: OO Product List > burkt4
+Task 9.3: Even more OO 
+	--> Finalize menuController in OO
+	--> Modelling of User object in OO 
+
+------
+
 16.11.2014 nells1, burk4, huber3
 
 Skype Session at 9pm:
