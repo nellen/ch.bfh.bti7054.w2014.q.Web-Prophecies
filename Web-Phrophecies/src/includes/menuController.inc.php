@@ -1,6 +1,6 @@
 <?php
 
-require './includes/langController.php';
+// require_once './includes/langController.php';
 
 class menuController {
 	

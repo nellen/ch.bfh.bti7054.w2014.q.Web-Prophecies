@@ -7,6 +7,10 @@ if (isset ( $_POST ["lang"] )) {
 	setcookie ( "lang", "en", $time );
 }
 session_start (); // create or recover session,
+function __autoload($class_name) {
+	require_once("./includes/".$class_name.".inc.php");
+}
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -20,9 +24,10 @@ session_start (); // create or recover session,
 <link rel="stylesheet" href="./css/format.css" type="text/css" />
 <script type="text/javascript" src="./includes/menu.js"></script>
 <?php
+require_once './includes/langController.php';
 include_once "./includes/functions.php";
-include_once "./includes/menuController.php";
 $menu = new menuController ( "./includes/menus.xml" );
+
 ?>
 </head>
 
