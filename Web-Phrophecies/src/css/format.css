@@ -12,6 +12,10 @@ body {
 	display: block;
 }
 
+.sidebarlist #dropdown {
+	display: block;
+}
+
 /* mouse over link */
 .sidebarlist a:hover {
     color: #473423;
@@ -49,6 +53,17 @@ body {
 	padding-left: 22px;
 	font-weight: normal;
 	color: #FBF9F3;
+}
+
+/* breadcrumps */
+#breadcrumps ul{
+	list-style-type: none;
+	margin-left: -20px;
+	display: block;
+}
+
+#breadcrumps li{
+	display: inline;
 }
 
 /* list format of sidebar navigation */ 
