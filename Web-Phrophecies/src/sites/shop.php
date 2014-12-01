@@ -3,7 +3,7 @@
 		echo ($_GET ["category"]);
 			$lang = get_language ();
 			include_once ("./includes/items.php");
-			$items = getCategoryItems ( 1, $lang );
+			$items = getCategoryItems ( $_GET ["category"], $lang );
 			foreach ( $items as $item ) {
 				echo "<div class=\"list-article\">";
 				echo "<img src=\"" . $item->getImage() . "\" width=\"100px\" height=\"100px\"/>";

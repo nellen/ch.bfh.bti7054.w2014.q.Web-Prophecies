@@ -1,111 +1,89 @@
 <?php
-function getCategoryItems ($CatId, $lang) {
-	switch($lang) {
-		case "en":
-			$items = array();
-			$items[] = new article(1,"Croissant", 1.50, "Homemade croissants. Freshly baked each morning.", "./img/user-a.png",
-					 	array(
-								new articleVariant(1, "butter", 0.00),
-								new articleVariant(2, "whole-grain", 0.00)
-							)
-			);
-			$items[] = new article(2, "Bun", 1.50, "Homemade buns. Freshly baked each morning.", "./img/user-b.png",
-					array(
-						new articleVariant(1, "butter", 0.00),
-						new articleVariant(2, "whole-grain", 0.00),
-						new articleVariant(3, "bacon", 0.50)
-					)
-			);
-			$items[] = new article(3, "Bread", 2.00, "Homemade bread. Freshly baked each morning.", "./img/user-c.png",
-					array(
-						new articleVariant(1, "butter", 0.00),
-						new articleVariant(2, "whole-grain", 0.00)
-					)
-			);
 
-			break;
-		case "de":
-			
-			$items = array();
-			$items[] = new article(1,"Gipfeli", 1.50, "Hausgemachte Gipfeli.  Jeden Morgen frisch gebacken.", "./img/user-a.png",
-					array(
-							new articleVariant(1, "mit Butter", 0.00),
-							new articleVariant(2, "Vollkorn", 0.00)
-					)
-			);
-			$items[] = new article(2, "Brötchen", 1.50, "Hausgemachte Brötchen. Jeden Morgen frisch gebacken.", "./img/user-b.png",
-					array(
-							new articleVariant(1, "mit Butter", 0.00),
-							new articleVariant(2, "Vollkorn", 0.00),
-							new articleVariant(3, "Speck", 0.50)
-					)
-			);
-			$items[] = new article(3, "Brot", 2.00, "Hausgemachtes Brot. Jeden Morgen frisch gebacken.", "./img/user-c.png",
-					array(
-							new articleVariant(1, "mit Butter", 0.00),
-							new articleVariant(2, "Vollkorn", 0.00)
-					)
-			);
+require_once "./DBInterface/articleDB.php";
+require_once "./DBInterface/variantDB.php";
 
-			break;
-		case "fr":
-			
-			$items = array();
-			$items[] = new article(1,"Croissant", 1.50, "discription fr", "./img/user-a.png",
-					array(
-							array("varId" => 1, "variantname" => "butter", "price" => 0.00),
-							array("varId" => 2, "variantname" => "whole-grain", "price" => 0.00)
-					)
-			);
-			$items[] = new article(2, "Bun", 1.50, "discription fr", "./img/user-b.png",
-					array(
-							array("varId" => 1, "variantname" => "butter", "price" => 0.00),
-							array("varId" => 2, "variantname" => "whole-grain", "price" => 0.00),
-							array("varId" => 3, "variantname" => "bacon", "price" => 0.50)
-					)
-			);
-			$items[] = new article(3, "Bread", 2.00, "discription fr", "./img/user-c.png",
-					array(
-							array("varId" => 1, "variantname" => "butter", "price" => 0.00),
-							array("varId" => 2, "variantname" => "whole-grain", "price" => 0.00)
-					)
-			);
-			
-			break;
-		default:
-			$items = array();
-			$items[] = new article(1,"Croissant", 1.50, "Homemade croissants. Freshly baked each morning.", "./img/user-a.png",
-					 		array(
-							new articleVariant(1, "butter", 0.00),
-							new articleVariant(2, "whole-grain", 0.00),
-							
-							)
-						);
-			$items[] = new article(2, "Bun", 1.50, "Homemade buns. Freshly baked each morning.", "./img/user-b.png",
-					array(
-						new articleVariant(1, "butter", 0.00),
-						new articleVariant(2, "whole-grain", 0.00),
-						new articleVariant(3, "bacon", 0.50)
-					)
-			);
-			$items[] = new article(3, "Bread", 2.00, "Homemade bread. Freshly baked each morning.", "./img/user-c.png",
-					array(
-						new articleVariant(1, "butter", 0.00),
-						new articleVariant(2, "whole-grain", 0.00),
-					)
-			);
-			break;
+function getCategoryItems ($categoryName, $lang) {
+
+	$items = array();
+
+	$articleDB = new ArticleDB();
+	$variantDB = new VariantDB(); 
+	
+	$res = $articleDB->getAllArticlesFromCategory($categoryName, $lang);
+	while($item = $res->fetch_object()){
+		
+		$itemName = $item->ArticleName;
+		if($item->TranslatedName != null){
+			$itemName = $item->TranslatedName;
+		}
+		$itemDescription = $item->ArticleDescription;
+		if($item->TranslatedName != null){
+			$itemDescription = $item->TranslatedDescription;
+		}
+		
+		$varRes =$variantDB->getAllVariantsFromArticle($item->Article_ID, $lang);
+		$variants = array();
+		while($variant = $varRes->fetch_object()){
+		
+			$variantName = $variant->VariationName;
+			if($variant->TranslatedName != null){
+				$variantName = $variant->TranslatedName;
+			}
+			$variantDescription = $variant->VariationDescription;
+			if($variant->TranslatedName != null){
+				$variantDescription = $variant->TranslatedDescription;
+			}
+		
+		
+			$variants[] = new articleVariant($variant->Variation_ID, $variantName, $variant->VariationPrice);
+		
+		}
+		
+		$items[] = new article($item->Article_ID,$itemName, $item->ArticlePrice, $itemDescription, "./img/user-a.png",$variants);
+		
 	}
-	return $items; // a real function
+	
+
+	return $items; 
 }
 
 function getItem ($artId, $lang) {
-	$itemList = getCategoryItems(42,$lang); // temp hack until db is integrated
-	foreach ( $itemList as $item ) {
-		if ($item->getId() == $artId) {
-			return $item;
-		}
+	$articleDB = new ArticleDB();
+	$variantDB = new VariantDB();
+	$res = $articleDB->getArticleById($artId, $lang);
+	$itemRes = $res->fetch_object();
+	$itemName = $itemRes->ArticleName;
+	if($itemRes->TranslatedName != null){
+		$itemName = $itemRes->TranslatedName;
 	}
+	$itemDescription = $itemRes->ArticleDescription;
+	if($itemRes->TranslatedName != null){
+		$itemDescription = $itemRes->TranslatedDescription;
+	}
+	
+	$varRes =$variantDB->getAllVariantsFromArticle($itemRes->Article_ID, $lang);
+	$variants = array();
+	while($variant = $varRes->fetch_object()){
+	
+		$variantName = $variant->VariationName;
+		if($variant->TranslatedName != null){
+			$variantName = $variant->TranslatedName;
+		}
+		$variantDescription = $variant->VariationDescription;
+		if($variant->TranslatedName != null){
+			$variantDescription = $variant->TranslatedDescription;
+		}
+	
+	
+		$variants[] = new articleVariant($variant->Variation_ID, $variantName, $variant->VariationPrice);
+	
+	}
+	
+	
+	$item = new article($itemRes->Article_ID,$itemName, $itemRes->ArticlePrice, $itemDescription, "./img/user-a.png",$variants);
+	return $item;
+	
 }
 
 
