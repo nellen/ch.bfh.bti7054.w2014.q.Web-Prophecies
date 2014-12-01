@@ -14,7 +14,7 @@
 			<text>Shop</text>
 			<siteName>shop</siteName>
 			<enabled>1</enabled>
-			<subMenu>
+			<subMenu menuId="subMenuShop">
 				<menuItem itemName="food">
 					<category>food</category>
 					<text>Food</text>
@@ -61,7 +61,7 @@
 			<text>Login / User</text>
 			<siteName>login_user</siteName>
 			<enabled>1</enabled>
-			<subMenu>
+			<subMenu menuId="subMenuLogin">
 				<menuItem itemName="basket">
 					<text>Basket</text>
 					<siteName>basket</siteName>

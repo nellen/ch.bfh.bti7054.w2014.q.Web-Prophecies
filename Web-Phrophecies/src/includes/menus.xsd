@@ -7,6 +7,8 @@
 
 	<!-- Defining attributes -->
 	<xsd:attribute name="itemName" type="xsd:ID" />
+	
+	<xsd:attribute name="menuId" type="xsd:ID" />
 
 	<xsd:attribute name="menuName">
 		<xsd:simpleType>
@@ -62,6 +64,7 @@
 			<xsd:sequence>
 				<xsd:element ref="menuItem" maxOccurs="unbounded" minOccurs="1" />
 			</xsd:sequence>
+			<xsd:attribute ref="menuId" use="required" />
 		</xsd:complexType>
 	</xsd:element>
 

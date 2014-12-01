@@ -97,15 +97,15 @@ class menuController {
 	// hint onmouseover="alert(' ."'toll'" . ');"
 	private function createLink($nodeToLink, $forOpeningSubMenu=FALSE){
 		if($forOpeningSubMenu && !($nodeToLink->firstChild->tagName == "category")){
-			
+			$id = $nodeToLink->getElementsByTagName("subMenu")->item(0)->getAttribute("menuId");
 			return '<li><a href="' . self::LINK_STR . self::getNodeValue($nodeToLink, "siteName") .
-			'" onmouseover="' . "openSubMenu();" . '" onmouseout="' . "closeSubMenu();" . '">' . get_localization($nodeToLink->getAttribute("itemName")) . '</a>' . "\n" .
-			'<ul class="' . $this->cssStyle . '"id="dropdown">' . "\n";
+			'" onmouseover="' . "openMenu('$id');" . '" onmouseout="' . "closeMenu('$id');" . '" onclick="' . "showMenu('$id');" . '">' . get_localization($nodeToLink->getAttribute("itemName")) . '</a>' . "\n" .
+			'<ul class="' . $this->cssStyle . '"id="' . $id . '"onmouseover="' . "openMenu('$id');" . '" onmouseout="' . "closeMenu('$id');" . '" onclick="' . "showMenu('$id');" . '">' . "\n";
 			
 		} else if($forOpeningSubMenu && ($nodeToLink->firstChild->tagName == "category")){
-			
+			var_dump($nodeToLink->parentNode->tagName);
 			return '<li><a href="' . self::LINK_STR . self::getNodeValue($nodeToLink, "siteName") .
-			'&category=' . self::getNodeValue($nodeToLink, "category") .'" onmouseover="' . "openSubMenu();" . '" onmouseout="' . "closeSubMenu();" . '">' .
+			'&category=' . self::getNodeValue($nodeToLink, "category") .'" onmouseover="' . "openMenu();" . '" onmouseout="' . "closeMenu();" . '">' .
 			get_localization($nodeToLink->getAttribute("itemName")) . '</a>' . "\n" .
 			'<ul class="' . $this->cssStyle . '"id="dropdown">' . "\n";
 			
