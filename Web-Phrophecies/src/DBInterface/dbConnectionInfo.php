@@ -1,7 +1,7 @@
 <?php 
 $host = "localhost";
-$user = "root";
-$pass = "";
+$user = "usr_webshop";
+$pass = "pass-webshop$";
 $dbase= "webshop";
 
 ?>

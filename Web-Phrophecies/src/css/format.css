@@ -73,6 +73,10 @@ body {
 	line-height: 2;
 }
 
+.sidebarlist ul {
+	display:none;
+}
+
 #language-selector {
 	word-spacing: 10px;
 	text-align: right;
