@@ -2,14 +2,22 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+01.12.2014 nells1, burk4, huber3
+
+ -> Discussion about Task 10, DB implementation and DB integration in PHP
+
+Task 11: Integration Google Maps to Contact Page > nells1
+
+------
+
 24.11.2014 nells1, burk4, huber3
 
 Task 10.1: Database Schema Design >all
 Task 10.2: Database Setup > huber3
 Task 10.3: PHP Integration > burkt4
 Task 10.4: Administrator > nells1
-------
 
+------
 
 17.11.2014 nells1, burk4, huber3
 
