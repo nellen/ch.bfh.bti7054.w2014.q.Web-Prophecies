@@ -27,5 +27,9 @@ $filler					= ". . .";
 $checkout				= "Payer";
 $administration			= "Administration";
 
+/** skypestatus.inc.php */
+$online					= "est en ligne";
+$offline				= "n'est pas connecté ou ne pas active";
+
 ?>
 					

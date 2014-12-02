@@ -45,8 +45,8 @@ function getSkypeStatusText($status)
 	switch($status["num"])
 	{
 		case 7:
-		case 2: return "is online"; break;
-		default: return "is offline or in away state";
+		case 2: return get_localization("online"); break;
+		default: return get_localization("offline");
 	}
 }
 ?>

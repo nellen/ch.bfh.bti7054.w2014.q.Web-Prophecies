@@ -27,5 +27,9 @@ $filler					= ". . .";
 $checkout				= "Checkout";
 $administration			= "Administration";
 
+/** skypestatus.inc.php */
+$online					= "is online";
+$offline				= "is offline or in away state";
+
 ?>
 					
