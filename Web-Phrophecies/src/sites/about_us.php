@@ -1,3 +1,11 @@
+<?php
+require_once './includes/skypestatus.inc.php';
+
+$status_burkt4 = getSkypeStatus("burkt4", $lang, "smallicon");
+$status_huber3 = getSkypeStatus("surferboy8722", $lang, "smallicon");
+$status_nells1 = getSkypeStatus("sebastian.nellen", $lang, "smallicon");
+
+?>
 <h1>
 <?php
 switch ($lang) {
@@ -59,15 +67,30 @@ switch ($lang) {
 <table>
 	<tr>
 		<td><img src="./img/user-a.png" width="100px" /></td>
-		<td>Timo B&uuml;rk</td>
+		<td>Timo B&uuml;rk<br />
+		<?php 
+		echo '<img src="'.$status_burkt4["img_url"].'" alt="'.$status_burkt4["text"].'" title="'.$status_burkt4["text"].'">';
+		echo "  ".getSkypeStatusText($status_burkt4);
+		?>
+		</td>
 	</tr>
 	<tr>
 		<td><img src="./img/user-b.png" width="100px" /></td>
-		<td>Raphael Huber</td>
+		<td>Raphael Huber<br />
+		<?php 
+		echo '<img src="'.$status_huber3["img_url"].'" alt="'.$status_huber3["text"].'" title="'.$status_huber3["text"].'">';
+		echo "  ".getSkypeStatusText($status_huber3);
+		?>
+		</td>
 	</tr>
 	<tr>
 		<td><img src="./img/user-c.png" width="100px" /></td>
-		<td>Sebastian Nellen</td>
+		<td>Sebastian Nellen<br />
+		<?php 
+		echo '<img src="'.$status_nells1["img_url"].'" alt="'.$status_nells1["text"].'" title="'.$status_nells1["text"].'">';
+		echo "  ".getSkypeStatusText($status_nells1); 
+		?>
+		</td>
 	</tr>
 </table>
 <p></p>
