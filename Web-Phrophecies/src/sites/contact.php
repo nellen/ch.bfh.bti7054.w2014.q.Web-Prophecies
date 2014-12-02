@@ -19,8 +19,8 @@ switch ($lang) {
 	case "en" :
 		echo '<p>
 				The BreakFast Company<br />
-				St.-Erpelsburg-Boulevard 0715<br />
-				0815 Duckburg
+				Aarefeldstrasse 16<br />
+				3600 Thun
 				<br /> <br />
 			</p>
 			<table id="contact-numbers">
@@ -34,7 +34,8 @@ switch ($lang) {
 				</tr>
 			</table>
 			<p>
-				<br />
+			<iframe width="500" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Aarefeldstrasse%2016%2C%20Thun%2C%20Switzerland&key=AIzaSyAYsl0o--f9WQIwjud-6GxCGAfTBwVRV_0"></iframe>
+			<br />
 			</p>
 			<hr />
 			<p>
@@ -46,8 +47,8 @@ switch ($lang) {
 	case "de" :
 		echo '<p>
 				The BreakFast Company<br />
-				St.-Erpelsburg-Boulevard 0715<br />
-				0815 Entenhausen
+				Aarefeldstrasse 16<br />
+				3600 Thun
 				<br /> <br />
 			</p>
 			<table id="contact-numbers">
@@ -61,6 +62,7 @@ switch ($lang) {
 				</tr>
 			</table>
 			<p>
+				<iframe width="500" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Aarefeldstrasse%2016%2C%20Thun%2C%20Switzerland&key=AIzaSyAYsl0o--f9WQIwjud-6GxCGAfTBwVRV_0"></iframe>
 				<br />
 			</p>
 			<hr />
@@ -73,8 +75,8 @@ switch ($lang) {
 	case "fr" :
 		echo '<p>
 				The BreakFast Company<br />
-				St.-Erpelsburg-Boulevard 0715<br />
-				0815 Duckburg
+				Aarefeldstrasse 16<br />
+				3600 Thoune
 				<br /> <br />
 			</p>
 			<table id="contact-numbers">
@@ -88,7 +90,8 @@ switch ($lang) {
 				</tr>
 			</table>
 			<p>
-				<br />
+			<iframe width="500" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Aarefeldstrasse%2016%2C%20Thun%2C%20Switzerland&key=AIzaSyAYsl0o--f9WQIwjud-6GxCGAfTBwVRV_0"></iframe>
+			<br />
 			</p>
 			<hr />
 			<p>
@@ -101,7 +104,8 @@ switch ($lang) {
 ?>
 
 
-<form name="htmlform" method="post" action="./includes/html_form_send.php">
+<form name="htmlform" method="post"
+	action="./includes/html_form_send.php">
 	<table width="550px">
 		<tr>
 			<td valign="top"><label for="first_name">First Name *</label></td>
@@ -133,7 +137,8 @@ switch ($lang) {
 		<tr>
 			<td colspan="2" style="text-align: center"><input type="submit"
 				value="Submit" /> ( <a
-				href="http://www.freecontactform.com/html_form.php">based on HTML Form</a>)</td>
+				href="http://www.freecontactform.com/html_form.php">based on HTML
+					Form</a>)</td>
 		</tr>
 		<tr>
 			<td>
