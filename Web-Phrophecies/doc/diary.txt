@@ -2,6 +2,67 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+08.12.2014 nells1, burk4, huber3
+
+ -> Discussion about given tasks and their status
+
+>>>>>>>> ToDo : Tasks <<<<<<<<
+	- Task 5.3 Multiple Languages (ALL/NELLS1)
+		-- ALL: 	dynamic translations when a page is "touched"
+		-- NELLS1: 	language buttons
+	
+	- Task 6.3 Shipping Address (BURKT4)
+		-- Shipping address should be get out of DB and displayed to the user
+		--> Therefore the user login is depent
+	- Task 6.4 Confirmation (NELLS1)
+		-- A confirmation should be sent by mail to the customer ( us in CC ) 
+	- Task 6.5 Refactoring and Code Beautification (HUBER3)
+		-- delete not needed content
+		-- move xml, xsd & js to resources (please: don't forget to change php paths)
+	
+	- Task 7.1 Purchase Confirmation (NELLS1)
+		-- Confirmation page > Proceed or Cancel Java Script PopUp
+	- Task 7.2 Form Validation (BURKT4)
+		-- Implement form validatio with Regex
+	
+	- Task 9.3 Even more OO (HUBER3)
+		-- Change "$self" to "$this" to be correct ;-)
+		
+	- Task 10.2 Database Setup (BURKT4)
+		-- continue to fill in data
+	- Task 10.3 PHP Integration (BURKT4)
+		-- close db connections 
+		-- add images to articles (for testing, user-a.png)
+		
+	- Task 10.4 Administrator (NELLS1)
+		-- has to be implemented 
+	
+	- Task 12.2 AJAX (HUBER3)
+		-- either the menu or a product search could be implemented with AJAX principles
+	- Task 12.3 HTML Templates (NELLS1)
+		-- "about us" and "contact" sites
+	- Task 12.4 Regular Expressions (BURKT4)
+		-- will be implemented together with task 7.2 "form validation"
+
+>>> ToDo : Nice to have
+	
+	- Possibility to register for a user account (e.g. with e-mail validation, 2-factor-auth, etc.)
+	- Ability to change user's profile
+	- HTTP 404 page
+	
+-> Termine:
+	
+	Status-Call	I		:	Di 23.12.2015, 19:00 Uhr
+	Status-Call II		:	tbd
+	
+	Workshop I			: 	Fr 02.01.2015, 09:00 Uhr
+	Skype-Final-Session	: 	So 04.01.2015, 20:30 Uhr
+	
+	Abgabe SourceCode	: 	So 04.01.2015, 23:59 Uhr
+	Präsentation		: 	Mo 05.01.2015, 18:10 Uhr
+	
+------
+
 01.12.2014 nells1, burk4, huber3
 
  -> Discussion about Task 10, DB implementation and DB integration in PHP
