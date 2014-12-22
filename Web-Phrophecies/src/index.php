@@ -22,11 +22,11 @@ function __autoload($class_name) {
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="./css/layout.css" type="text/css" />
 <link rel="stylesheet" href="./css/format.css" type="text/css" />
-<script type="text/javascript" src="./includes/menu.js"></script>
+<script type="text/javascript" src="./resources/js/menu.js"></script>
 <?php
 require_once './includes/langController.php';
 include_once "./includes/functions.php";
-$menu = new menuController ( "./includes/menus.xml" );
+$menu = new menuController ( "./resources/xml/menus.xml" );
 
 ?>
 </head>

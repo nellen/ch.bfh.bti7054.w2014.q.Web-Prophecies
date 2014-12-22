@@ -1,12 +1,11 @@
 <?php
 
-// require_once './includes/langController.php';
 
 class menuController {
 	
-	const XSD_PATH = "./includes/menus.xsd";
+	const XSD_PATH = "./resources/xml/menus.xsd";
 	const LINK_STR = "./index.php?site=";
-	public $xmlDom;
+	private $xmlDom;
 	private $cssStyle;
 
 	
@@ -45,9 +44,9 @@ class menuController {
 						"is not a String ");
 			}
 			$this->cssStyle = $cssStyle;
-			$menuNode = self::getMenuNode($menuName);
+			$menuNode = $this->getMenuNode($menuName);
 			$htmlMenu = '<ul class="' . $this->cssStyle . '">' . "\n";
-			$htmlMenu .= self::getHtmlMenuContent($menuNode);
+			$htmlMenu .= $this->getHtmlMenuContent($menuNode);
 			$htmlMenu .= "</ul>";
 			echo $htmlMenu;
 		} catch (Exception $e) {
@@ -59,7 +58,7 @@ class menuController {
 	}
 	
 	private function getMenuNode($menuName){
-		$menus= $this->xmlDom->getElementsByTagName("menu");
+		$menus = $this->xmlDom->getElementsByTagName("menu");
 		// TODO what happens if the menu is not found??
 		foreach ($menus as $menu){
 			if($menu->getAttribute("menuName") == $menuName){
@@ -72,15 +71,15 @@ class menuController {
 		$htmlStr = "";
 		$menuItem = $menuNode->firstChild;
 		while($menuItem != NULL){
-			if(self::hasSubMenu($menuItem)){
-				$htmlStr .= self::createLink($menuItem, TRUE);
+			if($this->hasSubMenu($menuItem)){
+				$htmlStr .= $this->createLink($menuItem, TRUE);
 				$subMenuItem = $menuItem->getElementsByTagName("subMenu")->item(0);
-				$htmlStr .= self::getHtmlMenuContent($subMenuItem,TRUE);
+				$htmlStr .= $this->getHtmlMenuContent($subMenuItem,TRUE);
 				$htmlStr .= "</ul>\n</li>\n";
 			} else if($inSubMenu) {
-				$htmlStr .= self::createLink($menuItem);
+				$htmlStr .= $this->createLink($menuItem);
 			} else {
-				$htmlStr .= self::createLink($menuItem);
+				$htmlStr .= $this->createLink($menuItem);
 			}
 			$menuItem = $menuItem->nextSibling;
 		}
@@ -98,26 +97,26 @@ class menuController {
 	private function createLink($nodeToLink, $forOpeningSubMenu=FALSE){
 		if($forOpeningSubMenu && !($nodeToLink->firstChild->tagName == "category")){
 			$id = $nodeToLink->getElementsByTagName("subMenu")->item(0)->getAttribute("menuId");
-			return '<li><a href="' . self::LINK_STR . self::getNodeValue($nodeToLink, "siteName") .
+			return '<li><a href="' . self::LINK_STR . $this->getNodeValue($nodeToLink, "siteName") .
 			'" onmouseover="' . "openMenu('$id');" . '" onmouseout="' . "closeMenu('$id');" . '" onclick="' . "showMenu('$id');" . '">' . get_localization($nodeToLink->getAttribute("itemName")) . '</a>' . "\n" .
 			'<ul class="' . $this->cssStyle . '"id="' . $id . '"onmouseover="' . "openMenu('$id');" . '" onmouseout="' . "closeMenu('$id');" . '" onclick="' . "showMenu('$id');" . '">' . "\n";
 			
 		} else if($forOpeningSubMenu && ($nodeToLink->firstChild->tagName == "category")){
 			var_dump($nodeToLink->parentNode->tagName);
-			return '<li><a href="' . self::LINK_STR . self::getNodeValue($nodeToLink, "siteName") .
-			'&category=' . self::getNodeValue($nodeToLink, "category") .'" onmouseover="' . "openMenu();" . '" onmouseout="' . "closeMenu();" . '">' .
+			return '<li><a href="' . self::LINK_STR . $this->getNodeValue($nodeToLink, "siteName") .
+			'&category=' . $this->getNodeValue($nodeToLink, "category") .'" onmouseover="' . "openMenu();" . '" onmouseout="' . "closeMenu();" . '">' .
 			get_localization($nodeToLink->getAttribute("itemName")) . '</a>' . "\n" .
 			'<ul class="' . $this->cssStyle . '"id="dropdown">' . "\n";
 			
 		} else if ($nodeToLink->firstChild->tagName == "category"){
 			
-			return '<li><a href="' . self::LINK_STR . self::getNodeValue($nodeToLink, "siteName") .
-			'&category=' . self::getNodeValue($nodeToLink, "category") . '">' .
+			return '<li><a href="' . self::LINK_STR . $this->getNodeValue($nodeToLink, "siteName") .
+			'&category=' . $this->getNodeValue($nodeToLink, "category") . '">' .
 			get_localization($nodeToLink->getAttribute("itemName")) . '</a></li>' . "\n";
 			
 		} else {
 			
-			return '<li><a href="' . self::LINK_STR . self::getNodeValue($nodeToLink, "siteName") .
+			return '<li><a href="' . self::LINK_STR . $this->getNodeValue($nodeToLink, "siteName") .
 			'">' . get_localization($nodeToLink->getAttribute("itemName")) . '</a></li>' . "\n";
 			
 		}
@@ -128,22 +127,22 @@ class menuController {
 	}
 	
 	public function getBreadcrumb($site, $category=NULL){
-		$location = self::getLocation($site, $category);
+		$location = $this->getLocation($site, $category);
 		if ($site == 'article'){
 			$site = "shop";
-			$location = self::getLocation($site, $category);
+			$location = $this->getLocation($site, $category);
 		}
 		else if ($location == ''){
 			$site = "main";
-			$location = self::getLocation($site, $category);
+			$location = $this->getLocation($site, $category);
 		}
 		$node = $this->xmlDom->getElementById($location);
 		if($node->getAttribute("itemName") == "home"){
-			echo "<ul>" . self::createLink($node) . "</ul>";
+			echo "<ul>" . $this->createLink($node) . "</ul>";
 		} else {
 			$breadcrumb = "<ul>";
-			$breadcrumb .= self::createLink($this->xmlDom->getElementById("home"));
-			$breadcrumb .= self::createBreadcrumb($node);
+			$breadcrumb .= $this->createLink($this->xmlDom->getElementById("home"));
+			$breadcrumb .= $this->createBreadcrumb($node);
 			$breadcrumb .= "</ul>";
 			echo $breadcrumb;
 		}
@@ -151,10 +150,10 @@ class menuController {
 	
 	private function createBreadcrumb($node, $crumbs=""){
 		if($node->parentNode->tagName == "menu"){
-			return $crumbs = "<li> => </li>" . self::createLink($node) . $crumbs;
+			return $crumbs = "<li> => </li>" . $this->createLink($node) . $crumbs;
 		} else {
- 			$crumb = "<li> => </li>" . self::createLink($node) . $crumbs;
- 			return self::createBreadcrumb($node->parentNode->parentNode, $crumb);
+ 			$crumb = "<li> => </li>" . $this->createLink($node) . $crumbs;
+ 			return $this->createBreadcrumb($node->parentNode->parentNode, $crumb);
  		}
 	}
 	
@@ -165,7 +164,7 @@ class menuController {
 			if(isset($category) && $node->firstChild->nodeValue == $category){
 				$location = $node->getAttribute("itemName");
 			} else {
-				if (self::getNodeValue($node, "siteName") == $site && $node->firstChild->nodeName != "category"){
+				if ($this->getNodeValue($node, "siteName") == $site && $node->firstChild->nodeName != "category"){
 					$location = $node->getAttribute("itemName");
 				}
 			}
