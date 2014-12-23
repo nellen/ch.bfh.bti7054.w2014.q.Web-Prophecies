@@ -2,7 +2,7 @@
 echo "<h2>Welcome ";
 // if a user is logged in, show his user name
 if (isset($_SESSION["user"])) {
-	echo $_SESSION["user"] . "!";
+	echo $_SESSION["user"]->getUsername() . "!";
 }		
 echo "</h2>";
 
