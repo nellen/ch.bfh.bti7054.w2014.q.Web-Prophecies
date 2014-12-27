@@ -14,7 +14,7 @@ class VariantDB extends mysqli {
 	
 
 	function __construct() {
-		include "./DBInterface/dbConnectionInfo.php";
+		include ROOT . "DBInterface/dbConnectionInfo.php";
 		parent::__construct($host, $user, $pass);
 		parent::select_db($dbase);
 	}

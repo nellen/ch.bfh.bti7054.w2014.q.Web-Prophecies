@@ -88,6 +88,35 @@ class article {
 	
 		return $variantname;
 	}
+	
+	public function getSearchView(){
+		include_once ROOT . "includes/functions.php";
+		$lang = get_language();
+		require ROOT . "resources/".$lang.".php";
+		
+		$item = "<div class=\"article\" title='" . $this->getDescription() . "'>";
+		$item .= "<h2>". $this->getName() . "</h2>";
+		$item .= "<img src=\"./img/user-a.png\" width=\"50px\" height=\"50px\"/>";
+		$item .= "<p class=\"article-price\">".$priceLabel.": ". $this->getPrice() . " CHF</p>";
+		
+		$item .= "<form action=\"index.php?site=basket\" method=\"post\">";
+		$item .= "<input type=\"hidden\" name=\"artId\" value=\"". $this->getId(). "\" /input>";
+		$item .= "<select name =\"varId\" size=\"1\">";
+		$item .= "<option value=\"0\">normal</option>";
+		foreach ( $this->getVariants() as $variant ) {
+			$item .= "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . $variant->getPrice() . " CHF</option>";
+		}
+		
+		$item .= "</select>";
+		//$item .= "<p id=\"searchDescription\">". $this->getDescription() . "</p>";
+		$item .= "<br/>";
+		$item .= "<input class=\"article-button\" type=\"submit\" value=\"$basketButtonLabel\"/>";
+		$item .= "</form>";
+		
+		$item .= "</div>";
+		
+		return $item;
+	}
 }
 
 

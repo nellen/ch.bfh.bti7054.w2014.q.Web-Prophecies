@@ -1,4 +1,5 @@
 <?php
+include_once("config.php");
 $time = time () + 60 * 60 * 24 * 30; // expires in 30 days
 if (isset ( $_POST ["lang"] )) {
 	setcookie ( "lang", $_POST ["lang"], $time );
@@ -8,7 +9,7 @@ if (isset ( $_POST ["lang"] )) {
 }
 session_start (); // create or recover session,
 function __autoload($class_name) {
-	require_once("./includes/".$class_name.".inc.php");
+	require_once(ROOT . "includes/".$class_name.".inc.php");
 }
 
 ?>
@@ -23,6 +24,7 @@ function __autoload($class_name) {
 <link rel="stylesheet" href="./css/layout.css" type="text/css" />
 <link rel="stylesheet" href="./css/format.css" type="text/css" />
 <script type="text/javascript" src="./resources/js/menu.js"></script>
+<script type="text/javascript" src="./resources/js/productSearch.js"></script>
 <?php
 require_once './includes/langController.php';
 include_once "./includes/functions.php";

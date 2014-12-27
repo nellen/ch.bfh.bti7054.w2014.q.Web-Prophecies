@@ -21,9 +21,20 @@ class ArticleDB extends mysqli {
 		$statement->close();
 		return $res;
 	}
+	
+	public function getArticleByKeyword($keyword, $lang) {
+		$keyword = $keyword . "%";
+		$query = "Select A.*, ATR.TranslatedName, ATR.TranslatedDescription from article As A left join articletranslation As ATR on A.Article_ID = ATR.Article_ID and ATR.Language_ID = ? where ATR.TranslatedName like ? ";
+		$statement = $this->prepare($query);
+		$statement->bind_param("ss", $lang, $keyword);
+		$statement->execute();
+		$res = $statement->get_result();
+		$statement->close();
+		return $res;
+	}
 
 	function __construct() {
-		include "./DBInterface/dbConnectionInfo.php";
+		include ROOT . "DBInterface/dbConnectionInfo.php";
 		parent::__construct($host, $user, $pass);
 		parent::select_db($dbase);
 	}
