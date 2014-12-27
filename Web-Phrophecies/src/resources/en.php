@@ -31,5 +31,7 @@ $administration			= "Administration";
 $online					= "is online";
 $offline				= "is offline or in away state";
 
+/** search */
+$searchfor				= "Product search";
 ?>
 					
