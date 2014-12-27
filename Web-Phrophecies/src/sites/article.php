@@ -1,6 +1,6 @@
 <?php 
 
-$lang = get_language ();
+$lang = get_language();
 include_once ("./includes/items.php");
 $item = getItem ( $_GET["artId"], $lang );
 

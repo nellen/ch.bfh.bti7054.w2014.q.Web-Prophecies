@@ -1,4 +1,5 @@
 <?php
+
 	if (isset ( $_GET ["category"] )) {
 		echo ($_GET ["category"]);
 			$lang = get_language ();
@@ -31,8 +32,11 @@
 				echo "</div>";
 			}
 	} else {
-		echo "Shop";
-		echo "<img src=\"./img/under_construction.png\" width=\"100%\" height=\"100%\" />";
+		$lang = get_language();
+		echo "<form name=\"productSearch\">";
+		echo $searchfor . ": <input type=\"text\" id=\"productKeyword\" onkeyup=\"getProductHint(this.value);\" />";
+		echo "<div id=\"searchResult\"></div>";
+		
 	}
 	
 ?>
