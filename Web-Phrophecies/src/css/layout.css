@@ -83,7 +83,6 @@ body {
 	height: inherit;
 	min-width: 150px;
 	padding: 5px;
-	border: 1px solid red;
 	display: table-cell;
 }
 
@@ -93,7 +92,6 @@ body {
 	height: inherit;
 	background-color: #F5EEDE;
 	color: #755A42;
-	border: 1px solid red;
 	/**background-color: #AC8B6F;
 	color: #473423;*/
 	display: table-cell;
@@ -104,7 +102,6 @@ body {
 	padding-right: 10px;
 	background-color: #FBF9F3;
 	margin: 0 auto;
-	border: 1px solid red;
 	display: table-cell;
 	width: 100%;
 }
@@ -180,4 +177,20 @@ hr {
 
 .address-form-table-label{
 	align: left;
+}
+
+#searchResult {
+	width: auto;
+}
+
+#searchResult .article {
+	width: 150px;
+	float: left;
+	margin: 5px;
+	border: 1px solid #473423;
+	
+}
+
+#searchDescription {
+	display: none;
 }
