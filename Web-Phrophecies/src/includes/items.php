@@ -17,10 +17,17 @@ function getCategoryItems ($categoryName, $lang) {
 		if($item->TranslatedName != null){
 			$itemName = $item->TranslatedName;
 		}
+		
 		$itemDescription = $item->ArticleDescription;
 		if($item->TranslatedName != null){
 			$itemDescription = $item->TranslatedDescription;
 		}
+		
+		$itemImage = "No_image_available.png";
+		if($item->ArticleImage != null){
+			$itemImage = $item->ArticleImage;
+		}
+		$itemImage = "./img/" . $itemImage;
 		
 		$varRes =$variantDB->getAllVariantsFromArticle($item->Article_ID, $lang);
 		$variants = array();
@@ -40,7 +47,7 @@ function getCategoryItems ($categoryName, $lang) {
 		
 		}
 		
-		$items[] = new article($item->Article_ID,$itemName, $item->ArticlePrice, $itemDescription, "./img/user-a.png",$variants);
+		$items[] = new article($item->Article_ID,$itemName, $item->ArticlePrice, $itemDescription, $itemImage,$variants);
 		
 	}
 	
@@ -60,7 +67,11 @@ function getItem ($artId, $lang) {
 	if($itemRes->TranslatedName != null){
 		$itemDescription = $itemRes->TranslatedDescription;
 	}
-	
+	$itemImage = "No_image_available.png";
+	if($itemRes->ArticleImage != null){
+		$itemImage = $itemRes->ArticleImage;
+	}
+	$itemImage = "./img/" . $itemImage;
 	$varRes =$variantDB->getAllVariantsFromArticle($itemRes->Article_ID, $lang);
 	$variants = array();
 	while($variant = $varRes->fetch_object()){
@@ -79,7 +90,7 @@ function getItem ($artId, $lang) {
 	
 	}
 
-	$item = new article($itemRes->Article_ID,$itemName, $itemRes->ArticlePrice, $itemDescription, "./img/user-a.png",$variants);
+	$item = new article($itemRes->Article_ID,$itemName, $itemRes->ArticlePrice, $itemDescription, $itemImage,$variants);
 	return $item;
 	
 }
@@ -98,7 +109,12 @@ function getItemByKeyword ($keyword, $lang) {
 		if($itemRes->TranslatedName != null){
 			$itemDescription = $itemRes->TranslatedDescription;
 		}
-	
+		
+		$itemImage = "No_image_available.png";
+		if($itemRes->ArticleImage != null){
+			$itemImage = $itemRes->ArticleImage;
+		}
+		$itemImage = "./img/" . $itemImage;
 		$varRes =$variantDB->getAllVariantsFromArticle($itemRes->Article_ID, $lang);
 		$variants = array();
 		while($variant = $varRes->fetch_object()){
@@ -115,7 +131,7 @@ function getItemByKeyword ($keyword, $lang) {
 			$variants[] = new articleVariant($variant->Variation_ID, $variantName, $variant->VariationPrice);
 		}
 	
-		$items[] = new article($itemRes->Article_ID,$itemName, $itemRes->ArticlePrice, $itemDescription, "./img/user-a.png",$variants);
+		$items[] = new article($itemRes->Article_ID,$itemName, $itemRes->ArticlePrice, $itemDescription, $itemImage,$variants);
 	}
 	return $items;
 }

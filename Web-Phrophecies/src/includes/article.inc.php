@@ -116,6 +116,64 @@ class article {
 		
 		return $item;
 	}
+	
+	public function getArticleView($lang){
+		
+		require ROOT . "resources/".$lang.".php";
+		
+		$itemHtml = "<div class=\"article\">";
+		$itemHtml .= "<h1>". $this->getName() . "</h1>";
+		$itemHtml .= "<img src=\"" . $this->getImage() . "\" width=\"100px\" height=\"100px\"/>";
+		$itemHtml .= "<p class=\"article-price\">".$priceLabel.": ". $this->getPrice() . " CHF</p>";
+		
+		$itemHtml .= "<form action=\"index.php?site=basket\" method=\"post\">";
+		$itemHtml .= "<input type=\"hidden\" name=\"artId\" value=\"". $this->getId(). "\" /input>";
+		$itemHtml .= "<select name =\"varId\" size=\"1\">";
+		$itemHtml .= "<option value=\"0\">normal</option>";
+		foreach ( $this->getVariants() as $variant ) {
+			$itemHtml .=  "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . $variant->getPrice() . " CHF</option>";
+		}
+		
+		$itemHtml .=  "</select>";
+		$itemHtml .=  "<p>". $this->getDescription() . "</p>";
+		$itemHtml .=  "<br/>";
+		$itemHtml .=  "<input class=\"article-button\" type=\"submit\" value=\"$basketButtonLabel\"/>";
+		$itemHtml .=  "</form>";
+		
+		$itemHtml .=  "</div>";
+		return $itemHtml;
+	}
+	
+	public function getListView($lang){
+		require ROOT . "resources/".$lang.".php";
+		$itemHtml = "<div class=\"list-article\">";
+		$itemHtml .= "<img src=\"" . $this->getImage() . "\" width=\"100px\" height=\"100px\"/>";
+		$itemHtml .=  "<h2><a href=\"./croissant.html\">" . $this->getName() . "</a></h2>";
+		$itemHtml .=  "<p class=\"list-article-price\">$priceLabel: " . $this->getPrice() . " CHF</p>";
+				$itemHtml .=  "<p class=\"list-article-variation\">$variationsLabel:";
+				$firstElement = TRUE;
+		foreach ( $this ->getVariants() as $variant ) {
+				if ($firstElement) {
+				$firstElement = FALSE;
+				} else {
+				$itemHtml .=  ",";
+		}
+				$itemHtml .=  " " . $variant->getName() . " + " . $variant->getPrice() . " CHF";
+		}
+		
+		$itemHtml .=  "</p>";
+		$itemHtml .=  "<p>" . $this->getDescription() . "</p>";
+		$itemHtml .=  "<form action=\"index.php\" method=\"get\">";
+		$itemHtml .=  "<input type=\"hidden\" name=\"site\" value=\"article\" /input>";
+		$itemHtml .= "<input type=\"hidden\" name=\"lang\" value=\"". $lang. "\" /input>";
+		$itemHtml .= "<input type=\"hidden\" name=\"artId\" value=\"". $this->getId(). "\" /input>";
+		$itemHtml .= "<input class=\"list-article-button\" type=\"submit\" value=\"$basketButtonLabel\"/>";
+		$itemHtml .= "</form>";
+		$itemHtml .= "</div>";
+		
+		return $itemHtml;
+		
+	}
 }
 
 
