@@ -181,6 +181,7 @@ hr {
 
 #searchResult {
 	width: auto;
+	margin: 5px -5px;
 }
 
 #searchResult .article {
@@ -189,6 +190,30 @@ hr {
 	margin: 5px;
 	border: 1px solid #473423;
 	
+}
+
+#searchResult .article h2 {
+	margin-top: auto;
+	margin-bottom: 5px;
+}
+
+#searchResult .article img {
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+}
+
+#searchResult select{
+	margin: 5px 0px;
+	width: 100%;
+}
+
+#searchResult .article-button {
+	float: none;
+	display: block;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #searchDescription {

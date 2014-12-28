@@ -96,7 +96,7 @@ class article {
 		
 		$item = "<div class=\"article\" title='" . $this->getDescription() . "'>";
 		$item .= "<h2>". $this->getName() . "</h2>";
-		$item .= "<img src=\"./img/user-a.png\" width=\"50px\" height=\"50px\"/>";
+		$item .= "<img src=\"./img/user-a.png\"/>";
 		$item .= "<p class=\"article-price\">".$priceLabel.": ". $this->getPrice() . " CHF</p>";
 		
 		$item .= "<form action=\"index.php?site=basket\" method=\"post\">";
@@ -108,7 +108,6 @@ class article {
 		}
 		
 		$item .= "</select>";
-		//$item .= "<p id=\"searchDescription\">". $this->getDescription() . "</p>";
 		$item .= "<br/>";
 		$item .= "<input class=\"article-button\" type=\"submit\" value=\"$basketButtonLabel\"/>";
 		$item .= "</form>";
