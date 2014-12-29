@@ -1,38 +1,61 @@
 <?php 
 
+include_once  ROOT . "includes/customers.php";
+
 $lang = get_language ();
+
+$firstname = '';
+$lastname = '';
+$zip ='';
+$city = '';
+$address1 = '';
+$address2 = '';
+$email = '';
+
+if (isset($_SESSION ["user"])){
+	$customer = getCustomer($_SESSION ["user"]->getCostumerId());
+	$firstname = $customer->getFirstname();
+	$lastname = $customer->getLastname();
+	$zip = $customer->getBillingAddress()->getZip();
+	$city = $customer->getBillingAddress()->getCity();
+	$address1 = $customer->getBillingAddress()->getAddress1();
+	$address2 = $customer->getBillingAddress()->getAddress2();
+	$email = $customer->getEmail();
+	
+}
+
 
 echo "<form name=\"billingForm\" action=\"index.php?site=confirm&lang=".$lang."\" onsubmit=\"return validateForm();\" method=\"post\">";
 echo "<table class=\"address-form-table\">";
 echo 	"<tr>";
 echo 		"<td class=\"address-form-table-label\">Firstname:</td>";
 echo 		"<td>";
-echo 			"<input class=\"address-form-field\" type=\"text\" name=\"firstname\"  /input>";
+echo 			"<input class=\"address-form-field\" type=\"text\" name=\"firstname\" value=\"$firstname\"  /input>";
 echo		"</td>";
 echo 	"</tr>";
 echo 	"<tr>";
 echo		"<td class=\"address-form-table-label\">Lastname:</td>";
 echo 		"<td>";
-echo 			"<input class=\"address-form-field\" type=\"text\" name=\"lastname\"  /input>";
+echo 			"<input class=\"address-form-field\" type=\"text\" name=\"lastname\"  value=\"$lastname\" /input>";
 echo 		"</td>";
 echo 	"</tr>";
 echo 	"<tr>";
 echo 		"<td class=\"address-form-table-label\">City \ Zip Code:</td>";
 echo 		"<td>";
-echo 			"<input class=\"address-form-field-zip\" type=\"text\" name=\"zip\"  /input>";
-echo 			"<input class=\"address-form-field-city\" type=\"text\" name=\"city\"  /input>";
+echo 			"<input class=\"address-form-field-zip\" type=\"text\" name=\"zip\"  value=\"$zip\" /input>";
+echo 			"<input class=\"address-form-field-city\" type=\"text\" name=\"city\" value=\"$city\"  /input>";
 echo 		"</td>";
 echo 	"</tr>";
 echo 	"<tr>";
 echo 		"<td class=\"address-form-table-label\">Street:</td>";
 echo 		"<td>";
-echo 			"<input class=\"address-form-field\" type=\"text\" name=\"street\"  /input>";
+echo 			"<input class=\"address-form-field\" type=\"text\" name=\"street\" value=\"$address1\"  /input>";
 echo 		"</td>";
 echo 	"</tr>";
 echo 	"<tr>";
 echo 		"<td class=\"address-form-table-label\">E-mail:</td>";
 echo 		"<td>";
-echo 			"<input class=\"address-form-field\" type=\"text\" name=\"email\"  /input>";
+echo 			"<input class=\"address-form-field\" type=\"text\" name=\"email\" value=\"$email\"  /input>";
 echo 		"</td>";
 echo 	"</tr>";
 echo "</table>";
