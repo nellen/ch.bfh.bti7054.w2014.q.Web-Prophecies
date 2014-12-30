@@ -1,0 +1,35 @@
+Task 5.1: External PHP Files
+
+> Export the PHP code for the menu and the list of products to external files. Use the menu file to build up the navigation menu in all pages of your Web site. 
+Modify the PHP code such that the menu item of the actual page gets a different appearance (background color, bold face, no link) or completely disappears in 
+the navigation menu. If you decide to change the appearance, do it properly with CSS (e.g. using the class attribute). Try to export other elements of your 
+pages into external files. The goal is to have a small set of very slim HTML files, which define only the page frames (using div-elements) while retrieving 
+their contents from external PHP files.
+
+
+------
+
+Task 5.2: Multi-Page PHP File
+
+> Give each page of your site an ID and try to merge all your pages into a single PHP page (similar to the multi-page example discussed in class). 
+The resulting main page may still be linked to external files (e.g. one external file per page).
+
+
+------
+
+Task 5.3: Multiple Languages
+
+> Make your page at least bilingual, e.g. German/French. For this, move all text snippets of your pages into one or several two-dimensional arrays, 
+where one dimension makes the distinction between the supported languages.
+
+> Examples:
+$menuItems[0]["de"]="Seite 1" $menuItems[0]["fr"]="Page 1"
+$menuItems[1]["de"]="Seite 2" $menuItems[1]["fr"]="Page 2"
+$menuItems[2]["de"]="Seite 3" $menuItems[2]["fr"]="Page 3"
+$generalText[0]["de"]="Willkommen!"
+$generalText[0]["fr"]="Bonjour!"
+$generalText[1]["de"]="Produkteliste:"
+$generalText[1]["fr"]="Liste de produits:"
+
+> Somewhere on your page, define respective links to select the language. When selected, use the HTTP GET request to pass respective language IDs, e.g. "de" or "fr", 
+to the page. Store the received value in a global variable and use it to access the right array entries.	
