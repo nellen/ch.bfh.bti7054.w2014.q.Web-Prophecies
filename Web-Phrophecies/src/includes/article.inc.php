@@ -148,7 +148,7 @@ class article {
 		require ROOT . "resources/".$lang.".php";
 		$itemHtml = "<div class=\"list-article\">";
 		$itemHtml .= "<img src=\"" . $this->getImage() . "\" width=\"100px\" height=\"100px\"/>";
-		$itemHtml .=  "<h2><a href=\"./croissant.html\">" . $this->getName() . "</a></h2>";
+		$itemHtml .=  "<h2>" . $this->getName() . "</h2>";
 		$itemHtml .=  "<p class=\"list-article-price\">$priceLabel: " . $this->getPrice() . " CHF</p>";
 				$itemHtml .=  "<p class=\"list-article-variation\">$variationsLabel:";
 				$firstElement = TRUE;

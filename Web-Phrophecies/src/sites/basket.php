@@ -18,7 +18,14 @@ if (!isset($_SESSION['basket'])){
 else{
 	
 	if(isset($_POST['recordKey'])){
-		$_SESSION['basket']->removeItem($_POST['recordKey'], $_POST['newQuantity']);
+		
+		if(isset($_POST['change'])){
+			$_SESSION['basket']->changeItem($_POST['recordKey'], $_POST['newQuantity']);
+		}
+		else if (isset($_POST['delete'])){
+			$_SESSION['basket']->removeItem($_POST['recordKey']);			
+		}
+
 	}
 	$_SESSION['basket']->display($lang);
  	

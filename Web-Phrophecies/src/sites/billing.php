@@ -14,13 +14,18 @@ $email = '';
 
 if (isset($_SESSION ["user"])){
 	$customer = getCustomer($_SESSION ["user"]->getCostumerId());
-	$firstname = $customer->getFirstname();
-	$lastname = $customer->getLastname();
-	$zip = $customer->getShippingAddress()->getZip();
-	$city = $customer->getShippingAddress()->getCity();
-	$address1 = $customer->getShippingAddress()->getAddress1();
-	$address2 = $customer->getShippingAddress()->getAddress2();
-	$email = $customer->getEmail();
+	if ($customer != null){
+		$firstname = $customer->getFirstname();
+		$lastname = $customer->getLastname();
+		if ($customer->getShippingAddress() != null){
+			$zip = $customer->getShippingAddress()->getZip();
+			$city = $customer->getShippingAddress()->getCity();
+			$address1 = $customer->getShippingAddress()->getAddress1();
+			$address2 = $customer->getShippingAddress()->getAddress2();
+		}
+		$email = $customer->getEmail();
+	}
+
 	
 }
 
