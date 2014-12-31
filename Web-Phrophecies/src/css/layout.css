@@ -219,3 +219,14 @@ hr {
 #searchDescription {
 	display: none;
 }
+
+.basket-table{
+	
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 95%;
+	padding: 10px;
+	
+}
+

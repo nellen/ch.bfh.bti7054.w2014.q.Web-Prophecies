@@ -31,22 +31,28 @@ class basket {
 			);
 		}
 	}
-	public function removeItem($recordKey, $newQuantity) {
+	public function changeItem($recordKey, $newQuantity) {
 		if (is_numeric ( $newQuantity )) {
 			if ($newQuantity > 0) {
 				$this->items [$recordKey] ['quantity'] = $newQuantity;
 			} else {
 				unset ( $this->items [$recordKey] );
-				$this->items [] = array_values ( $this->items );
+				$this->items = array_values ( $this->items );
 			}
 		}
 	}
+	
+	public function removeItem($recordKey) {
+		unset ( $this->items [$recordKey] );
+		$this->items = array_values ( $this->items );
+	}
+	
 	public function display($lang) {
 		$total = 0;
 		
 		include ROOT . "resources/$lang.php";
 		
-		echo "<table border=\"1px\">";
+		echo "<table  class=\"basket-table\">";
 		echo "<thead>";
 		echo "<tr>";
 		echo "<th>$basketDescriptionLabel</th>";
@@ -72,7 +78,9 @@ class basket {
 			echo "<input type=\"text\" name=\"newQuantity\" maxlength=\"4\" size=\"5\"  value=\"" . $_basketitem ['quantity'] . "\" />";
 			echo "</td>";
 			echo "<td>" . $pricePerUnit * $_basketitem ['quantity'] . "</td>";
-			echo "<td> <input class=\"basket-update-button\" type=\"submit\" value=\"Update\"/></td>";
+			echo "<td> <input class=\"basket-update-button\" name=\"change\" type=\"submit\" value=\"$basketUpdateLabel\"/></td>";
+			echo "<td> <input class=\"basket-delete-button\" name=\"delete\" type=\"submit\" value=\"$basketDeleteLabel\"/></td>";
+				
 			echo "</tr>";
 			echo "</form>";
 			
@@ -101,7 +109,7 @@ class basket {
 		
 		include ROOT . "resources/$lang.php";
 		
-		echo "<table border=\"1px\">";
+		echo "<table class=\"basket-table\">";
 		echo "<thead>";
 		echo "<tr>";
 		echo "<th>$basketDescriptionLabel</th>";

@@ -42,6 +42,8 @@ $basketVariationLabel =  "Variation";
 $basketPricePerUnitLabel =  "Price per Unit";
 $basketPriceLabel =  "Price";
 $basketTotalLabel = "Total";
+$basketUpdateLabel =  "Update";
+$basketDeleteLabel =  "Delete";
 
 /** billing.php  & confirm.php*/
 
