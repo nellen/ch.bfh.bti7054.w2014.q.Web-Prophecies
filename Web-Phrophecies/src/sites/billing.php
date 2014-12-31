@@ -99,7 +99,7 @@ echo "</form>";
 		//check zipcode
 		element = document.forms["billingForm"]["zip"];
 		value = element.value;
-	    if (value.length != 4 && !isNaN(value)) {
+	    if (!value.match("^[0-9]{4}$")) {
 	    	element.style.backgroundColor = "red";
 	    	errorCounter++;
 	    }
@@ -110,9 +110,7 @@ echo "</form>";
 		//check email
 		element = document.forms["billingForm"]["email"];
 		value = element.value;
-	    var atpos = value.indexOf("@");
-	    var dotpos = value.lastIndexOf(".");
-	    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=value.length) {
+	    if (!value.match("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")) {
 	    	element.style.backgroundColor = "red";
 	    	errorCounter++;
 	    }
