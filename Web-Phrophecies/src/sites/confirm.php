@@ -16,13 +16,22 @@ require_once './includes/mail.php';
 
 echo "<h3>Shipping Information:</h3>";
 
-echo "Firstname: ". $_POST["firstname"]. "<br/>";
-echo "Lastname: ". $_POST["lastname"]. "<br/>";
-echo "City: ". $_POST["city"]. "<br/>";
-echo "Zip Code: ". $_POST["zip"]. "<br/>";
-echo "Street: ". $_POST["street"]. "<br/>";
-echo "E-mail: ". $_POST["email"]. "<br/>";
+
+echo "$AddressFirstnameLabel: ". $_POST["firstname"]. "<br/>";
+echo "$AddressLastnameLabel: ". $_POST["lastname"]. "<br/>";
+echo "$AddressCityLabel: ". $_POST["city"]. "<br/>";
+echo "$AddressZIPLabel: ". $_POST["zip"]. "<br/>";
+echo "$AddressAddress1Label: ". $_POST["address1"]. "<br/>";
+echo "$AddressAddress2Label: ". $_POST["address2"]. "<br/>";
+echo "$AddressEmailLabel: ". $_POST["email"]. "<br/>";
 echo "<br />";
+
+if (!isset($_SESSION['basket'])){
+	echo "Shopping basket is empty";
+}
+else{
+	$_SESSION['basket']->displaySummary($lang);
+}
 
 ?>
 

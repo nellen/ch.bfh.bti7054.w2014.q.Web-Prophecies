@@ -1,6 +1,6 @@
 <?php
 
-include_once ("./includes/items.php");
+
 $lang = get_language ();
 
 if (isset($_POST['artId']) && isset($_POST['varId'])){

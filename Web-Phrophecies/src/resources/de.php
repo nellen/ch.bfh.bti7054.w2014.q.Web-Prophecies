@@ -34,5 +34,24 @@ $offline				= "ist offline oder nicht anwesend";
 /** search */
 $searchfor				= "Produktsuche";
 
+/** basket.inc.php */
+
+$basketQuantityLabel = "Menge";
+$basketDescriptionLabel = "Beschreibung";
+$basketVariationLabel =  "Variation";
+$basketPricePerUnitLabel =  "Einzelpreis";
+$basketPriceLabel =  "Preis";
+$basketTotalLabel = "Total";
+
+/** billing.php  & confirm.php*/
+
+$AddressFirstnameLabel = "Vorname";
+$AddressLastnameLabel = "Name";
+$AddressCityLabel = "Stadt";
+$AddressZIPLabel = "PLZ";
+$AddressAddress1Label = "Adresse 1";
+$AddressAddress2Label = "Adresse 2";
+$AddressEmailLabel = "E-mail";
+
 ?>
 					
