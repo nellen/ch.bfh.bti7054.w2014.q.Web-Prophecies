@@ -32,6 +32,25 @@ class ArticleDB extends mysqli {
 		$statement->close();
 		return $res;
 	}
+	
+	public function getAllArticles() {
+		$query = "SELECT Article_ID, ArticleName, ArticleDescription, ArticlePrice, ArticleImage FROM article";
+		$statement = $this->prepare($query);
+		$statement->execute();
+		$res = $statement->get_result();
+		$statement->close();
+		return $res;
+	}
+	
+	public function addArticle($articleName, $articleDescription, $articlePrice, $articleImage) {
+		$query = "INSERT INTO article (ArticleName, ArticleDescription, ArticlePrice, ArticleImage) VALUES (?,?,?,?)";
+		$statement = $this->prepare($query);
+		$statement->bind_param("ssss", $articleName, $articleDescription, $articlePrice, $articleImage);
+		$statement->execute();
+		$res = $statement->get_result();
+		$statement->close();
+		return $res;
+	}
 
 	function __construct() {
 		include ROOT . "DBInterface/dbConnectionInfo.php";

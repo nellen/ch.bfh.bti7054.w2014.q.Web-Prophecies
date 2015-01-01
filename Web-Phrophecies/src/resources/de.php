@@ -55,5 +55,15 @@ $AddressAddress1Label = "Adresse 1";
 $AddressAddress2Label = "Adresse 2";
 $AddressEmailLabel = "E-mail";
 
+/** administration.php */
+$adminArticleId = "ID";
+$adminArticleName = "Name";
+$adminArticleDescription = $basketDescriptionLabel;
+$adminArticlePrice = $basketPricePerUnitLabel;
+$adminArticleImage = "Artikelbild";
+$adminArticleUpdateLabel = $basketUpdateLabel;
+$adminArticleDeleteLabel = $basketDeleteLabel;
+$adminArticleAddLabel = "Hinzufügen";
+
 ?>
 					
