@@ -45,7 +45,7 @@ $basketTotalLabel = "Total";
 $basketUpdateLabel =  "&Auml;ndern";
 $basketDeleteLabel =  "Löschen";
 
-/** billing.php  & confirm.php*/
+/** billing.php, confirm.php & processOrder.php */
 
 $AddressFirstnameLabel = "Vorname";
 $AddressLastnameLabel = "Name";
@@ -62,6 +62,8 @@ $confirmConfirmationQuestion2 = "Klicken Sie OK, damit Ihre Bestellung ausgefüh
 $confirmConfirmationQuestion3 = "Klicken Sie ABBRECHEN/CANCEL um zum Warenkorb zurück zu kehren.";
 $confirmStatusFieldOK = "Bestellung per E-mail versendet. Danke für Ihre Bestellung!";
 $confirmStatusFieldCancel = "Bestellung abgebrochen. Sie werden zum Warenkorb weitergeleitet.";
+
+$processMailSubject = "Ihre Bestellbestätigung - The Breakfast Company";
 
 /** administration.php */
 $adminArticleId = "ID";

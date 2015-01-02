@@ -45,7 +45,7 @@ $basketTotalLabel = "Total";
 $basketUpdateLabel =  "Update";
 $basketDeleteLabel =  "Delete";
 
-/** billing.php  & confirm.php*/
+/** billing.php, confirm.php & processOrder.php */
 
 $AddressFirstnameLabel = "Firstname";
 $AddressLastnameLabel = "Lastname";
@@ -62,6 +62,8 @@ $confirmConfirmationQuestion2 =	"Your order will only be processed when you clic
 $confirmConfirmationQuestion3 = "To return to basket press CANCEL";
 $confirmStatusFieldOK = "Order sent by email. Thank you for your order!";
 $confirmStatusFieldCancel = "Checkout aborted. You will be redirected to your basket.";
+
+$processMailSubject = "Your order confirmation - The Breakfast Company";
 
 /** administration.php */
 $adminArticleId = "ID";

@@ -26,6 +26,7 @@ $email		= $_POST["email"];
 
 if (!isset($_SESSION['basket'])){
 	echo $confirmEmptyBasket;
+	header ("Location: " . ROOT . "index.php?site=shop");
 }
 else{
 	$basketContent = $_SESSION['basket']->displaySummary($lang);

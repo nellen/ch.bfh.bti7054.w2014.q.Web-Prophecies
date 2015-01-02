@@ -37,7 +37,7 @@ $address2	= $_POST["address2"];
 $email		= $_POST["email"];
 $basketContent = $_POST["basketcontent"];
 
-$Subject = 'Your order confirmation - The Breakfast Company';
+$Subject = $processMailSubject;
 $MessageHTML = generateMailHTMLBody($lang);
 $MessageTEXT = generateMailPlainBody($lang);
 
@@ -63,6 +63,7 @@ function generateMailHTMLBody($lang) {
   				<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
 				</head>
 				<body>";
+	$mailbody .= "<p>Thank you for your order!<br /></p>";
 	$mailbody .= "<h3>$confirmShippingInfo</h3>";
 	$mailbody .= "<p>";
 	$mailbody .= "$AddressFirstnameLabel: " . $_POST["firstname"] . "<br />";
@@ -76,6 +77,7 @@ function generateMailHTMLBody($lang) {
 	$mailbody .= "</p>";
 	$mailbody .= "<h3>$basket</h3>";
 	$mailbody .= "<p>" . $_POST["basketcontent"] ."</p>";
+	$mailbody .= "<p>Kind Regards,<br />The BreakFast Company</p>";
 	$mailbody .= "</body></html>";
 	
 	return $mailbody;
