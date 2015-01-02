@@ -25,12 +25,11 @@ if (isset($_SESSION ["user"])){
 		}
 		$email = $customer->getEmail();
 	}
-
 	
 }
 
 
-echo "<form name=\"billingForm\" action=\"index.php?site=confirm&lang=".$lang."\" onsubmit=\"return validateForm();\" method=\"post\">";
+echo "<form name=\"billingForm\" action=\"index.php?site=confirm\" onsubmit=\"return validateForm();\" method=\"post\">";
 echo "<table class=\"address-form-table\">";
 echo 	"<tr>";
 echo 		"<td class=\"address-form-table-label\">$AddressFirstnameLabel: </td>";
