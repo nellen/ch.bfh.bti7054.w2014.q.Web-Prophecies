@@ -25,7 +25,6 @@ if (isset($_SESSION ["user"])){
 		}
 		$email = $customer->getEmail();
 	}
-
 	
 }
 
