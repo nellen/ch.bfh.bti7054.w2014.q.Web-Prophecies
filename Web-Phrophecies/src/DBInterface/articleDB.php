@@ -47,11 +47,28 @@ class ArticleDB extends mysqli {
 		$statement = $this->prepare($query);
 		$statement->bind_param("ssss", $articleName, $articleDescription, $articlePrice, $articleImage);
 		$statement->execute();
-		$res = $statement->get_result();
 		$statement->close();
+		$res = $this->query("Select * from article order by Article_ID desc LIMIT 1");
 		return $res;
 	}
 
+	
+	public function updateArticle($artID,$articleName, $articleDescription, $articlePrice, $articleImage) {
+		$query = "Update article set ArticleName = ?, ArticleDescription = ?, ArticlePrice = ?, ArticleImage = ? where Article_ID = ?";
+		$statement = $this->prepare($query);
+		$statement->bind_param("sssss", $articleName, $articleDescription, $articlePrice, $articleImage, $artID);
+		$statement->execute();
+		$statement->close();
+	}
+
+	public function deleteArticle($artID) {
+		$query = "delete  from article where Article_ID = ?";
+		$statement = $this->prepare($query);
+		$statement->bind_param("s", $artID);
+		$statement->execute();
+		$statement->close();
+	}
+	
 	function __construct() {
 		include ROOT . "DBInterface/dbConnectionInfo.php";
 		parent::__construct($host, $user, $pass);

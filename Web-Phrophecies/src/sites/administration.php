@@ -22,6 +22,37 @@ function showArticleAdministration() {
 	require_once ROOT . "includes/items.php";
 	require_once ROOT . "DBInterface/articleDB.php";
 	
+	if(isset($_POST['action'])){
+		if($_POST['action'] == 'add'){
+	
+				
+			$articleDB = new ArticleDB();
+			$res = $articleDB->addArticle($_POST['artSystemName'], $_POST['artSystemDescription'], $_POST['artPrice'], $_POST['artImagePath']);
+			$resID = $res->fetch_object();
+			$artID = $resID->Article_ID;
+			$action = 'update';
+		}
+		else if($_POST['action'] == 'update'){
+	
+			$articleDB = new ArticleDB();
+			$artID = $_POST['artId'];
+			$res = $articleDB->updateArticle($_POST['artId'], $_POST['artSystemName'], $_POST['artSystemDescription'], $_POST['artPrice'], $_POST['artImagePath']);
+			$action = 'update';
+				
+		}
+		else if($_POST['action'] == 'delete'){
+		
+			$articleDB = new ArticleDB();
+			$artID = $_POST['artId'];
+			$res = $articleDB->deleteArticle($_POST['artId']);
+			$action = 'update';
+		
+		}
+	
+	
+	}
+	
+	
 	$lang = $_COOKIE ["lang"];
 	include ROOT . "resources/$lang.php";
 	
@@ -54,8 +85,7 @@ function showArticleAdministration() {
 		
 		$article = new article ( $articleId, $articleName, $articlePrice, $articleDescription, $articleImage, null );
 		
-		echo "<form action=\"index.php?" . $_SERVER ['QUERY_STRING'] . "\" method=\"post\">";
-		echo "<input type=\"hidden\" name=\"articleId\" value=\"" . $articleId . "\" /input>";
+
 		echo "<tr>";
 		echo "<td>" . $article->getId () . "</td>";
 		echo "<td>" . $article->getName () . "</td>";
@@ -63,25 +93,34 @@ function showArticleAdministration() {
 		echo "<td>" . $article->getPrice () . "</td>";
 		echo "<td>" . $article->getImage () . "</td>";
 		
-		echo "<td> <input class=\"basket-update-button\" name=\"change\" type=\"submit\" value=\"$adminArticleUpdateLabel\"/></td>";
+		echo "<form action=\"index.php?site=changeArticle\" method=\"get\">";
+		echo "<input type=\"hidden\" name=\"artId\" value=\"" . $article->getId () . "\" /input>";
+		echo "<input type=\"hidden\" name=\"site\" value=\"changeArticle\" /input>";
+		echo "<input type=\"hidden\" name=\"origin\" value=\"update\" /input>";
+		echo "<td> <input class=\"basket-update-button\" type=\"submit\" value=\"$adminArticleUpdateLabel\"/></td>";
+		echo "</form>";
+		echo "<form action=\"index.php?" . $_SERVER ['QUERY_STRING'] . "\" method=\"post\">";
+		echo "<input type=\"hidden\" name=\"artId\" value=\"" . $article->getId () . "\" /input>";
+		echo "<input type=\"hidden\" name=\"action\" value=\"delete\" /input>";
 		echo "<td> <input class=\"basket-delete-button\" name=\"delete\" type=\"submit\" value=\"$adminArticleDeleteLabel\"/></td>";
-		
+		echo "</form>";		
 		echo "</tr>";
 		echo "</form>";
 	}
 	
 	// last line to add a new article
 	
-	echo "<form action=\"index.php?" . $_SERVER ['QUERY_STRING'] . "\" method=\"post\">";
+	echo "<form action=\"index.php?site=changeArticle\" method=\"get\">";
 	// echo "<input type=\"hidden\" name=\"articleId\" value=\"" . $articleId . "\" /input>";
 	echo "<tr>";
-	echo "<td>&nbsp;</td>";
-	echo "<td> <input type=\"text\" name=\"newArtName\" maxlength=\"45\" value=\"$adminArticleName\" </td>";
-	echo "<td> <input type=\"text\" name=\"newArtDescription\" maxlength=\"256\" value=\"$adminArticleDescription\" </td>";
-	echo "<td> <input type=\"text\" name=\"newArtPrice\" maxlength=\"20\" value=\"0.00\" </td>";
-	echo "<td> <input type=\"text\" name=\"newArtImage\" maxlength=\"150\" value=\"/path/to/image\" </td>";
-	
-	echo "<td> <input class=\"basket-update-button\" name=\"add\" type=\"submit\" value=\"$adminArticleAddLabel\"/></td>";
+	echo "<td></td>";
+	echo "<td></td>";
+	echo "<td></td>";
+	echo "<td></td>";
+	echo "<td></td>";
+	echo "<input type=\"hidden\" name=\"site\" value=\"changeArticle\" /input>";
+	echo "<input type=\"hidden\" name=\"origin\" value=\"add\" /input>";
+	echo "<td> <input class=\"basket-update-button\"  type=\"submit\" value=\"$adminArticleAddLabel\"/></td>";
 	
 	echo "</tr>";
 	echo "</form>";
