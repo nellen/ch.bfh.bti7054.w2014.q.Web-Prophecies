@@ -1,6 +1,9 @@
 <?php
-function SendMail( $ToEmail, $MessageHTML, $MessageTEXT ) {
-  require '../resources/phpmailer/PHPMailerAutoload.php'; // Add the path as appropriate
+
+include_once("../../config.php");
+
+function SendMail( $ToEmail, $Subject, $MessageHTML, $MessageTEXT ) {
+  require ROOT . 'resources/phpmailer/PHPMailerAutoload.php'; // Add the path as appropriate
   $Mail = new PHPMailer();
   $Mail->IsSMTP(); // Use SMTP
   $Mail->Host        = "smtpauth.bluewin.ch"; // Sets SMTP server
@@ -13,7 +16,7 @@ function SendMail( $ToEmail, $MessageHTML, $MessageTEXT ) {
   $Mail->Priority    = 1; // Highest priority - Email priority (1 = High, 3 = Normal, 5 = low)
   $Mail->CharSet     = 'UTF-8';
   $Mail->Encoding    = '8bit';
-  $Mail->Subject     = 'Test Email Using Bluewin PHP';
+  $Mail->Subject     = $Subject;
   $Mail->ContentType = 'text/html; charset=utf-8\r\n';
   $Mail->From        = 'xampp@bluewin.ch';
   $Mail->FromName    = 'The Breakfast Company - XAMPP';
@@ -34,22 +37,5 @@ function SendMail( $ToEmail, $MessageHTML, $MessageTEXT ) {
     return TRUE;
   }
 }
-
-/** temporary information
-$ToEmail = 'sebastian@nellen.it';
-$ToName  = 'Sebastian Nellen';
-$MessageHTML = '<html>Mail Test for webp@nellen.it - Web Prophecies GROUP';
-$MessageTEXT = '<plain>Mail Test for webp@nellen.it - Web Prophecies GROUP';
-
-
-$Send = SendMail( $ToEmail, $MessageHTML, $MessageTEXT );
-if ( $Send ) {
-  echo "<h2> Sent OK</h2>";
-}
-else {
-  echo "<h2> ERROR</h2>";
-}
-die;
-*/
 
 ?>
