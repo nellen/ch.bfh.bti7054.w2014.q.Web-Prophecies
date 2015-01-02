@@ -110,44 +110,45 @@ class basket {
 		
 		include ROOT . "resources/$lang.php";
 		
-		echo "<table class=\"basket-table\">";
-		echo "<thead>";
-		echo "<tr>";
-		echo "<th>$basketDescriptionLabel</th>";
-		echo "<th>$basketVariationLabel</th>";
-		echo "<th class='price'>$basketPricePerUnitLabel</th>";
-		echo "<th>$basketQuantityLabel</th>";
-		echo "<th class='price'>$basketPriceLabel</th>";
+		$output = "<table class=\"basket-table\">";
+		$output .= "<thead>";
+		$output .= "<tr>";
+		$output .= "<th>$basketDescriptionLabel</th>";
+		$output .= "<th>$basketVariationLabel</th>";
+		$output .= "<th class='price'>$basketPricePerUnitLabel</th>";
+		$output .= "<th>$basketQuantityLabel</th>";
+		$output .= "<th class='price'>$basketPriceLabel</th>";
 		
-		echo "</tr>";
-		echo "</thead>";
-		echo "<tbody>";
+		$output .= "</tr>";
+		$output .= "</thead>";
+		$output .= "<tbody>";
 		
 		foreach ( $this->items as $key => $_basketitem ) {
 			$item = getItem ( $_basketitem ["artId"], $lang );
 			$pricePerUnit = $item->getPriceWithVariant ( $_basketitem ["varId"] );
-			echo "<tr>";
-			echo "<td>" . $item->getName () . "</td>";
-			echo "<td>" . $item->getVariantName ( $_basketitem ["varId"] ) . "</td>";
-			echo "<td class='price'>" . formatPrice($pricePerUnit) . "</td>";
-			echo "<td>". $_basketitem ['quantity'] . "</td>";
-			echo "<td class='price'>" . formatPrice($pricePerUnit * $_basketitem ['quantity'])  . "</td>";
-			echo "</tr>";
+			$output .=  "<tr>";
+			$output .=  "<td>" . $item->getName () . "</td>";
+			$output .=  "<td>" . $item->getVariantName ( $_basketitem ["varId"] ) . "</td>";
+			$output .=  "<td class='price'>" . formatPrice($pricePerUnit) . "</td>";
+			$output .=  "<td>". $_basketitem ['quantity'] . "</td>";
+			$output .=  "<td class='price'>" . formatPrice($pricePerUnit * $_basketitem ['quantity'])  . "</td>";
+			$output .=  "</tr>";
 			
 			$total += $pricePerUnit * $_basketitem ['quantity'];
 		}
 		
-		echo "<tr>";
-		echo "<td>$basketTotalLabel</td>";
-		echo "<td></td>";
-		echo "<td></td>";
-		echo "<td></td>";
-		echo "<td class='price'>" . formatPrice($total) . "</td>";
-		echo "</tr>";
+		$output .=  "<tr>";
+		$output .=  "<td>$basketTotalLabel</td>";
+		$output .=  "<td></td>";
+		$output .=  "<td></td>";
+		$output .=  "<td></td>";
+		$output .=  "<td class='price'>" . formatPrice($total) . "</td>";
+		$output .=  "</tr>";
 		
-		echo "</tbody>";
-		echo "</table>";
+		$output .=  "</tbody>";
+		$output .=  "</table>";
 		
+		return $output;
 	}
 }
 
