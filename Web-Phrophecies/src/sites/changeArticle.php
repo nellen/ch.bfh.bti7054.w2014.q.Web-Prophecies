@@ -3,6 +3,8 @@
 require_once ROOT . "DBInterface/articleDB.php";
 require_once ROOT . "DBInterface/categoryDB.php";
 require_once ROOT . "DBInterface/categoryArticleDB.php";
+require_once ROOT . "DBInterface/languageDB.php";
+require_once ROOT . "DBInterface/articleTranslationDB.php";
 
 // User has to be logged in and have the correct role to use administration
 if (isset ( $_SESSION ["user"] )) {
@@ -55,6 +57,7 @@ function showArticleAdministration() {
 
 	$categoryDB = new CategoryDB();
 	$categoryArticleDB = new CategoryArticleDB();
+	$languageDB = new LanguageDB();
 	
 	$sqlcategoryArticleRes = $categoryArticleDB->getAllCategorysByArticle($artID);
 	
@@ -64,37 +67,40 @@ function showArticleAdministration() {
 		$selectedCats[] = $catArt->categoryId;
 	}
 	
+	$sqllanguageRes = $languageDB->getAllLanguages();
+	
 	echo "<form action=\"index.php?site=administration\" method=\"post\">";
 	echo "<input type=\"hidden\" name=\"artId\" value=\"$artID\" /input>";
-	echo "<table>";
+	echo "<table style=\"width:95%\">";
 	echo 	"<tr>";
-	echo 		"<td >Articlename: </td>";
+	echo 		"<td >Systemname: </td>";
 	echo 		"<td>";
 	echo 			"<input  type=\"text\" name=\"artSystemName\" value=\"$artSystemName\"  /input>";
 	echo		"</td>";
 	echo 	"</tr>";
-	echo "<table>";
 	echo 	"<tr>";
-	echo 		"<td >Articledescription: </td>";
+	echo 		"<td >Systemdescription: </td>";
 	echo 		"<td>";
 	echo 			"<input  type=\"text\" name=\"artSystemDescription\" value=\"$artSystemDescription\"  /input>";
 	echo		"</td>";
 	echo 	"</tr>";
 	echo 	"<tr>";
-	echo 	"<td >Articleprice: </td>";
+	echo 	"<td >Price: </td>";
 	echo 		"<td>";
 	echo 			"<input  type=\"text\" name=\"artPrice\" value=\"$artPrice\"  /input>";
 	echo		"</td>";
 	echo 	"</tr>";
 	echo 	"<tr>";
-	echo 	"<td >Articleimage: </td>";
+	echo 	"<td >Imagepath: </td>";
 	echo 		"<td>";
 	echo 			"<input  type=\"text\" name=\"artImagePath\" value=\"$artImagePath\"  /input>";
 	echo		"</td>";
 	echo 	"</tr>";
+	echo 	"<tr>";
 	echo 	"<td >Article Category: </td>";
 	echo 		"<td>";
-	echo 			"<select name=\"category[]\" size=\"3\" multiple=\"multiple\" tabindex=\"1\">";
+	echo 			"<select name=\"category[]\" size=\"4\" multiple=\"multiple\" tabindex=\"1\">";
+	
 	while($cat = $sqlcategoryRes->fetch_object()){
     	echo   "<option value=\"$cat->Category_ID\" ";
     	foreach ($selectedCats as $selected){
@@ -109,9 +115,12 @@ function showArticleAdministration() {
 	}
 
 
-    echo "</select>";
+    echo 			"</select>";
 	echo		"</td>";
 	echo 	"</tr>";
+		
+	printLanguagePart($sqllanguageRes, $artID);
+	
 	echo "</table>";
 	echo "<input type=\"hidden\" name=\"action\" value=\"$action\" /input>";
 	echo "<input class=\"basket-update-button\"  type=\"submit\" value=\"Save\"/>";
@@ -121,6 +130,43 @@ function showArticleAdministration() {
 
 
 
+}
+
+function printLanguagePart($sqllanguageRes, $artID){
+	
+	$articleTranslationDB = new ArticleTranslationDB();
+	
+	echo 	"<tr>";
+	echo 	"<td >Translations: </td>";
+	echo 	"</tr>";
+	
+	while($language = $sqllanguageRes->fetch_object()){
+		
+		$translatedName = '';
+		$translatedDescription = '';
+		$sqlTransRes = $articleTranslationDB->getArticletranslation($artID, $language->Language_ID);
+		while($trans = $sqlTransRes->fetch_object()){
+			$translatedName = $trans->TranslatedName;
+			$translatedDescription = $trans->TranslatedDescription;
+		}
+		echo 	"<tr></tr>";
+		echo 	"<tr>";
+		echo 		"<td >$language->EnglishName: </td>";
+		echo 	"</tr>";
+		echo 	"<tr>";
+				echo 		"<td >Translated Name: </td>";
+						echo 		"<td>";
+						echo 			"<input  type=\"text\" name=\"" . $language->Language_ID . "translatedName\" value=\"$translatedName\"  /input>";
+						echo		"</td>";
+						echo 	"</tr>";
+						echo 	"<tr>";
+						echo 		"<td >Translated Description: </td>";
+		echo 		"<td>";
+		echo 			"<input  type=\"text\" name=\"" . $language->Language_ID . "translatedDescription\" value=\"$translatedDescription\"  /input>";
+		echo		"</td>";
+			echo 	"</tr>";
+		}
+	
 }
 
 

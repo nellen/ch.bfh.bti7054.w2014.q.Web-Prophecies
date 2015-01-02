@@ -21,6 +21,8 @@ function showArticleAdministration() {
 	
 	require_once ROOT . "includes/items.php";
 	require_once ROOT . "DBInterface/articleDB.php";
+	require_once ROOT . "DBInterface/languageDB.php";
+	require_once ROOT . "DBInterface/articleTranslationDB.php";
 	
 	if(isset($_POST['action'])){
 		if($_POST['action'] == 'add'){
@@ -30,24 +32,18 @@ function showArticleAdministration() {
 			$res = $articleDB->addArticle($_POST['artSystemName'], $_POST['artSystemDescription'], $_POST['artPrice'], $_POST['artImagePath']);
 			$resID = $res->fetch_object();
 			$artID = $resID->Article_ID;
-			if(isset($_POST['category'])){
-				saveCategory($artID, $_POST['category']);
-			}
-			else{
-				saveCategory($artID, null);
-			}
+
+			saveCategory($artID);
+			saveLanguages($artID);
 		}
 		else if($_POST['action'] == 'update'){
 	
 			$articleDB = new ArticleDB();
 			$artID = $_POST['artId'];
 			$res = $articleDB->updateArticle($_POST['artId'], $_POST['artSystemName'], $_POST['artSystemDescription'], $_POST['artPrice'], $_POST['artImagePath']);
-			if(isset($_POST['category'])){
-				saveCategory($artID, $_POST['category']);
-			}
-			else{
-				saveCategory($artID, null);
-			}
+			
+			saveCategory($artID);
+			saveLanguages($artID);
 				
 		}
 		else if($_POST['action'] == 'delete'){
@@ -139,16 +135,41 @@ function showArticleAdministration() {
 	echo "</table>";
 }
 
-function saveCategory($artID, $categorys){
+function saveCategory($artID){
 	require_once ROOT . "DBInterface/categoryArticleDB.php";
 	
 	$categoryArticleDB = new CategoryArticleDB();
 	$categoryArticleDB->deleteAllCategorysByArticle($artID);
-	if($categorys != null){
-		foreach ($categorys as $catID){
+	if(isset($_POST['category'])){
+		foreach ($_POST['category'] as $catID){
 			$categoryArticleDB->insertCategoryArticle($artID, $catID);
 		}
 	}
+}
+
+function saveLanguages($artID){
+	require_once ROOT . "DBInterface/languageDB.php";
+	require_once ROOT . "DBInterface/articleTranslationDB.php";
+	
+	$languageDB = new LanguageDB();
+	$articleTranslationDB = new ArticleTranslationDB();
+	
+	$sqllanguageRes = $languageDB->getAllLanguages();
+	
+	$articleTranslationDB->deleteAllTranslationsByArticle($artID);
+	
+	while($language = $sqllanguageRes->fetch_object()){
+		echo $language->Language_ID . "translatedName";
+		echo $language->Language_ID . "translatedDescription";
+		if(isset($_POST[ $language->Language_ID . "translatedName"]) && isset($_POST[ $language->Language_ID . "translatedDescription"])){
+			$translatedName = $_POST[ $language->Language_ID . "translatedName"];
+			$translatedDescription = $_POST[ $language->Language_ID . "translatedDescription"];
+			$articleTranslationDB->insertCategoryArticle($artID, $language->Language_ID, $translatedName, $translatedDescription);
+			
+		}
+		
+	}
+	
 }
 
 ?>
