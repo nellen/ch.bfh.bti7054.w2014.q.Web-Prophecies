@@ -42,7 +42,7 @@ $basketVariationLabel =  "Variation";
 $basketPricePerUnitLabel =  "Einzelpreis";
 $basketPriceLabel =  "Preis";
 $basketTotalLabel = "Total";
-$basketUpdateLabel =  "Ändern";
+$basketUpdateLabel =  "&Auml;ndern";
 $basketDeleteLabel =  "Löschen";
 
 /** billing.php  & confirm.php*/
@@ -55,6 +55,14 @@ $AddressAddress1Label = "Adresse 1";
 $AddressAddress2Label = "Adresse 2";
 $AddressEmailLabel = "E-mail";
 
+$confirmShippingInfo = "Versandinformationen";
+$confirmEmptyBasket = "Ihr Warenkorb ist leer.";
+$confirmConfirmationQuestion1 = "Haben Sie die Information über Ihre Bestellung kontrolliert?"; 
+$confirmConfirmationQuestion2 = "Klicken Sie OK, damit Ihre Bestellung ausgeführt wird.";
+$confirmConfirmationQuestion3 = "Klicken Sie ABBRECHEN/CANCEL um zum Warenkorb zurück zu kehren.";
+$confirmStatusFieldOK = "Bestellung per E-mail versendet. Danke für Ihre Bestellung!";
+$confirmStatusFieldCancel = "Bestellung abgebrochen. Sie werden zum Warenkorb weitergeleitet.";
+
 /** administration.php */
 $adminArticleId = "ID";
 $adminArticleName = "Name";
@@ -63,7 +71,10 @@ $adminArticlePrice = $basketPricePerUnitLabel;
 $adminArticleImage = "Artikelbild";
 $adminArticleUpdateLabel = $basketUpdateLabel;
 $adminArticleDeleteLabel = $basketDeleteLabel;
-$adminArticleAddLabel = "Hinzufügen";
+$adminArticleAddLabel = "Hinzuf&uuml;gen";
+
+/** productSearch.php */
+$prodSearchProductNotFound = "Ihre Suche ergab keine Produkttreffer.";
 
 ?>
 					
