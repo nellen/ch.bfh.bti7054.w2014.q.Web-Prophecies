@@ -150,9 +150,9 @@ class menuController {
 	
 	private function createBreadcrumb($node, $crumbs=""){
 		if($node->parentNode->tagName == "menu"){
-			return $crumbs = "<li> => </li>" . $this->createLink($node) . $crumbs;
+			return $crumbs = "<li> &gt; </li>" . $this->createLink($node) . $crumbs;
 		} else {
- 			$crumb = "<li> => </li>" . $this->createLink($node) . $crumbs;
+ 			$crumb = "<li> &gt; </li>" . $this->createLink($node) . $crumbs;
  			return $this->createBreadcrumb($node->parentNode->parentNode, $crumb);
  		}
 	}
