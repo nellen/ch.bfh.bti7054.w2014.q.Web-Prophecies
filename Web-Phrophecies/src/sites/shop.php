@@ -12,6 +12,7 @@
 		$lang = get_language();
 		echo "<form name=\"productSearch\">";
 		echo $searchfor . ": <input type=\"text\" id=\"productKeyword\" onkeyup=\"getProductHint(this.value);\" />";
+		echo "</form>";
 		echo "<div id=\"searchResult\"></div>";
 		
 	}
