@@ -1,13 +1,12 @@
 <?php
 
 	if (isset ( $_GET ["category"] )) {
-		echo ($_GET ["category"]);
-			$lang = get_language ();
-			include_once ("./includes/items.php");
-			$items = getCategoryItems ( $_GET ["category"], $lang );
-			foreach ( $items as $item ) {
-				echo $item->getListView($lang);
-			}
+		$lang = get_language ();
+		include_once ("./includes/items.php");
+		$items = getCategoryItems ( $_GET ["category"], $lang );
+		foreach ( $items as $item ) {
+			echo $item->getListView($lang);
+		}
 	} else {
 		$lang = get_language();
 		echo "<form name=\"productSearch\">";

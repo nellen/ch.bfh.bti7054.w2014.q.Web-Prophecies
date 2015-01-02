@@ -128,8 +128,13 @@ body {
 
 }
 
-.basket-table thead{
+.basket-table thead {
 	
 text-align: left;
 	
+}
+
+.basket-table .price {
+	text-align: right;
+	padding-right: 5px;
 }

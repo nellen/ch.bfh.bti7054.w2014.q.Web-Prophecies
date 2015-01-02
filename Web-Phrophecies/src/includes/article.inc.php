@@ -97,14 +97,14 @@ class article {
 		$item = "<div class=\"article\" title='" . $this->getDescription() . "'>";
 		$item .= "<h2>". $this->getName() . "</h2>";
 		$item .= "<img src=\"./img/user-a.png\"/>";
-		$item .= "<p class=\"article-price\">".$priceLabel.": ". $this->getPrice() . " CHF</p>";
+		$item .= "<p class=\"article-price\">".$priceLabel.": ". formatPrice($this->getPrice()) . " CHF</p>";
 		
 		$item .= "<form action=\"index.php?site=basket\" method=\"post\">";
 		$item .= "<input type=\"hidden\" name=\"artId\" value=\"". $this->getId(). "\" /input>";
 		$item .= "<select name =\"varId\" size=\"1\">";
 		$item .= "<option value=\"0\">normal</option>";
 		foreach ( $this->getVariants() as $variant ) {
-			$item .= "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . $variant->getPrice() . " CHF</option>";
+			$item .= "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF</option>";
 		}
 		
 		$item .= "</select>";
@@ -124,14 +124,14 @@ class article {
 		$itemHtml = "<div class=\"article\">";
 		$itemHtml .= "<h1>". $this->getName() . "</h1>";
 		$itemHtml .= "<img src=\"" . $this->getImage() . "\" width=\"100px\" height=\"100px\"/>";
-		$itemHtml .= "<p class=\"article-price\">".$priceLabel.": ". $this->getPrice() . " CHF</p>";
+		$itemHtml .= "<p class=\"article-price\">".$priceLabel.": ". formatPrice($this->getPrice()) . " CHF</p>";
 		
 		$itemHtml .= "<form action=\"index.php?site=basket\" method=\"post\">";
 		$itemHtml .= "<input type=\"hidden\" name=\"artId\" value=\"". $this->getId(). "\" /input>";
 		$itemHtml .= "<select name =\"varId\" size=\"1\">";
 		$itemHtml .= "<option value=\"0\">normal</option>";
 		foreach ( $this->getVariants() as $variant ) {
-			$itemHtml .=  "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . $variant->getPrice() . " CHF</option>";
+			$itemHtml .=  "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF</option>";
 		}
 		
 		$itemHtml .=  "</select>";
@@ -149,7 +149,7 @@ class article {
 		$itemHtml = "<div class=\"list-article\">";
 		$itemHtml .= "<img src=\"" . $this->getImage() . "\" width=\"100px\" height=\"100px\"/>";
 		$itemHtml .=  "<h2>" . $this->getName() . "</h2>";
-		$itemHtml .=  "<p class=\"list-article-price\">$priceLabel: " . $this->getPrice() . " CHF</p>";
+		$itemHtml .=  "<p class=\"list-article-price\">$priceLabel: " . formatPrice($this->getPrice()) . " CHF</p>";
 				$itemHtml .=  "<p class=\"list-article-variation\">$variationsLabel:";
 				$firstElement = TRUE;
 		foreach ( $this ->getVariants() as $variant ) {
@@ -158,7 +158,7 @@ class article {
 				} else {
 				$itemHtml .=  ",";
 		}
-				$itemHtml .=  " " . $variant->getName() . " + " . $variant->getPrice() . " CHF";
+				$itemHtml .=  " " . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF";
 		}
 		
 		$itemHtml .=  "</p>";

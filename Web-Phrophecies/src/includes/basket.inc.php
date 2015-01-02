@@ -57,9 +57,9 @@ class basket {
 		echo "<tr>";
 		echo "<th>$basketDescriptionLabel</th>";
 		echo "<th>$basketVariationLabel</th>";
-		echo "<th>$basketPricePerUnitLabel</th>";
+		echo "<th class='price'>$basketPricePerUnitLabel</th>";
 		echo "<th>$basketQuantityLabel</th>";
-		echo "<th>$basketPriceLabel</th>";
+		echo "<th class='price'>$basketPriceLabel</th>";
 		echo "<th>&nbsp;</th>";
 		echo "</tr>";
 		echo "</thead>";
@@ -73,11 +73,11 @@ class basket {
 			echo "<tr>";
 			echo "<td>" . $item->getName () . "</td>";
 			echo "<td>" . $item->getVariantName ( $_basketitem ["varId"] ) . "</td>";
-			echo "<td>" . $pricePerUnit . "</td>";
+			echo "<td class='price'>" . formatPrice($pricePerUnit) . "</td>";
 			echo "<td>";
 			echo "<input type=\"text\" name=\"newQuantity\" maxlength=\"4\" size=\"5\"  value=\"" . $_basketitem ['quantity'] . "\" />";
 			echo "</td>";
-			echo "<td>" . $pricePerUnit * $_basketitem ['quantity'] . "</td>";
+			echo "<td class='price'>" . formatPrice($pricePerUnit * $_basketitem ['quantity']) . "</td>";
 			echo "<td> <input class=\"basket-update-button\" name=\"change\" type=\"submit\" value=\"$basketUpdateLabel\"/></td>";
 			echo "<td> <input class=\"basket-delete-button\" name=\"delete\" type=\"submit\" value=\"$basketDeleteLabel\"/></td>";
 				
@@ -92,7 +92,7 @@ class basket {
 		echo "<td></td>";
 		echo "<td></td>";
 		echo "<td></td>";
-		echo "<td>$total</td>";
+		echo "<td class='price'>" . formatPrice($total) . "</td>";
 		echo "<td></td>";
 		echo "</tr>";
 		
@@ -115,9 +115,9 @@ class basket {
 		echo "<tr>";
 		echo "<th>$basketDescriptionLabel</th>";
 		echo "<th>$basketVariationLabel</th>";
-		echo "<th>$basketPricePerUnitLabel</th>";
+		echo "<th class='price'>$basketPricePerUnitLabel</th>";
 		echo "<th>$basketQuantityLabel</th>";
-		echo "<th>$basketPriceLabel</th>";
+		echo "<th class='price'>$basketPriceLabel</th>";
 		
 		echo "</tr>";
 		echo "</thead>";
@@ -129,9 +129,9 @@ class basket {
 			echo "<tr>";
 			echo "<td>" . $item->getName () . "</td>";
 			echo "<td>" . $item->getVariantName ( $_basketitem ["varId"] ) . "</td>";
-			echo "<td>" . $pricePerUnit . "</td>";
+			echo "<td class='price'>" . formatPrice($pricePerUnit) . "</td>";
 			echo "<td>". $_basketitem ['quantity'] . "</td>";
-			echo "<td>" . $pricePerUnit * $_basketitem ['quantity'] . "</td>";
+			echo "<td class='price'>" . formatPrice($pricePerUnit * $_basketitem ['quantity'])  . "</td>";
 			echo "</tr>";
 			
 			$total += $pricePerUnit * $_basketitem ['quantity'];
@@ -142,7 +142,7 @@ class basket {
 		echo "<td></td>";
 		echo "<td></td>";
 		echo "<td></td>";
-		echo "<td>$total</td>";
+		echo "<td class='price'>" . formatPrice($total) . "</td>";
 		echo "</tr>";
 		
 		echo "</tbody>";
