@@ -1,8 +1,10 @@
 <?php
+
+// User has to be logged in and have the correct role to use administration
 if (isset ( $_SESSION ["user"] )) {
-	if ($_SESSION ["user"]->getRoleId () == 1) {
+	if ($_SESSION ["user"]->getRoleId () == 2) {
 		// User is logged in and has an admin role - continue!
-		articleAdministration ();
+		showArticleAdministration ();
 	} else {
 		// User is logged in, but without an admin role
 		echo "You aren't allowed to view this page.<br />";
@@ -15,7 +17,7 @@ if (isset ( $_SESSION ["user"] )) {
 }
 
 // This function is reached, when an admin is logged in
-function articleAdministration() {
+function showArticleAdministration() {
 	
 	require_once ROOT . "includes/items.php";
 	require_once ROOT . "DBInterface/articleDB.php";
