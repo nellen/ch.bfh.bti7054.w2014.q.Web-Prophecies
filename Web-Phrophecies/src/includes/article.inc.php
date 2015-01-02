@@ -150,18 +150,20 @@ class article {
 		$itemHtml .= "<img src=\"" . $this->getImage() . "\" width=\"100px\" height=\"100px\"/>";
 		$itemHtml .=  "<h2>" . $this->getName() . "</h2>";
 		$itemHtml .=  "<p class=\"list-article-price\">$priceLabel: " . formatPrice($this->getPrice()) . " CHF</p>";
-				$itemHtml .=  "<p class=\"list-article-variation\">$variationsLabel:";
-				$firstElement = TRUE;
-		foreach ( $this ->getVariants() as $variant ) {
+		if(count($this->getVariants()) > 0){
+			$itemHtml .=  "<p class=\"list-article-variation\">$variationsLabel:";
+			$firstElement = TRUE;
+			foreach ( $this ->getVariants() as $variant ) {
 				if ($firstElement) {
-				$firstElement = FALSE;
+					$firstElement = FALSE;
 				} else {
-				$itemHtml .=  ",";
-		}
-				$itemHtml .=  " " . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF";
+					$itemHtml .=  ",";
+				}
+			$itemHtml .=  " " . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF";
+			}
+			$itemHtml .=  "</p>";
 		}
 		
-		$itemHtml .=  "</p>";
 		$itemHtml .=  "<p>" . $this->getDescription() . "</p>";
 		$itemHtml .=  "<form action=\"index.php\" method=\"get\">";
 		$itemHtml .=  "<input type=\"hidden\" name=\"site\" value=\"article\" /input>";

@@ -33,12 +33,6 @@
 					<siteName>shop</siteName>
 					<enabled>1</enabled>
 				</menuItem>
-				<menuItem itemName="specials">
-					<category>specials</category>
-					<text>Specials</text>
-					<siteName>shop</siteName>
-					<enabled>1</enabled>
-				</menuItem>
 			</subMenu>
 		</menuItem>
 		
@@ -65,21 +59,6 @@
 				<menuItem itemName="basket">
 					<text>Basket</text>
 					<siteName>basket</siteName>
-					<enabled>1</enabled>
-				</menuItem>
-				<menuItem itemName="userprofile">
-					<text>Userprofile</text>
-					<siteName>userprofile</siteName>
-					<enabled>1</enabled>
-				</menuItem>
-				<menuItem itemName="filler">
-					<text>Filler</text>
-					<siteName>filler</siteName>
-					<enabled>1</enabled>
-				</menuItem>
-				<menuItem itemName="checkout">
-					<text>Checkout</text>
-					<siteName>checkout</siteName>
 					<enabled>1</enabled>
 				</menuItem>
 				<menuItem itemName="administration">

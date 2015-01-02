@@ -138,8 +138,9 @@ hr {
 	overflow: auto;
 }
 
-.list-article img {
+.list-article img, .article img {
 	float: left;
+	margin-right: 10px;
 }
 
 .list-article h2 {
