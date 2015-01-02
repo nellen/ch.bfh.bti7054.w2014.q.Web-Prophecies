@@ -1,6 +1,8 @@
 <?php 
 
 require_once ROOT . "DBInterface/articleDB.php";
+require_once ROOT . "DBInterface/categoryDB.php";
+require_once ROOT . "DBInterface/categoryArticleDB.php";
 
 // User has to be logged in and have the correct role to use administration
 if (isset ( $_SESSION ["user"] )) {
@@ -51,8 +53,16 @@ function showArticleAdministration() {
 			$action = 'add';
 	}
 
+	$categoryDB = new CategoryDB();
+	$categoryArticleDB = new CategoryArticleDB();
 	
+	$sqlcategoryArticleRes = $categoryArticleDB->getAllCategorysByArticle($artID);
 	
+	$sqlcategoryRes = $categoryDB->getAllCategorys();
+	$selectedCats = array();
+ 	while($catArt = $sqlcategoryArticleRes->fetch_object()){
+		$selectedCats[] = $catArt->categoryId;
+	}
 	
 	echo "<form action=\"index.php?site=administration\" method=\"post\">";
 	echo "<input type=\"hidden\" name=\"artId\" value=\"$artID\" /input>";
@@ -80,6 +90,26 @@ function showArticleAdministration() {
 	echo 	"<td >Articleimage: </td>";
 	echo 		"<td>";
 	echo 			"<input  type=\"text\" name=\"artImagePath\" value=\"$artImagePath\"  /input>";
+	echo		"</td>";
+	echo 	"</tr>";
+	echo 	"<td >Article Category: </td>";
+	echo 		"<td>";
+	echo 			"<select name=\"category[]\" size=\"3\" multiple=\"multiple\" tabindex=\"1\">";
+	while($cat = $sqlcategoryRes->fetch_object()){
+    	echo   "<option value=\"$cat->Category_ID\" ";
+    	foreach ($selectedCats as $selected){
+    		if ($selected == $cat->Category_ID){
+    			echo "selected=\"selected\" ";
+    			break;
+    		}
+    	}
+    	
+    	
+    	echo 	">$cat->CategoryName</option>";
+	}
+
+
+    echo "</select>";
 	echo		"</td>";
 	echo 	"</tr>";
 	echo "</table>";

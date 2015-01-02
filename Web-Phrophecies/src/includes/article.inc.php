@@ -123,7 +123,7 @@ class article {
 		
 		$itemHtml = "<div class=\"article\">";
 		$itemHtml .= "<h1>". $this->getName() . "</h1>";
-		$itemHtml .= "<img src=\"" . $this->getImage() . "/>";
+		$itemHtml .= "<img src=\"" . $this->getImage() . "\"/>";
 		$itemHtml .= "<p class=\"article-price\">".$priceLabel.": ". formatPrice($this->getPrice()) . " CHF</p>";
 		
 		$itemHtml .= "<form action=\"index.php?site=basket\" method=\"post\">";

@@ -30,14 +30,24 @@ function showArticleAdministration() {
 			$res = $articleDB->addArticle($_POST['artSystemName'], $_POST['artSystemDescription'], $_POST['artPrice'], $_POST['artImagePath']);
 			$resID = $res->fetch_object();
 			$artID = $resID->Article_ID;
-			$action = 'update';
+			if(isset($_POST['category'])){
+				saveCategory($artID, $_POST['category']);
+			}
+			else{
+				saveCategory($artID, null);
+			}
 		}
 		else if($_POST['action'] == 'update'){
 	
 			$articleDB = new ArticleDB();
 			$artID = $_POST['artId'];
 			$res = $articleDB->updateArticle($_POST['artId'], $_POST['artSystemName'], $_POST['artSystemDescription'], $_POST['artPrice'], $_POST['artImagePath']);
-			$action = 'update';
+			if(isset($_POST['category'])){
+				saveCategory($artID, $_POST['category']);
+			}
+			else{
+				saveCategory($artID, null);
+			}
 				
 		}
 		else if($_POST['action'] == 'delete'){
@@ -127,6 +137,18 @@ function showArticleAdministration() {
 	
 	echo "</tbody>";
 	echo "</table>";
+}
+
+function saveCategory($artID, $categorys){
+	require_once ROOT . "DBInterface/categoryArticleDB.php";
+	
+	$categoryArticleDB = new CategoryArticleDB();
+	$categoryArticleDB->deleteAllCategorysByArticle($artID);
+	if($categorys != null){
+		foreach ($categorys as $catID){
+			$categoryArticleDB->insertCategoryArticle($artID, $catID);
+		}
+	}
 }
 
 ?>
