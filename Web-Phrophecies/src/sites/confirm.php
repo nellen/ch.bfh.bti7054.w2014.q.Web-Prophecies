@@ -22,7 +22,7 @@ if (!isset($_SESSION['basket'])){
 	echo $confirmEmptyBasket;
 }
 else{
-	$_SESSION['basket']->displaySummary($lang);
+	echo $_SESSION['basket']->displaySummary($lang);
 }
 
 ?>

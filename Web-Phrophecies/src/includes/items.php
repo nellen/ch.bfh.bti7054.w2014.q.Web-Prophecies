@@ -95,6 +95,35 @@ function getItem ($artId, $lang) {
 	
 }
 	
+
+function getSysItem ($artId) {
+	$articleDB = new ArticleDB();
+	$variantDB = new VariantDB();
+	$res = $articleDB->getArticleById($artId, '');
+	$itemRes = $res->fetch_object();
+	$itemName = $itemRes->ArticleName;
+	$itemDescription = $itemRes->ArticleDescription;
+	$itemImage = "";
+	if($itemRes->ArticleImage != null){
+		$itemImage = $itemRes->ArticleImage;
+	}
+	$varRes =$variantDB->getAllVariantsFromArticle($itemRes->Article_ID, '');
+	$variants = array();
+	while($variant = $varRes->fetch_object()){
+	
+		$variantName = $variant->VariationName;
+		$variantDescription = $variant->VariationDescription;
+		
+		$variants[] = new articleVariant($variant->Variation_ID, $variantName, $variant->VariationPrice);
+	
+	}
+	
+	$item = new article($itemRes->Article_ID,$itemName, $itemRes->ArticlePrice, $itemDescription, $itemImage,$variants);
+	return $item;
+	
+}
+
+
 function getItemByKeyword ($keyword, $lang) {
 	$articleDB = new ArticleDB();
 	$variantDB = new VariantDB();
