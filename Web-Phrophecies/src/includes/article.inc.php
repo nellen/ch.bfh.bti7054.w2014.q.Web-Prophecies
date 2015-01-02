@@ -96,7 +96,7 @@ class article {
 		
 		$item = "<div class=\"article\" title='" . $this->getDescription() . "'>";
 		$item .= "<h2>". $this->getName() . "</h2>";
-		$item .= "<img src=\"./img/user-a.png\"/>";
+		$item .= "<img src=\"" . $this->getImage() . "\"/>";
 		$item .= "<p class=\"article-price\">".$priceLabel.": ". formatPrice($this->getPrice()) . " CHF</p>";
 		
 		$item .= "<form action=\"index.php?site=basket\" method=\"post\">";
@@ -123,7 +123,7 @@ class article {
 		
 		$itemHtml = "<div class=\"article\">";
 		$itemHtml .= "<h1>". $this->getName() . "</h1>";
-		$itemHtml .= "<img src=\"" . $this->getImage() . "\" width=\"100px\" height=\"100px\"/>";
+		$itemHtml .= "<img src=\"" . $this->getImage() . "/>";
 		$itemHtml .= "<p class=\"article-price\">".$priceLabel.": ". formatPrice($this->getPrice()) . " CHF</p>";
 		
 		$itemHtml .= "<form action=\"index.php?site=basket\" method=\"post\">";

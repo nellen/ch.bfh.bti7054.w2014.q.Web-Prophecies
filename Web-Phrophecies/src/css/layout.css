@@ -141,6 +141,8 @@ hr {
 .list-article img, .article img {
 	float: left;
 	margin-right: 10px;
+	height: 100px;
+	width: 100px;
 }
 
 .list-article h2 {
@@ -161,10 +163,6 @@ hr {
 	min-height: 120px;
 	padding: 10px;
 	overflow: auto;
-}
-
-.article img {
-	float: left;
 }
 
 .article h3 {
