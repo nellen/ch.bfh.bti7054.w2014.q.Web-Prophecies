@@ -55,6 +55,14 @@ $AddressAddress1Label = "Address 1";
 $AddressAddress2Label = "Address 2";
 $AddressEmailLabel = "E-mail";
 
+$confirmShippingInfo = "Shipping Information";
+$confirmEmptyBasket = "Shopping basket is empty.";
+$confirmConfirmationQuestion1 = "Did you verify information regarding your order? ";
+$confirmConfirmationQuestion2 =	"Your order will only be processed when you click OK."; 
+$confirmConfirmationQuestion3 = "To return to basket press CANCEL";
+$confirmStatusFieldOK = "Order sent by email. Thank you for your order!";
+$confirmStatusFieldCancel = "Checkout aborted. You will be redirected to your basket.";
+
 /** administration.php */
 $adminArticleId = "ID";
 $adminArticleName = "Name";
@@ -64,6 +72,9 @@ $adminArticleImage = "Article Image";
 $adminArticleUpdateLabel = $basketUpdateLabel;
 $adminArticleDeleteLabel = $basketDeleteLabel;
 $adminArticleAddLabel = "Add";
+
+/** productSearch.php */
+$prodSearchProductNotFound = "Your search did not match any products.";
 
 ?>
 					

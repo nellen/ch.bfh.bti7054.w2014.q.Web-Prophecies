@@ -3,7 +3,7 @@ require_once 'functions.php';
 
 $lang = get_language();
 
-require ('./resources/' . $lang . '.php');
+require ( ROOT . 'resources/' . $lang . '.php');
 
 function get_localization($key) {
 	$lang = get_language();
