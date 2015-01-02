@@ -2,6 +2,38 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+02.01.2015 nells1, burkt4, huber3
+
+ -> Discussion about given tasks and their status
+
+>>>>>>>> ToDo : Tasks <<<<<<<<
+
+	- Task 10.4 Administrator (BURKT4)
+		-- categories & translations
+	
+	- Task 6.4 Confirmation (NELLS1)
+		-- A confirmation should be sent by mail to the customer ( us in CC ) 
+	
+	- Contact form has to be finished. (NELLS1)
+	
+	- Layout Optimierungen (HUBER3)
+		
+->	Termine:
+	
+	Final Workshop		: 	So 04.01.2015, 09:30 Uhr
+
+	Abgabe SourceCode	: 	So 04.01.2015, 23:59 Uhr
+	Präsentation		: 	Mo 05.01.2015, 18:10 Uhr
+	
+	
+------
+
+23.12.2014 huber3, burkt4, nells1
+
+ -> Skype Status-Call
+
+------
+
 08.12.2014 nells1, burk4, huber3
 
  -> Discussion about given tasks and their status
@@ -52,7 +84,7 @@
 	
 -> Termine:
 	
-	Status-Call	I		:	Di 23.12.2015, 19:00 Uhr
+	Status-Call	I		:	Di 23.12.2014, 19:00 Uhr
 	Status-Call II		:	tbd
 	
 	Workshop I			: 	Fr 02.01.2015, 09:00 Uhr
