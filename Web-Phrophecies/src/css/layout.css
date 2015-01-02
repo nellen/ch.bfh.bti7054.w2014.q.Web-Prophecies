@@ -73,7 +73,7 @@ body {
 	background-color: #473423;
 	color: #fbf9f3;
 	min-width: 190px;
-	display: table-cell
+	display: table-cell;
 }
 
 #left-area {
@@ -228,5 +228,21 @@ hr {
 	width: 95%;
 	padding: 10px;
 	
+}
+
+.lang-img{
+	height:15px;
+	width:30px;
+	float:left;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 1px solid #F5EEDE;
+}
+
+#language-selector-flag-area{
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 83%;
 }
 

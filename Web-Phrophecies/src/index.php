@@ -49,21 +49,29 @@ $menu = new menuController ( "./resources/xml/menus.xml" );
 				</p>
 			</div>
 			<div id="language-selector">
-
-				<form action="<?php "index.php?site=" . get_site ()  ?>"
-					name="langSelector" method="post">
-					<div id="en" style="display: inline">
-						<input type="submit" name="lang" value="en" />
+				<div id="language-selector-flag-area">
+					<div id="en" style="display: inline">				
+						<form action="<?php "index.php?site=" . get_site ()  ?>" name="langSelector" method="post">
+							<input class="lang-img" name="img" type="image" src="./img/flag_en.png"/>		
+							<input type="hidden" name="lang" value="en" />
+						</form>
 					</div>
 
 					<div id="de" style="display: inline">
-						<input type="submit" name="lang" value="de" />
+						<form action="<?php "index.php?site=" . get_site ()  ?>" name="langSelector" method="post">
+							<input class="lang-img" name="img" type="image" src="./img/flag_de.png"/>		
+							<input type="hidden" name="lang" value="de" />
+						</form>
 					</div>
 
 					<div id="fr" style="display: inline">
-						<input type="submit" name="lang" value="fr" />
+						<form action="<?php "index.php?site=" . get_site ()  ?>" name="langSelector" method="post">
+							<input class="lang-img" name="img" type="image" src="./img/flag_fr.png"/>		
+							<input type="hidden" name="lang" value="fr" />
+						</form>
 					</div>
-				</form>
+				</div>
+
 			</div>
 		</div>
 		<div id="main-area">
