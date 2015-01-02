@@ -102,6 +102,7 @@ class basket {
 		echo "<form action=\"index.php\" method=\"get\">";
 		echo "<input type=\"hidden\" name=\"site\" value=\"billing\" /input>";
 		echo "<input class=\"list-article-button\" type=\"submit\" value=\"Checkout\"/>";
+		echo "<input class=\"list-article-button\" type=\"button\" onclick=\"location='index.php?site=shop'\" value=\"Back to Shop\"/>";
 		echo "</form>";
 	}
 	public function displaySummary($lang) {
