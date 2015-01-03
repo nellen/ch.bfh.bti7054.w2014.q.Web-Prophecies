@@ -245,3 +245,19 @@ hr {
 	width: 83%;
 }
 
+.changeArticleForm-title{
+	width: 300px;
+	
+}
+
+.changeArticleForm-description{
+	width: 450px;
+	height: 100px;
+}
+.changeArticleForm-imagePath{
+	width: 450px;
+}
+
+.changeArticleForm-price{
+	width: 50px;
+}
