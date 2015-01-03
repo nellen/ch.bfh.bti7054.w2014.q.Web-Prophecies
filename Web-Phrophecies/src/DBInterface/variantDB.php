@@ -12,6 +12,23 @@ class VariantDB extends mysqli {
 		return $res;
 	}
 	
+	public function getAllVariantIDsByArticle($artId) {
+		$query = "Select Variation_ID from variation  where Article_ID = ?";
+		$statement = $this->prepare($query);
+		$statement->bind_param("i", $artId);
+		$statement->execute();
+		$res = $statement->get_result();
+		$statement->close();
+		return $res;
+	}
+	
+	public function deleteAllVariantsByArticle($artID) {
+		$query = "delete  from variation where Article_ID = ?";
+		$statement = $this->prepare($query);
+		$statement->bind_param("i", $artID);
+		$statement->execute();
+		$statement->close();
+	}
 
 	function __construct() {
 		include ROOT . "DBInterface/dbConnectionInfo.php";

@@ -75,7 +75,7 @@ function showArticleAdministration() {
 	echo 	"<tr>";
 	echo 		"<td >Systemname: </td>";
 	echo 		"<td>";
-	echo 			"<input  type=\"text\" name=\"artSystemName\" value=\"$artSystemName\"  /input>";
+	echo 			"<input  type=\"text\" name=\"artSystemName\" maxlength=\"45\" value=\"$artSystemName\"  /input>";
 	echo		"</td>";
 	echo 	"</tr>";
 	echo 	"<tr>";
@@ -87,13 +87,13 @@ function showArticleAdministration() {
 	echo 	"<tr>";
 	echo 	"<td >Price: </td>";
 	echo 		"<td>";
-	echo 			"<input  type=\"text\" name=\"artPrice\" value=\"$artPrice\"  /input>";
+	echo 			"<input  type=\"number\" name=\"artPrice\" value=\"$artPrice\"  /input>";
 	echo		"</td>";
 	echo 	"</tr>";
 	echo 	"<tr>";
 	echo 	"<td >Imagepath: </td>";
 	echo 		"<td>";
-	echo 			"<input  type=\"text\" name=\"artImagePath\" value=\"$artImagePath\"  /input>";
+	echo 			"<input  type=\"text\" name=\"artImagePath\"  maxlength=\"150\" value=\"$artImagePath\"  /input>";
 	echo		"</td>";
 	echo 	"</tr>";
 	echo 	"<tr>";
@@ -156,7 +156,7 @@ function printLanguagePart($sqllanguageRes, $artID){
 		echo 	"<tr>";
 				echo 		"<td >Translated Name: </td>";
 						echo 		"<td>";
-						echo 			"<input  type=\"text\" name=\"" . $language->Language_ID . "translatedName\" value=\"$translatedName\"  /input>";
+						echo 			"<input  type=\"text\" name=\"" . $language->Language_ID . "translatedName\" maxlength=\"45\" value=\"$translatedName\"  /input>";
 						echo		"</td>";
 						echo 	"</tr>";
 						echo 	"<tr>";

@@ -47,11 +47,10 @@ function showArticleAdministration() {
 				
 		}
 		else if($_POST['action'] == 'delete'){
-		
-			$articleDB = new ArticleDB();
+			
 			$artID = $_POST['artId'];
-			$res = $articleDB->deleteArticle($_POST['artId']);
-			$action = 'update';
+			
+			deleteArticle($artID);
 		
 		}
 	
@@ -124,6 +123,7 @@ function showArticleAdministration() {
 	echo "<td></td>";
 	echo "<td></td>";
 	echo "<td></td>";
+	echo "<td></td>";
 	echo "<input type=\"hidden\" name=\"site\" value=\"changeArticle\" /input>";
 	echo "<input type=\"hidden\" name=\"origin\" value=\"add\" /input>";
 	echo "<td> <input class=\"basket-update-button\"  type=\"submit\" value=\"$adminArticleAddLabel\"/></td>";
@@ -159,8 +159,6 @@ function saveLanguages($artID){
 	$articleTranslationDB->deleteAllTranslationsByArticle($artID);
 	
 	while($language = $sqllanguageRes->fetch_object()){
-		echo $language->Language_ID . "translatedName";
-		echo $language->Language_ID . "translatedDescription";
 		if(isset($_POST[ $language->Language_ID . "translatedName"]) && isset($_POST[ $language->Language_ID . "translatedDescription"])){
 			$translatedName = $_POST[ $language->Language_ID . "translatedName"];
 			$translatedDescription = $_POST[ $language->Language_ID . "translatedDescription"];
@@ -169,6 +167,33 @@ function saveLanguages($artID){
 		}
 		
 	}
+	
+}
+
+function deleteArticle($artID){
+
+	require_once ROOT . "DBInterface/articleTranslationDB.php";
+	require_once ROOT . "DBInterface/categoryArticleDB.php";
+	require_once ROOT . "DBInterface/variantDB.php";
+	require_once ROOT . "DBInterface/variantTranslationDB.php";
+	
+	$articleDB = new ArticleDB();
+	$articleTranslationDB = new ArticleTranslationDB();
+	$categoryArticleDB = new CategoryArticleDB();
+	$variantDB = new VariantDB();
+	$variantTranslationDB = new VariantTranslationDB();
+	
+	$articleDB->deleteArticle($artID);
+	$articleTranslationDB->deleteAllTranslationsByArticle($artID);
+	$categoryArticleDB->deleteAllCategorysByArticle($artID);
+	
+	$sqlVariantRes = $variantDB->getAllVariantIDsByArticle($artID);
+	
+	while($variant = $sqlVariantRes->fetch_object()){
+		$variantTranslationDB->deleteAllVariantsByArticle($variant->Variation_ID);
+	}
+	
+	$variantDB->deleteAllVariantsByArticle($artID);
 	
 }
 
