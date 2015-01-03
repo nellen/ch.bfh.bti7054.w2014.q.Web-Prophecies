@@ -78,5 +78,13 @@ $adminArticleAddLabel = "Hinzuf&uuml;gen";
 /** productSearch.php */
 $prodSearchProductNotFound = "Ihre Suche ergab keine Produkttreffer.";
 
+/** contact.php */
+
+$contactTitle = "Kontakt";
+$contactFormHeading = "Kontaktieren Sie uns mittels unten stehendem Formular. Wir freuen uns &uuml;ber Ihre Nachricht.";
+$contactPhoneNumber = "Telefonnummer";
+$contactComments = "Bemerkungen";
+$contactFormSend = "Senden";
+
 ?>
 					

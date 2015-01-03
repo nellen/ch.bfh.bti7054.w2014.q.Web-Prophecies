@@ -78,5 +78,13 @@ $adminArticleAddLabel = "Add";
 /** productSearch.php */
 $prodSearchProductNotFound = "Your search did not match any products.";
 
+/** contact.php */
+
+$contactTitle = "Contact";
+$contactFormHeading = "Feel free to leave us a message with the contact form below.";
+$contactPhoneNumber = "Phone Number";
+$contactComments = "Comments";
+$contactFormSend = "Send";
+
 ?>
 					

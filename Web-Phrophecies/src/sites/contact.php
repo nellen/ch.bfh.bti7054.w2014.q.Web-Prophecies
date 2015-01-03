@@ -4,16 +4,15 @@ function fill_template(&$template, $tag, $content) {
 	$template = str_replace("@$tag@", $content, $template);
 }
 
-// fill $title, $address, $contactNumbers, $contactUs
+// fill $title, $address, $phoneNumbers, $contactUs
 switch ($lang) {
-	case "en" :
-		$title = 'Contact';
+	case "en" :	
 		$address = 
 				'The BreakFast Company<br />
 				Aarefeldstrasse 16<br />
 				3600 Thun
 				<br /> <br />';
-		$contactNumbers = 
+		$phoneNumbers = 
 				'<tr>
 					<td>Phone:&nbsp;&nbsp;</td>
 					<td>+1 123 456 78</td>
@@ -22,16 +21,14 @@ switch ($lang) {
 					<td>Fax:</td>
 					<td>+1 123 456 79</td>
 				</tr>';
-		$contactUs = 'Feel free to leave us a message with the contact form below.';
 		break;
 	case "de" :
-		$title = 'Kontakt';
 		$address =
 				'The BreakFast Company<br />
 				Aarefeldstrasse 16<br />
 				3600 Thun
 				<br /> <br />';
-		$contactNumbers =
+		$phoneNumbers =
 				'<tr>
 					<td>Telefon:&nbsp;&nbsp;</td>
 					<td>+1 123 456 78</td>
@@ -40,16 +37,14 @@ switch ($lang) {
 					<td>Fax:</td>
 					<td>+1 123 456 79</td>
 				</tr>';
-		$contactUs = 'Kontaktieren Sie uns mittels unten stehendem Formular. Wir freuen uns &uuml;ber Ihre Nachricht.';
 		break;
 	case "fr" :
-		$title = "Contact";
 		$address =
 				'The BreakFast Company<br />
 				Aarefeldstrasse 16<br />
 				3600 Thoune
 				<br /> <br />';
-		$contactNumbers =
+		$phoneNumbers =
 				'<tr>
 					<td>Téléphone:&nbsp;&nbsp;</td>
 					<td>+1 123 456 78</td>
@@ -58,15 +53,20 @@ switch ($lang) {
 					<td>Fax:</td>
 					<td>+1 123 456 79</td>
 				</tr>';
-		$contactUs = 'N\'hésitez pas à nous contacter avec le formulaire ci-dessous.';
 		break;
 }
 
 $template = file_get_contents(ROOT."/sites/contact.html");
-fill_template($template, "title", $title);
+fill_template($template, "title", $contactTitle);
 fill_template($template, "address", $address);
-fill_template($template, "contactNumbers", $contactNumbers);
-fill_template($template, "contactUs", $contactUs);
+fill_template($template, "contactNumbers", $phoneNumbers);
+fill_template($template, "contactUs", $contactFormHeading);
+fill_template($template, "firstname", $AddressFirstnameLabel);
+fill_template($template, "lastname", $AddressLastnameLabel);
+fill_template($template, "email", $AddressEmailLabel);
+fill_template($template, "phonenumber", $contactPhoneNumber);
+fill_template($template, "comments", $contactComments);
+fill_template($template, "send", $contactFormSend);
 
 echo $template;
 
