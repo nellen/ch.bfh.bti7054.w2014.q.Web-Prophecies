@@ -1,5 +1,5 @@
 <?php 
-echo "<h2>Welcome ";
+echo "<h2>" . $welcome;
 // if a user is logged in, show his user name
 if (isset($_SESSION["user"])) {
 	echo $_SESSION["user"]->getUsername() . "!";

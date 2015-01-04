@@ -5,6 +5,9 @@ $de						= "German";
 $fr						= "French";
 $en						= "English";
 
+/** main.php */
+$welcome				= "Welcome";
+
 /** category.php */
 $priceLabel 			= "Price";
 $variationsLabel 		= "Variations";
