@@ -95,7 +95,7 @@ class article {
 		require ROOT . "resources/".$lang.".php";
 		
 		$item = "<div class=\"article\" title='" . $this->getDescription() . "'>";
-		$item .= "<h2>". $this->getName() . "</h2>";
+		$item .= "<h3>". $this->getName() . "</h3>";
 		$item .= "<img src=\"" . $this->getImage() . "\"/>";
 		$item .= "<p class=\"article-price\">".$priceLabel.": ". formatPrice($this->getPrice()) . " CHF</p>";
 		

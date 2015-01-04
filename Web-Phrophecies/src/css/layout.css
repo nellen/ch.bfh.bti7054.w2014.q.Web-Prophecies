@@ -170,11 +170,6 @@ hr {
 	overflow: auto;
 }
 
-.article h3 {
-	margin-top: 0px;
-	margin-left: 10px;
-}
-
 .article-button {
 	float: right;
 }
@@ -191,14 +186,16 @@ hr {
 #searchResult .article {
 	width: 30%;
 	float: left;
-	margin: 5px;
+	margin: 3px;
 	border: 1px solid #473423;
+	padding: 5px;
 	
 }
 
-#searchResult .article h2 {
+#searchResult .article h3 {
 	margin-top: auto;
 	margin-bottom: 5px;
+	margin-left: -
 }
 
 #searchResult .article img {
