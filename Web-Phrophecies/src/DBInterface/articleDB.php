@@ -23,7 +23,7 @@ class ArticleDB extends mysqli {
 	}
 	
 	public function getArticleByKeyword($keyword, $lang) {
-		$keyword = $keyword . "%";
+		$keyword = "%" . $keyword . "%";
 		$query = "Select A.*, ATR.TranslatedName, ATR.TranslatedDescription from article As A left join articletranslation As ATR on A.Article_ID = ATR.Article_ID and ATR.Language_ID = ? where ATR.TranslatedName like ? ";
 		$statement = $this->prepare($query);
 		$statement->bind_param("ss", $lang, $keyword);
