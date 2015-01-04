@@ -57,6 +57,7 @@ switch ($lang) {
 }
 
 $template = file_get_contents(ROOT."/sites/contact.html");
+fill_template($template, "lang", $lang);
 fill_template($template, "title", $contactTitle);
 fill_template($template, "address", $address);
 fill_template($template, "contactNumbers", $phoneNumbers);

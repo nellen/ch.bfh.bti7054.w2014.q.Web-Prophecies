@@ -1,3 +1,4 @@
+<script type="text/javascript" src="./resources/js/validateContactForm.js"></script>
 <h1>@title@</h1>
 <p>@address@</p>
 <table id="contact-numbers">@contactNumbers@</table>
@@ -8,7 +9,8 @@
 <p><br />@contactUs@<br />
 </p>
 <form name="htmlform" method="post"
-	action="./includes/html_form_send.php">
+	action="index.php" onsubmit="return validateForm();">
+	<input type="hidden" name="lang" value="@lang@" />
 	<table width="550px">
 		<tr>
 			<td valign="top"><label for="first_name">@firstname@ *</label></td>
