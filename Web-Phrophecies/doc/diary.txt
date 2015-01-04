@@ -60,9 +60,9 @@
 	- Task 9.3 Even more OO (HUBER3)
 		-- Change "$self" to "$this" to be correct ;-)
 		
-	- Task 10.2 Database Setup (BURKT4)
+	- Task 10.2 Database Setup (BURKT4, HUBER3)
 		-- continue to fill in data
-	- Task 10.3 PHP Integration (BURKT4)
+	- Task 10.3 PHP Integration (BURKT4, HUBER3)
 		-- close db connections 
 		-- add images to articles (for testing, user-a.png)
 		
