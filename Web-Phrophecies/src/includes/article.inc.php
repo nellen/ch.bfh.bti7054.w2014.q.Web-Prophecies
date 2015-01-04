@@ -104,7 +104,12 @@ class article {
 		$item .= "<select name =\"varId\" size=\"1\">";
 		$item .= "<option value=\"0\">normal</option>";
 		foreach ( $this->getVariants() as $variant ) {
-			$item .= "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF</option>";
+			if($variant->getPrice() >= 0){
+				$sign = " +";
+			} else {
+				$sign = " ";
+			}
+			$item .= "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . $sign . formatPrice($variant->getPrice()) . " CHF</option>";
 		}
 		
 		$item .= "</select>";
@@ -131,7 +136,12 @@ class article {
 		$itemHtml .= "<select name =\"varId\" size=\"1\">";
 		$itemHtml .= "<option value=\"0\">normal</option>";
 		foreach ( $this->getVariants() as $variant ) {
-			$itemHtml .=  "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF</option>";
+			if($variant->getPrice() >= 0){
+				$sign = " +";
+			} else {
+				$sign = " ";
+			}
+			$itemHtml .=  "<option value=\"" . $variant->getId() . "\">" . $variant->getName() . $sign . formatPrice($variant->getPrice()) . " CHF</option>";
 		}
 		
 		$itemHtml .=  "</select>";
@@ -159,7 +169,12 @@ class article {
 				} else {
 					$itemHtml .=  ",";
 				}
-			$itemHtml .=  " " . $variant->getName() . " + " . formatPrice($variant->getPrice()) . " CHF";
+				if($variant->getPrice() >= 0){
+					$sign = " +";
+				} else {
+					$sign = " ";
+				}
+			$itemHtml .=  " " . $variant->getName() . $sign . formatPrice($variant->getPrice()) . " CHF";
 			}
 			$itemHtml .=  "</p>";
 		}
