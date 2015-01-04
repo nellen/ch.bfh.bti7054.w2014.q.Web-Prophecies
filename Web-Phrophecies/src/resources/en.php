@@ -92,5 +92,11 @@ $contactFormSend = "Send";
 /** processOrder.php */
 $msg = "Thank you for your order!";
 $greeting = "Kind Regards,";
+
+/** processContact.php */
+$processContactMailSubject = "Your contact request - The Breakfast Company";
+$processContactGreetingInfo = "Thank you having contacted us";
+$processContactAddressInfo = "Address information";
+
 ?>
 					

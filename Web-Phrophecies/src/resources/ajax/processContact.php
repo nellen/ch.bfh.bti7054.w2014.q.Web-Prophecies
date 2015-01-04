@@ -21,16 +21,17 @@ if (!isset( $_POST["firstname"] ) ||  $_POST["firstname"] == "") {
 	header ("Location: " . ROOT . "index.php");
 }
 
-
 $firstname 	= $_POST["firstname"];
 $lastname 	= $_POST["lastname"];
 $phonenumber = $_POST["phonenumber"];
 $email		= $_POST["email"];
 $comments = $_POST["comments"];
 
-$Subject = $processMailSubject;
+
+$Subject = $processContactMailSubject;
 $MessageHTML = generateMailHTMLBody($lang);
 $MessageTEXT = generateMailPlainBody($lang);
+
 
 $Send = SendMail( $email, $Subject, $MessageHTML, $MessageTEXT );
 if ( $Send ) {
@@ -39,7 +40,8 @@ if ( $Send ) {
 else {
 	echo "<h2> ERROR </h2>";
 }
-die;
+die();
+
 
 function generateMailHTMLBody($lang) {
 	
@@ -54,18 +56,18 @@ function generateMailHTMLBody($lang) {
   				<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
 				</head>
 				<body>";
-	$mailbody .= "<p>Thank you for your order!<br /></p>";
-	$mailbody .= "<h3>$confirmShippingInfo</h3>";
+	$mailbody .= "<p>$processContactGreetingInfo<br /></p>";
+	$mailbody .= "<h3>$processContactAddressInfo</h3>";
 	$mailbody .= "<p>";
 	$mailbody .= "$AddressFirstnameLabel: " . $_POST["firstname"] . "<br />";
 	$mailbody .= "$AddressLastnameLabel: ". $_POST["lastname"]. "<br />";
-	$mailbody .= "$AddressCityLabel: ". $_POST["phonenumber"]. "<br />";
+	$mailbody .= "$contactPhoneNumber: ". $_POST["phonenumber"]. "<br />";
 	$mailbody .= "$AddressEmailLabel: ". $_POST["email"]. "<br />";
 	$mailbody .= "<br /><br />";
 	$mailbody .= "</p>";
-	$mailbody .= "<h3>Comment:</h3>";
+	$mailbody .= "<h3>$contactComments</h3>";
 	$mailbody .= "<p>" . $_POST["comments"] ."</p>";
-	$mailbody .= "<p>Kind Regards,<br />The BreakFast Company</p>";
+	$mailbody .= "<p>" . $greeting . "<br />The BreakFast Company</p>";
 	$mailbody .= "</body></html>";
 	
 	return $mailbody;
@@ -75,9 +77,7 @@ function generateMailPlainBody($lang) {
 
 	require ( ROOT . 'resources/' . $lang . '.php' );
 	
-	$mailbody = "Thank you for your order!
-			Kind Regards, 
-			The BreakFast Company";
+	$mailbody = $processContactGreetingInfo . "\n" . $greeting . "\n" . "The BreakFast Company";
 	
 	return $mailbody;
 }

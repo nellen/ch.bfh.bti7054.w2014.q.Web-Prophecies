@@ -93,4 +93,9 @@ $contactFormSend = "Envoyer";
 $msg = "Nous vous remercions de votre commande!";
 $greeting = "Meilleures salutations";
 
+/** processContact.php */
+$processContactMailSubject = "Votre prise de contact - The Breakfast Company";
+$processContactGreetingInfo = "Merci de nous avoir contacte";
+$processContactAddressInfo = "Vos coordonnés";
+
 ?>

@@ -44,31 +44,5 @@
 	        alert("Please check your entered data");
 	        return false;
 	    }
-	    else{
-	    	//TODO: correctly send contact email at the moment nothing happens
-	    	//processContact();
-	    }
 	}
 	
-	function processContact() {
-		var xmlhttp;
-		if (window.XMLHttpRequest){
-			xmlhttp = new XMLHttpRequest();
-		} else if (window.ActiveXObject){
-			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-		} else {
-			alert("Your browser does not support XMLHTTP!");
-			return;
-		}
-		
-		var lang = document.forms["htmlform"]["lang"].value;
-		var firstname = document.forms["htmlform"]["firstname"].value;
-		var lastname = document.forms["htmlform"]["lastname"].value;
-		var email = document.forms["htmlform"]["email"].value;
-		var phonenumber = document.forms["htmlform"]["phonenumber"].value;
-		var comments = document.forms["htmlform"]["comments"].value;
-		
-		xmlhttp.open("POST", "./resources/ajax/processContact.php", true);
-		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-		xmlhttp.send("firstname=" + firstname + "&lastname=" + lastname + "&email=" + email + "&phonenumber=" + phonenumber + "&comments=" + comments + "&lang=" + lang);
-	}
