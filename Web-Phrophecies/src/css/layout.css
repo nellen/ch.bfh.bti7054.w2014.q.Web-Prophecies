@@ -87,14 +87,17 @@ body {
 }
 
 #right-area {
-	min-width: 200px;
-	padding: 5px;
+	min-width: 190px;
 	height: inherit;
 	background-color: #F5EEDE;
 	color: #755A42;
 	/**background-color: #AC8B6F;
 	color: #473423;*/
 	display: table-cell;
+}
+
+#right-area hr {
+	width: 95%;
 }
 
 #content-area {
@@ -108,10 +111,12 @@ body {
 
 #user-area {
 	min-height: 100px;
+	padding: 5px;
 }
 
 #news-area {
 	min-height: 200px;
+	padding: 5px;
 }
 
 #footer-area {
