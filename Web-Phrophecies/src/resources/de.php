@@ -89,5 +89,9 @@ $contactPhoneNumber = "Telefonnummer";
 $contactComments = "Bemerkungen";
 $contactFormSend = "Senden";
 
+/** processOrder.php */
+$msg = "Besten Dank für Ihre Bestellung!";
+$greeting = "Freundliche Grüsse";
+
 ?>
 					

@@ -17,7 +17,7 @@ function __autoload($class_name) {
 }
 
 // When page is loaded without POST variables, we assume that something is not ok - so we relocate the user to index.php
-if (!isset( $_POST["firstname"] ) ||  $_POST["firstname"] = "") {
+if (!isset( $_POST["firstname"] ) ||  $_POST["firstname"] == "") {
 	header ("Location: " . ROOT . "index.php");
 }
 
@@ -63,7 +63,7 @@ function generateMailHTMLBody($lang) {
   				<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
 				</head>
 				<body>";
-	$mailbody .= "<p>Thank you for your order!<br /></p>";
+	$mailbody .= "<p>" . $msg . "<br /></p>";
 	$mailbody .= "<h3>$confirmShippingInfo</h3>";
 	$mailbody .= "<p>";
 	$mailbody .= "$AddressFirstnameLabel: " . $_POST["firstname"] . "<br />";
@@ -77,7 +77,7 @@ function generateMailHTMLBody($lang) {
 	$mailbody .= "</p>";
 	$mailbody .= "<h3>$basket</h3>";
 	$mailbody .= "<p>" . $_POST["basketcontent"] ."</p>";
-	$mailbody .= "<p>Kind Regards,<br />The BreakFast Company</p>";
+	$mailbody .= "<p>" . $greeting . "<br />The BreakFast Company</p>";
 	$mailbody .= "</body></html>";
 	
 	return $mailbody;
@@ -87,9 +87,7 @@ function generateMailPlainBody($lang) {
 
 	require ( ROOT . 'resources/' . $lang . '.php' );
 	
-	$mailbody = "Thank you for your order!
-			Kind Regards, 
-			The BreakFast Company";
+	$mailbody = $msg . "\n" . $greeting . "\n" . "The BreakFast Company";
 	
 	return $mailbody;
 }

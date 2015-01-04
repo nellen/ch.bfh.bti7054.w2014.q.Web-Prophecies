@@ -89,4 +89,8 @@ $contactPhoneNumber = "Numéro de téléphone";
 $contactComments = "Commentaires";
 $contactFormSend = "Envoyer";
 
+/** processOrder.php */
+$msg = "Nous vous remercions de votre commande!";
+$greeting = "Meilleures salutations";
+
 ?>
