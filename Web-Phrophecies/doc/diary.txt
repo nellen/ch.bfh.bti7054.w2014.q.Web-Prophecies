@@ -2,13 +2,33 @@
 ## --- Project Diary ---
 ## ----------------------------------
 
+
+
+04.01.2015 huber3, burkt4, nells1(ill but available over skype)
+
+ -> discussed the finished tasks from 02.01.15
+ -> prepared the final presentation for teacher (more infos about implemented features/tqsks)
+ 	and one for class
+ -> fixed bugs which we had seen by look through the webshop
+ -> nells1 managed to send mail from contact form
+ -> prepared screencast
+ -> prepared DB setup and installation instruction for teacher
+ 
+ >>> every paper, SQL-Script for the DB and the screencasts are available in the doc folder Abgabe
+ 
+ -> in case nells1 is ill, he sent an e-mail for asking if burkt4 and huber3 will have the
+ 	presentation by themselves
+ 	
+ 	
+------
+
 02.01.2015 nells1, burkt4, huber3
 
  -> Discussion about given tasks and their status
 
 >>>>>>>> ToDo : Tasks <<<<<<<<
 
-	- Task 10.4 Administrator (BURKT4)
+	- Task 10.4 Administrator (BURKT4, HUBER3)
 		-- categories & translations
 	
 	- Task 6.4 Confirmation (NELLS1)
