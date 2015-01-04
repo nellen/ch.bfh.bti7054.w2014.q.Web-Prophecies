@@ -13,7 +13,7 @@ if (isset ( $_SESSION ["user"] )) {
 } else {
 	// User is not logged in...
 	echo "Please log in to display this page.<br />";
-	echo "<a href='./index.php'>Back to Login</a>";
+	echo "<a href='./index.php?site=login_user'>Back to Login</a>";
 }
 
 // This function is reached, when an admin is logged in
